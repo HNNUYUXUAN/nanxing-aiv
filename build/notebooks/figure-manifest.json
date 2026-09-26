@@ -1,0 +1,498 @@
+[
+  {
+    "id": "final-dimension-level-distribution",
+    "caption": "各维度分别以自身候选为分母；两个候选集合并非同一批回合。",
+    "kind": "real",
+    "notebook": "09_Agent批量结果与互评.ipynb",
+    "notebook_code_sha256": "00eabe021c33b0eff580a3eab39c9f1a8016ff1059abd2c7ae8e7cf85d865f53",
+    "files": {
+      "pdf": "figures/final-dimension-level-distribution.pdf",
+      "svg": "figures/final-dimension-level-distribution.svg",
+      "png": "figures/final-dimension-level-distribution.png"
+    },
+    "sources": [
+      {
+        "path": "results/final-analysis/level-distribution.csv",
+        "sha256": "dd45944ed312884f1599003a8a603baf84475886709b24113bd55cf9db002c28"
+      },
+      {
+        "path": "results/final-analysis/descriptive.csv",
+        "sha256": "6d868656aa33bc5299ce6e6ff19643eebf3ba2d4ba23f557642ba552dd0cc686"
+      },
+      {
+        "path": "results/final-analysis/summary.json",
+        "sha256": "a181f0840a47c129aeb148f1ea5b36c5941a0943cd5fb1ebfa2acd8bfc28a64c"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  },
+  {
+    "id": "final-human-role-timing",
+    "caption": "同题8项、两角色共16对；时间包含停顿，固定顺序与共同推荐限制因果解释。",
+    "kind": "real",
+    "notebook": "03_人审与校准.ipynb",
+    "notebook_code_sha256": "3b7c28c4dd508d62184d38a96117268f3b4332b06940761b502819e986198f66",
+    "files": {
+      "pdf": "figures/final-human-role-timing.pdf",
+      "svg": "figures/final-human-role-timing.svg",
+      "png": "figures/final-human-role-timing.png"
+    },
+    "sources": [
+      {
+        "path": "results/final-analysis/human-role-timing.csv",
+        "sha256": "0662f7af9c686f96cf75fe6162a5e0d0b6df14b020587ceae7ff98bfc0c94078"
+      },
+      {
+        "path": "results/final-analysis/summary.json",
+        "sha256": "a181f0840a47c129aeb148f1ea5b36c5941a0943cd5fb1ebfa2acd8bfc28a64c"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  },
+  {
+    "id": "final-joint-candidate-levels",
+    "caption": "48条同回合双维非空候选；任务较高13条、相同29条、贡献较高6条。",
+    "kind": "real",
+    "notebook": "09_Agent批量结果与互评.ipynb",
+    "notebook_code_sha256": "00eabe021c33b0eff580a3eab39c9f1a8016ff1059abd2c7ae8e7cf85d865f53",
+    "files": {
+      "pdf": "figures/final-joint-candidate-levels.pdf",
+      "svg": "figures/final-joint-candidate-levels.svg",
+      "png": "figures/final-joint-candidate-levels.png"
+    },
+    "sources": [
+      {
+        "path": "results/final-analysis/joint-levels.csv",
+        "sha256": "e3012f93a8b2f253092ce7a51f3160a0fa2af1e91da94e0be8076aa444347dc9"
+      },
+      {
+        "path": "results/final-analysis/summary.json",
+        "sha256": "a181f0840a47c129aeb148f1ea5b36c5941a0943cd5fb1ebfa2acd8bfc28a64c"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  },
+  {
+    "id": "final-random-review-flow",
+    "caption": "固定随机复核子集的同题状态比较；每种方法、每个维度均保留全部352回合。",
+    "kind": "real",
+    "notebook": "02_标注与互评.ipynb",
+    "notebook_code_sha256": "a8c94b95636f966be61cf032fca57aec442d8491c8d358986ffc2c092fa26517",
+    "files": {
+      "pdf": "figures/final-random-review-flow.pdf",
+      "svg": "figures/final-random-review-flow.svg",
+      "png": "figures/final-random-review-flow.png"
+    },
+    "sources": [
+      {
+        "path": "results/final-analysis/flow-comparison.csv",
+        "sha256": "5f1ac3cbf959b79cb4f31c492c4b21a671ac56cc3445bd0901103044eb6749c0"
+      },
+      {
+        "path": "results/final-analysis/summary.json",
+        "sha256": "a181f0840a47c129aeb148f1ea5b36c5941a0943cd5fb1ebfa2acd8bfc28a64c"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  },
+  {
+    "id": "final-score-range-sensitivity",
+    "caption": "356个有任务候选的学生—学期单位；按ceil(εn)改标，缺失CTQ及工具情景保留；稳定配对仅在同学期内比较。",
+    "kind": "conditional",
+    "notebook": "05_指标性质与不确定性.ipynb",
+    "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+    "files": {
+      "pdf": "figures/final-score-range-sensitivity.pdf",
+      "svg": "figures/final-score-range-sensitivity.svg",
+      "png": "figures/final-score-range-sensitivity.png"
+    },
+    "sources": [
+      {
+        "path": "results/final-analysis/score-range-sensitivity.csv",
+        "sha256": "a4674ebd51093893398034352e1cf80c3478cb714c4d57562dc660a633516936"
+      },
+      {
+        "path": "results/final-analysis/summary.json",
+        "sha256": "a181f0840a47c129aeb148f1ea5b36c5941a0943cd5fb1ebfa2acd8bfc28a64c"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  },
+  {
+    "id": "final-tool-stacking-comparison",
+    "caption": "同一固定标签案例的工具堆叠增量；MAB权重置零也移除了工具广度奖励。",
+    "kind": "synthetic",
+    "notebook": "06_红队与失败边界.ipynb",
+    "notebook_code_sha256": "91634e7d1a144fc7df2cd4a2d705110d0d87687ba4cc0fd0c676981c7de80bb9",
+    "files": {
+      "pdf": "figures/final-tool-stacking-comparison.pdf",
+      "svg": "figures/final-tool-stacking-comparison.svg",
+      "png": "figures/final-tool-stacking-comparison.png"
+    },
+    "sources": [
+      {
+        "path": "results/final-analysis/summary.json",
+        "sha256": "a181f0840a47c129aeb148f1ea5b36c5941a0943cd5fb1ebfa2acd8bfc28a64c"
+      },
+      {
+        "path": "results/synthetic/redteam.csv",
+        "sha256": "168ee85975bf84134ad3cc27fcd5cf9071c0a7b781181c12b463239eddb2f057"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  },
+  {
+    "id": "final-unknown-label-bounds",
+    "caption": "线段为未知标签任取L1–L6的条件范围，菱形为候选子集点值；已判定标签暂视为正确。",
+    "kind": "conditional",
+    "notebook": "05_指标性质与不确定性.ipynb",
+    "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+    "files": {
+      "pdf": "figures/final-unknown-label-bounds.pdf",
+      "svg": "figures/final-unknown-label-bounds.svg",
+      "png": "figures/final-unknown-label-bounds.png"
+    },
+    "sources": [
+      {
+        "path": "results/final-analysis/unknown-label-bounds.csv",
+        "sha256": "0292c1c637f0f91242a3c8d6cd238c776cd9476296a72dfc1fafdca392555da0"
+      },
+      {
+        "path": "results/final-analysis/summary.json",
+        "sha256": "a181f0840a47c129aeb148f1ea5b36c5941a0943cd5fb1ebfa2acd8bfc28a64c"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-01-01",
+    "caption": "合成实验：检查分布",
+    "kind": "synthetic",
+    "notebook": "01_数据与问题.ipynb",
+    "notebook_code_sha256": "5c4ac7a37964aa08b0ea42e8eaed34cb8191d41295b2e8611864b4914b88e704",
+    "files": {
+      "pdf": "figures/synthetic-01-01.pdf",
+      "svg": "figures/synthetic-01-01.svg",
+      "png": "figures/synthetic-01-01.png"
+    },
+    "sources": [
+      {
+        "path": "aiv/data.py",
+        "sha256": "60b1c0c78f2c5faef8545ff72aa5ae7b2ea515f1d18ebacac19105cc9917bf4e"
+      },
+      {
+        "path": "aiv/analysis.py",
+        "sha256": "dc6a51f7e3bd8db9bb8021732c83e520234e8867f61ad6e87015b9b85ee6ce82"
+      },
+      {
+        "path": "aiv/metrics.py",
+        "sha256": "fbadbed350e50cd016faddf4d065c4122d6387122bb60ceb798fa36265255a90"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-03-01",
+    "caption": "合成实验：残差校正模拟",
+    "kind": "synthetic",
+    "notebook": "03_人审与校准.ipynb",
+    "notebook_code_sha256": "3b7c28c4dd508d62184d38a96117268f3b4332b06940761b502819e986198f66",
+    "files": {
+      "pdf": "figures/synthetic-03-01.pdf",
+      "svg": "figures/synthetic-03-01.svg",
+      "png": "figures/synthetic-03-01.png"
+    },
+    "sources": [
+      {
+        "path": "aiv/calibration.py",
+        "sha256": "77f78855e4fdff3fa611ef91be63cea68383b93ecbbbb9171a0e37289d5e7faf"
+      },
+      {
+        "path": "aiv/data.py",
+        "sha256": "60b1c0c78f2c5faef8545ff72aa5ae7b2ea515f1d18ebacac19105cc9917bf4e"
+      },
+      {
+        "path": "aiv/analysis.py",
+        "sha256": "dc6a51f7e3bd8db9bb8021732c83e520234e8867f61ad6e87015b9b85ee6ce82"
+      },
+      {
+        "path": "aiv/metrics.py",
+        "sha256": "fbadbed350e50cd016faddf4d065c4122d6387122bb60ceb798fa36265255a90"
+      },
+      {
+        "path": "results/synthetic/residual-coverage-summary.json",
+        "sha256": "ce2473ae5e8bfc77b5dc29a899969c50a4bd5785264c30fa79368a47b33e84d6"
+      },
+      {
+        "path": "results/synthetic/residual-coverage-trials.csv",
+        "sha256": "1e4d56fae6ce0910df9571f5872a0989f2bee79a48797718c6784c5a46a83221"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-03-02",
+    "caption": "合成实验：有限总体覆盖率模拟",
+    "kind": "synthetic",
+    "notebook": "03_人审与校准.ipynb",
+    "notebook_code_sha256": "3b7c28c4dd508d62184d38a96117268f3b4332b06940761b502819e986198f66",
+    "files": {
+      "pdf": "figures/synthetic-03-02.pdf",
+      "svg": "figures/synthetic-03-02.svg",
+      "png": "figures/synthetic-03-02.png"
+    },
+    "sources": [
+      {
+        "path": "aiv/calibration.py",
+        "sha256": "77f78855e4fdff3fa611ef91be63cea68383b93ecbbbb9171a0e37289d5e7faf"
+      },
+      {
+        "path": "aiv/data.py",
+        "sha256": "60b1c0c78f2c5faef8545ff72aa5ae7b2ea515f1d18ebacac19105cc9917bf4e"
+      },
+      {
+        "path": "aiv/analysis.py",
+        "sha256": "dc6a51f7e3bd8db9bb8021732c83e520234e8867f61ad6e87015b9b85ee6ce82"
+      },
+      {
+        "path": "aiv/metrics.py",
+        "sha256": "fbadbed350e50cd016faddf4d065c4122d6387122bb60ceb798fa36265255a90"
+      },
+      {
+        "path": "results/synthetic/residual-coverage-summary.json",
+        "sha256": "ce2473ae5e8bfc77b5dc29a899969c50a4bd5785264c30fa79368a47b33e84d6"
+      },
+      {
+        "path": "results/synthetic/residual-coverage-trials.csv",
+        "sha256": "1e4d56fae6ce0910df9571f5872a0989f2bee79a48797718c6784c5a46a83221"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-04-01",
+    "caption": "合成实验：已知真值实验",
+    "kind": "synthetic",
+    "notebook": "04_识别边界与模拟.ipynb",
+    "notebook_code_sha256": "047b409fbec30e726d960feb4915f7cdf58dea52d463545b27c324fd8a660c09",
+    "files": {
+      "pdf": "figures/synthetic-04-01.pdf",
+      "svg": "figures/synthetic-04-01.svg",
+      "png": "figures/synthetic-04-01.png"
+    },
+    "sources": [
+      {
+        "path": "aiv/data.py",
+        "sha256": "60b1c0c78f2c5faef8545ff72aa5ae7b2ea515f1d18ebacac19105cc9917bf4e"
+      },
+      {
+        "path": "aiv/analysis.py",
+        "sha256": "dc6a51f7e3bd8db9bb8021732c83e520234e8867f61ad6e87015b9b85ee6ce82"
+      },
+      {
+        "path": "aiv/metrics.py",
+        "sha256": "fbadbed350e50cd016faddf4d065c4122d6387122bb60ceb798fa36265255a90"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-05-01",
+    "caption": "合成实验：三套固定权重",
+    "kind": "synthetic",
+    "notebook": "05_指标性质与不确定性.ipynb",
+    "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+    "files": {
+      "pdf": "figures/synthetic-05-01.pdf",
+      "svg": "figures/synthetic-05-01.svg",
+      "png": "figures/synthetic-05-01.png"
+    },
+    "sources": [
+      {
+        "path": "aiv/data.py",
+        "sha256": "60b1c0c78f2c5faef8545ff72aa5ae7b2ea515f1d18ebacac19105cc9917bf4e"
+      },
+      {
+        "path": "aiv/analysis.py",
+        "sha256": "dc6a51f7e3bd8db9bb8021732c83e520234e8867f61ad6e87015b9b85ee6ce82"
+      },
+      {
+        "path": "aiv/metrics.py",
+        "sha256": "fbadbed350e50cd016faddf4d065c4122d6387122bb60ceb798fa36265255a90"
+      },
+      {
+        "path": "results/synthetic/label-dependence.csv",
+        "sha256": "8a67c52b44c3d6ceb58a59f83cebb57a0f193126007e7d226b1b250d456e0cc7"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-05-02",
+    "caption": "合成实验：权重敏感性",
+    "kind": "synthetic",
+    "notebook": "05_指标性质与不确定性.ipynb",
+    "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+    "files": {
+      "pdf": "figures/synthetic-05-02.pdf",
+      "svg": "figures/synthetic-05-02.svg",
+      "png": "figures/synthetic-05-02.png"
+    },
+    "sources": [
+      {
+        "path": "aiv/data.py",
+        "sha256": "60b1c0c78f2c5faef8545ff72aa5ae7b2ea515f1d18ebacac19105cc9917bf4e"
+      },
+      {
+        "path": "aiv/analysis.py",
+        "sha256": "dc6a51f7e3bd8db9bb8021732c83e520234e8867f61ad6e87015b9b85ee6ce82"
+      },
+      {
+        "path": "aiv/metrics.py",
+        "sha256": "fbadbed350e50cd016faddf4d065c4122d6387122bb60ceb798fa36265255a90"
+      },
+      {
+        "path": "results/synthetic/label-dependence.csv",
+        "sha256": "8a67c52b44c3d6ceb58a59f83cebb57a0f193126007e7d226b1b250d456e0cc7"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-05-03",
+    "caption": "合成实验：标签共同误差敏感性",
+    "kind": "synthetic",
+    "notebook": "05_指标性质与不确定性.ipynb",
+    "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+    "files": {
+      "pdf": "figures/synthetic-05-03.pdf",
+      "svg": "figures/synthetic-05-03.svg",
+      "png": "figures/synthetic-05-03.png"
+    },
+    "sources": [
+      {
+        "path": "aiv/data.py",
+        "sha256": "60b1c0c78f2c5faef8545ff72aa5ae7b2ea515f1d18ebacac19105cc9917bf4e"
+      },
+      {
+        "path": "aiv/analysis.py",
+        "sha256": "dc6a51f7e3bd8db9bb8021732c83e520234e8867f61ad6e87015b9b85ee6ce82"
+      },
+      {
+        "path": "aiv/metrics.py",
+        "sha256": "fbadbed350e50cd016faddf4d065c4122d6387122bb60ceb798fa36265255a90"
+      },
+      {
+        "path": "results/synthetic/label-dependence.csv",
+        "sha256": "8a67c52b44c3d6ceb58a59f83cebb57a0f193126007e7d226b1b250d456e0cc7"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-06-01",
+    "caption": "合成实验：固定标签攻击",
+    "kind": "synthetic",
+    "notebook": "06_红队与失败边界.ipynb",
+    "notebook_code_sha256": "91634e7d1a144fc7df2cd4a2d705110d0d87687ba4cc0fd0c676981c7de80bb9",
+    "files": {
+      "pdf": "figures/synthetic-06-01.pdf",
+      "svg": "figures/synthetic-06-01.svg",
+      "png": "figures/synthetic-06-01.png"
+    },
+    "sources": [
+      {
+        "path": "aiv/data.py",
+        "sha256": "60b1c0c78f2c5faef8545ff72aa5ae7b2ea515f1d18ebacac19105cc9917bf4e"
+      },
+      {
+        "path": "aiv/analysis.py",
+        "sha256": "dc6a51f7e3bd8db9bb8021732c83e520234e8867f61ad6e87015b9b85ee6ce82"
+      },
+      {
+        "path": "aiv/metrics.py",
+        "sha256": "fbadbed350e50cd016faddf4d065c4122d6387122bb60ceb798fa36265255a90"
+      },
+      {
+        "path": "results/synthetic/text-redteam.csv",
+        "sha256": "367dc8f796c24a275af700703379b6bbe0670ffba10b9acc1496b801763cf088"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  },
+  {
+    "id": "synthetic-live-evidence-chain",
+    "caption": "已保存合成标签的现场计算；缺少会话边和工具时保留null指标及条件范围。",
+    "kind": "synthetic",
+    "notebook": "07_教育报告与复用.ipynb",
+    "notebook_code_sha256": "03f668f85b8c73f8115614b7f231833b66c8cd580d62f003ebe264facd054a20",
+    "files": {
+      "pdf": "figures/synthetic-live-evidence-chain.pdf",
+      "svg": "figures/synthetic-live-evidence-chain.svg",
+      "png": "figures/synthetic-live-evidence-chain.png"
+    },
+    "sources": [
+      {
+        "path": "scripts/demo_evidence_chain.py",
+        "sha256": "82d28c8f3aec81fdc25562ed2316527a60ffb8da543d4335597cea327ce18579"
+      },
+      {
+        "path": "aiv/metrics.py",
+        "sha256": "fbadbed350e50cd016faddf4d065c4122d6387122bb60ceb798fa36265255a90"
+      },
+      {
+        "path": "aiv/models.py",
+        "sha256": "14ef06394913f417bce4ffdd1fcf6428743d141c45862bfb6c8d0c2aff0ad00f"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      }
+    ]
+  }
+]

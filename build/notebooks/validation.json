@@ -1,0 +1,31 @@
+{
+  "notebooks_executed": 10,
+  "figures": 16,
+  "export_formats": [
+    "pdf",
+    "svg",
+    "png"
+  ],
+  "source_hashes_rechecked": true,
+  "all_export_files_present": true,
+  "inline_figure_outputs_verified": true,
+  "live_api": false,
+  "wall_seconds": 51.73,
+  "turn_snapshot": "pending",
+  "snapshot_manifest_sha256": null,
+  "materials_manifest_sha256": null,
+  "concept_illustrations": {
+    "status": "accepted",
+    "manifest_sha256": "fb022c88c400c50cf5d905e3808d9cda63373554988f82b5c525a679a8882d79",
+    "source_hashes": {
+      "assets/illustrations/evidence-chain.png": "55ca6cbdce0e8cd4d98ef4784699254dd62aa77ecf03f4c4b9c7e631f22b783a",
+      "assets/illustrations/manifest.json": "fb022c88c400c50cf5d905e3808d9cda63373554988f82b5c525a679a8882d79",
+      "assets/illustrations/model-review.png": "8429f1dc155311377a0982fb295258729d91994ccd4833ed6fdb0c40fba66afa",
+      "assets/illustrations/process-overview.png": "439f20c1a2e7a90c363f475f438733408bfdc6c4d250baca0e4415070d538d83",
+      "assets/illustrations/reproducibility.png": "e6230e685a864c9c4ee7373c26b2fa4b76e4a974aacb53a5561d4d3169bc8326",
+      "assets/illustrations/system-architecture.png": "b23337e9fada57b25db65b5209f11841bb5b3bd5433286db7942843cc0828096"
+    },
+    "integration_script_sha256": "ad0c1ee16e213c303a65640024264e1e40b222a6e13326bea6769cd3d6a3862b",
+    "images": 5
+  }
+}

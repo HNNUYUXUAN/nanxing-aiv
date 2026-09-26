@@ -1,0 +1,53 @@
+# Numerical computing, symbolic mathematics and optimization
+numpy
+scipy
+sympy
+cvxpy
+# Data and statistical modeling
+pandas
+openpyxl
+pyarrow
+scikit-learn
+statsmodels
+# Figures and notebooks
+matplotlib
+seaborn
+jupyterlab
+ipykernel
+nbconvert
+# Markdown / LaTeX source processing and existing conversion scripts
+markdown-it-py
+mdit-py-plugins
+Jinja2
+PyYAML
+python-dotenv
+lxml
+Pillow
+# Literature acquisition, PDF processing, citations and API integration
+openai
+requests
+httpx
+tenacity
+tqdm
+beautifulsoup4
+PyMuPDF
+pypdf
+pdfplumber
+bibtexparser<2
+pylatexenc<3
+arxiv
+rapidfuzz
+# Reproducible charts and scientific utilities (no browser download needed)
+plotly
+altair
+vl-convert-python
+networkx
+SALib
+# Optional local API and Office delivery
+fastapi
+uvicorn
+python-docx
+python-pptx
+# Development checks
+pytest
+ruff

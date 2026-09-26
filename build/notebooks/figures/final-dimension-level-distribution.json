@@ -1,0 +1,30 @@
+{
+  "id": "final-dimension-level-distribution",
+  "caption": "各维度分别以自身候选为分母；两个候选集合并非同一批回合。",
+  "kind": "real",
+  "notebook": "09_Agent批量结果与互评.ipynb",
+  "notebook_code_sha256": "00eabe021c33b0eff580a3eab39c9f1a8016ff1059abd2c7ae8e7cf85d865f53",
+  "files": {
+    "pdf": "figures/final-dimension-level-distribution.pdf",
+    "svg": "figures/final-dimension-level-distribution.svg",
+    "png": "figures/final-dimension-level-distribution.png"
+  },
+  "sources": [
+    {
+      "path": "results/final-analysis/level-distribution.csv",
+      "sha256": "dd45944ed312884f1599003a8a603baf84475886709b24113bd55cf9db002c28"
+    },
+    {
+      "path": "results/final-analysis/descriptive.csv",
+      "sha256": "6d868656aa33bc5299ce6e6ff19643eebf3ba2d4ba23f557642ba552dd0cc686"
+    },
+    {
+      "path": "results/final-analysis/summary.json",
+      "sha256": "a181f0840a47c129aeb148f1ea5b36c5941a0943cd5fb1ebfa2acd8bfc28a64c"
+    },
+    {
+      "path": "aiv/notebook_materials.py",
+      "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+    }
+  ]
+}

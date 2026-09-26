@@ -1,0 +1,30 @@
+{
+  "id": "synthetic-live-evidence-chain",
+  "caption": "已保存合成标签的现场计算；缺少会话边和工具时保留null指标及条件范围。",
+  "kind": "synthetic",
+  "notebook": "07_教育报告与复用.ipynb",
+  "notebook_code_sha256": "03f668f85b8c73f8115614b7f231833b66c8cd580d62f003ebe264facd054a20",
+  "files": {
+    "pdf": "figures/synthetic-live-evidence-chain.pdf",
+    "svg": "figures/synthetic-live-evidence-chain.svg",
+    "png": "figures/synthetic-live-evidence-chain.png"
+  },
+  "sources": [
+    {
+      "path": "scripts/demo_evidence_chain.py",
+      "sha256": "82d28c8f3aec81fdc25562ed2316527a60ffb8da543d4335597cea327ce18579"
+    },
+    {
+      "path": "aiv/metrics.py",
+      "sha256": "fbadbed350e50cd016faddf4d065c4122d6387122bb60ceb798fa36265255a90"
+    },
+    {
+      "path": "aiv/models.py",
+      "sha256": "14ef06394913f417bce4ffdd1fcf6428743d141c45862bfb6c8d0c2aff0ad00f"
+    },
+    {
+      "path": "aiv/notebook_materials.py",
+      "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+    }
+  ]
+}

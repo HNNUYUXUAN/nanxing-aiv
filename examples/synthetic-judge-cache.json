@@ -1,0 +1,940 @@
+[
+  {
+    "record": {
+      "id": "control-0",
+      "student": "S006",
+      "term": "synthetic",
+      "timestamp": "2026-01-02",
+      "question": "请列举线性规划的基本要素。",
+      "agent": "探知侠",
+      "session": "5-session",
+      "label": 1,
+      "confidence": 0.8,
+      "source": "synthetic teaching examples",
+      "label_status": "constructed_truth",
+      "evidence": "请列举线性规划的基本要素。",
+      "student_contribution": false
+    },
+    "independent": [
+      {
+        "model": "claude-sonnet-5",
+        "family": "Anthropic Claude",
+        "judgment": {
+          "level": 1,
+          "probabilities": [
+            0.92,
+            0.05,
+            0.02,
+            0.01,
+            0,
+            0
+          ],
+          "evidence": "请列举线性规划的基本要素。",
+          "reason": "任务动词为“列举”，要求回忆并罗列线性规划的基本组成部分（如目标函数、约束条件、决策变量等），属于对既有知识的记忆/复述，未涉及解释、应用、比较或评价，故判为L1。",
+          "contribution_level": null,
+          "contribution_evidence": "",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "Google Gemini",
+        "judgment": {
+          "level": 1,
+          "probabilities": [
+            0.95,
+            0.05,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "evidence": "请列举线性规划的基本要素。",
+          "reason": "学生要求列出“线性规划”这一特定知识点的“基本要素”。该任务的核心动词是“列举”，这是一个典型的记忆复述类操作，要求从记忆或信息库中提取并呈现事实性知识，不涉及解释、应用或分析等更高层次的认知活动。",
+          "contribution_level": null,
+          "contribution_evidence": "",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "deepseek-v4.1-flash",
+        "family": "DeepSeek",
+        "judgment": {
+          "level": 1,
+          "probabilities": [
+            0.72,
+            0.17,
+            0.05,
+            0.03,
+            0.02,
+            0.01
+          ],
+          "evidence": "请列举线性规划的基本要素。",
+          "reason": "学生仅要求“列举”线性规划的基本要素，任务指向对既有知识点的记忆性提取与罗列；未要求解释原因、运用方法、比较关系、依据标准评判或提出新方案，故主要认知操作为L1记忆/列举。术语本身不改变这一点。",
+          "contribution_level": null,
+          "contribution_evidence": "",
+          "uncertain": false
+        },
+        "error": null
+      }
+    ],
+    "peer": [
+      {
+        "model": "claude-sonnet-5",
+        "family": "Anthropic Claude",
+        "judgment": {
+          "level": 1,
+          "probabilities": [
+            0.93,
+            0.05,
+            0.01,
+            0.01,
+            0,
+            0
+          ],
+          "evidence": "请列举线性规划的基本要素。",
+          "reason": "任务动词为“列举”，要求提取并罗列线性规划的既有知识点（如决策变量、目标函数、约束条件等），属于记忆性复述，未要求解释、应用、比较或评价，故为L1。三份候选判断一致且理由充分，独立核对后认同。",
+          "contribution_level": null,
+          "contribution_evidence": "",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "Google Gemini",
+        "judgment": {
+          "level": 1,
+          "probabilities": [
+            0.95,
+            0.04,
+            0.01,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "evidence": "请列举线性规划的基本要素。",
+          "reason": "该提问的核心指令是“列举”，要求复述“线性规划的基本要素”这一事实性知识。任务要求从记忆或信息源中提取并罗列出确定的知识点（如决策变量、目标函数、约束条件），属于典型的记忆/复述操作（L1）。问题未要求解释概念（L2）、应用方法（L3）、分析关系（L4）或进行评价（L6），故判定为L1。",
+          "contribution_level": null,
+          "contribution_evidence": "",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "deepseek-v4.1-flash",
+        "family": "DeepSeek",
+        "judgment": {
+          "level": 1,
+          "probabilities": [
+            0.93,
+            0.05,
+            0.02,
+            0,
+            0,
+            0
+          ],
+          "evidence": "请列举线性规划的基本要素。",
+          "reason": "任务动词为“列举”，要求提取并罗列线性规划的基本要素（如目标函数、约束条件、决策变量等），属于对既有事实性知识的记忆/复述。未要求解释原因、套用方法、拆解关系、评价或提出新方案，故为L1。仅提出请求，未展示自身对要素的掌握，贡献无法判定。",
+          "contribution_level": null,
+          "contribution_evidence": "",
+          "uncertain": false
+        },
+        "error": null
+      }
+    ],
+    "arbitration": null,
+    "single_model": 1,
+    "vote": 1,
+    "peer_vote": 1,
+    "final": 1,
+    "truth_status": "constructed_control_not_independent_human_gold"
+  },
+  {
+    "record": {
+      "id": "control-1",
+      "student": "S006",
+      "term": "synthetic",
+      "timestamp": "2026-01-05",
+      "question": "请解释线性规划可行域的含义，并举一个例子。",
+      "agent": "逆行侠",
+      "session": "5-session",
+      "label": 2,
+      "confidence": 0.8,
+      "source": "synthetic teaching examples",
+      "label_status": "constructed_truth",
+      "evidence": "请解释线性规划可行域的含义，并举一个例子。",
+      "student_contribution": false
+    },
+    "independent": [
+      {
+        "model": "claude-sonnet-5",
+        "family": "Anthropic Claude",
+        "judgment": {
+          "level": 2,
+          "probabilities": [
+            0.03,
+            0.75,
+            0.12,
+            0.05,
+            0.03,
+            0.02
+          ],
+          "evidence": "请解释线性规划可行域的含义，并举一个例子。",
+          "reason": "学生要求解释一个概念并举例，属于理解/解释既有知识（L2）。没有要求应用新方法解决具体问题、比较分析或提出新方案的痕迹。",
+          "contribution_level": null,
+          "contribution_evidence": "",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "Google Gemini",
+        "judgment": {
+          "level": 2,
+          "probabilities": [
+            0.1,
+            0.9,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "evidence": "请解释线性规划可行域的含义，并举一个例子。",
+          "reason": "学生要求对一个核心概念（“可行域的含义”）进行解释，并请求一个例子来辅助理解。这表明其学习目标是建立对该概念的理解，而非简单记忆或应用。这属于L2（理解/解释）的范畴。",
+          "contribution_level": null,
+          "contribution_evidence": "",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "deepseek-v4.1-flash",
+        "family": "DeepSeek",
+        "judgment": {
+          "level": 2,
+          "probabilities": [
+            0.05,
+            0.8,
+            0.1,
+            0.03,
+            0.01,
+            0.01
+          ],
+          "evidence": "请解释线性规划可行域的含义，并举一个例子。",
+          "reason": "学生请求解释“可行域”的含义并举例，核心是要求说明概念、用例子阐明，属于理解/解释；举例可能涉及示例说明，但未要求学生独立求解或应用算法，因此主要认知操作为L2。",
+          "contribution_level": null,
+          "contribution_evidence": "",
+          "uncertain": false
+        },
+        "error": null
+      }
+    ],
+    "peer": [
+      {
+        "model": "claude-sonnet-5",
+        "family": "Anthropic Claude",
+        "judgment": {
+          "level": 2,
+          "probabilities": [
+            0.05,
+            0.85,
+            0.06,
+            0.02,
+            0.01,
+            0.01
+          ],
+          "evidence": "请解释线性规划可行域的含义，并举一个例子。",
+          "reason": "学生要求解释概念含义并举例说明，核心认知操作是理解与阐释既有知识，不涉及独立应用算法求解具体问题、比较分析多方法或提出新方案，判定为L2。",
+          "contribution_level": null,
+          "contribution_evidence": "",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "Google Gemini",
+        "judgment": {
+          "level": 2,
+          "probabilities": [
+            0.05,
+            0.9,
+            0.04,
+            0.01,
+            0.0,
+            0.0
+          ],
+          "evidence": "请解释线性规划可行域的含义，并举一个例子。",
+          "reason": "学生提问要求解释一个核心概念（“可行域的含义”）并请求一个例子来辅助说明。这表明其学习目标是建立对该概念的理解，而非简单背诵定义（L1）或应用该概念解决一个具体问题（L3）。该任务的核心是阐明概念和举例说明，属于L2（理解/解释）的范畴。",
+          "contribution_level": null,
+          "contribution_evidence": "",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "deepseek-v4.1-flash",
+        "family": "DeepSeek",
+        "judgment": {
+          "level": 2,
+          "probabilities": [
+            0.05,
+            0.86,
+            0.06,
+            0.02,
+            0.01,
+            0.0
+          ],
+          "evidence": "请解释线性规划可行域的含义，并举一个例子。",
+          "reason": "该请求的核心是解释“线性规划可行域”这一概念，并要求举一个例子来辅助说明。举例属于概念解释的辅助，并未要求学生应用算法求解、分析关系、评价或提出新方案，因此主要认知操作为L2理解/解释。",
+          "contribution_level": null,
+          "contribution_evidence": "",
+          "uncertain": false
+        },
+        "error": null
+      }
+    ],
+    "arbitration": null,
+    "single_model": 2,
+    "vote": 2,
+    "peer_vote": 2,
+    "final": 2,
+    "truth_status": "constructed_control_not_independent_human_gold"
+  },
+  {
+    "record": {
+      "id": "control-2",
+      "student": "S005",
+      "term": "synthetic",
+      "timestamp": "2026-01-05",
+      "question": "我把每件产品的成本代入约束，得到 2x+3y≤120，请检查代入过程。",
+      "agent": "数模全才",
+      "session": "4-session",
+      "label": 3,
+      "confidence": 0.8,
+      "source": "synthetic teaching examples",
+      "label_status": "constructed_truth",
+      "evidence": "我把每件产品的成本代入约束，得到 2x+3y≤120，请检查代入过程。",
+      "student_contribution": true
+    },
+    "independent": [
+      {
+        "model": "claude-sonnet-5",
+        "family": "Anthropic Claude",
+        "judgment": {
+          "level": 3,
+          "probabilities": [
+            0.02,
+            0.1,
+            0.55,
+            0.25,
+            0.06,
+            0.02
+          ],
+          "evidence": "我把每件产品的成本代入约束，得到 2x+3y≤120，请检查代入过程",
+          "reason": "学生将成本数据代入既定的约束建模方法，得出线性不等式，属于套用已有方法解决具体问题，接近L3应用；也带有一定分析（列出关系式）成分，故L4概率不可忽略。文本简短，无法判断是否涉及更深入的关系拆解或评价。",
+          "contribution_level": 3,
+          "contribution_evidence": "我把每件产品的成本代入约束，得到 2x+3y≤120",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "Google Gemini",
+        "judgment": {
+          "level": 5,
+          "probabilities": [
+            0.0,
+            0.05,
+            0.15,
+            0.0,
+            0.8,
+            0.0
+          ],
+          "evidence": "我把每件产品的成本代入约束，得到 2x+3y≤120，请检查代入过程。",
+          "reason": "学生展示了自己应用（L3）一个方法的过程和结果，但他向他人提出的请求是“检查代入过程”。“检查”在此情境下是要求他人依据正确性标准，对其工作进行判断和评价。这属于L5（依据标准评价）的操作，而非要求解释（L2）或重新应用（L3）。",
+          "contribution_level": 3,
+          "contribution_evidence": "我把每件产品的成本代入约束，得到 2x+3y≤120",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "deepseek-v4.1-flash",
+        "family": "DeepSeek",
+        "judgment": {
+          "level": 5,
+          "probabilities": [
+            0.01,
+            0.05,
+            0.2,
+            0.08,
+            0.64,
+            0.02
+          ],
+          "evidence": "我把每件产品的成本代入约束，得到 2x+3y≤120，请检查代入过程。",
+          "reason": "核心请求是请AI检查已有代入过程是否正确，需要依据成本与约束的标准核对、验证并可能指出错误，属于评价/检查，而不是单纯记忆、解释或提出新方案。",
+          "contribution_level": 3,
+          "contribution_evidence": "我把每件产品的成本代入约束，得到 2x+3y≤120",
+          "uncertain": false
+        },
+        "error": null
+      }
+    ],
+    "peer": [
+      {
+        "model": "claude-sonnet-5",
+        "family": "Anthropic Claude",
+        "judgment": {
+          "level": 3,
+          "probabilities": [
+            0.02,
+            0.1,
+            0.6,
+            0.2,
+            0.06,
+            0.02
+          ],
+          "evidence": "我把每件产品的成本代入约束，得到 2x+3y≤120，请检查代入过程",
+          "reason": "学生请求AI检查的是“检查代入过程”，这是要求AI核对操作，而非学生本人依据标准做出评价。判断认知操作要看学生自己完成了什么：学生本人的认知操作是把成本数据代入既定约束框架得出不等式，这是套用既有建模方法，属于L3。请求他人检查不能算作学生展示了评价能力，故不定为L5。",
+          "contribution_level": 3,
+          "contribution_evidence": "我把每件产品的成本代入约束，得到 2x+3y≤120",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "Google Gemini",
+        "judgment": {
+          "level": 5,
+          "probabilities": [
+            0.01,
+            0.05,
+            0.15,
+            0.1,
+            0.68,
+            0.01
+          ],
+          "evidence": "我把每件产品的成本代入约束，得到 2x+3y≤120，请检查代入过程。",
+          "reason": "学生文本的核心诉求是“请检查代入过程”。此处的“检查”是要求对方依据数学运算法则和问题约束等正确性标准，来判断学生自己已完成的“代入”操作（L3应用）是否准确。这种依据标准进行判断、验证和寻找错误的行为是L5（评价）的典型特征。学生并非请求对方解释概念(L2)或代为应用(L3)，而是要求对自己的工作成果进行评判。",
+          "contribution_level": 3,
+          "contribution_evidence": "我把每件产品的成本代入约束，得到 2x+3y≤120",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "deepseek-v4.1-flash",
+        "family": "DeepSeek",
+        "judgment": {
+          "level": 5,
+          "probabilities": [
+            0.01,
+            0.04,
+            0.18,
+            0.07,
+            0.68,
+            0.02
+          ],
+          "evidence": "我把每件产品的成本代入约束，得到 2x+3y≤120，请检查代入过程。",
+          "reason": "学生请求的核心是“检查代入过程”，即要求依据成本与约束的正确性标准，对已有代入步骤和结果进行核对、验证并可能指出错误，主要认知操作属于L5评价/检查。学生自己展示的是把成本代入约束并得出不等式，属于应用既有方法，贡献可标L3，但这不是提问要求AI完成的主要操作。",
+          "contribution_level": 3,
+          "contribution_evidence": "我把每件产品的成本代入约束，得到 2x+3y≤120",
+          "uncertain": false
+        },
+        "error": null
+      }
+    ],
+    "arbitration": {
+      "model": "claude-sonnet-5",
+      "family": "Anthropic Claude",
+      "judgment": {
+        "level": 3,
+        "probabilities": [
+          0.02,
+          0.08,
+          0.62,
+          0.18,
+          0.08,
+          0.02
+        ],
+        "evidence": "我把每件产品的成本代入约束，得到 2x+3y≤120，请检查代入过程。",
+        "reason": "标注的是学生本人展示的主要认知操作，不是请求AI执行的操作。学生自己完成的是把成本数据代入既定约束框架、得出不等式，这是套用既有建模/代入方法，属于L3。'请检查代入过程'是向AI提出的请求，说明AI应做什么（核验），并不能证明学生本人做了评价性判断，因此不能因为请求内容涉及'检查'就把学生的认知层级定为L5。三候选中两个把请求对象误当作学生的认知操作，混淆了任务要求与学生展示的能力。",
+        "contribution_level": 3,
+        "contribution_evidence": "我把每件产品的成本代入约束，得到 2x+3y≤120",
+        "uncertain": false
+      },
+      "error": null
+    },
+    "single_model": 3,
+    "vote": 5,
+    "peer_vote": 5,
+    "final": 3,
+    "truth_status": "constructed_control_not_independent_human_gold"
+  },
+  {
+    "record": {
+      "id": "control-3",
+      "student": "S006",
+      "term": "synthetic",
+      "timestamp": "2026-01-08",
+      "question": "我比较了两种假设：固定需求忽略了季节性，随机需求会改变库存约束，请分析影响。",
+      "agent": "数模全才",
+      "session": "5-session",
+      "label": 4,
+      "confidence": 0.8,
+      "source": "synthetic teaching examples",
+      "label_status": "constructed_truth",
+      "evidence": "我比较了两种假设：固定需求忽略了季节性，随机需求会改变库存约束，请分析影",
+      "student_contribution": true
+    },
+    "independent": [
+      {
+        "model": "claude-sonnet-5",
+        "family": "Anthropic Claude",
+        "judgment": {
+          "level": 4,
+          "probabilities": [
+            0,
+            0,
+            0.05,
+            0.1,
+            0.75,
+            0.1
+          ],
+          "evidence": "我比较了两种假设：固定需求忽略了季节性，随机需求会改变库存约束，请分析影响",
+          "reason": "学生自主提出两种假设并识别出各自的局限（忽略季节性、改变库存约束），这是对两种模型的拆解与比较，属于分析层面。请求AI分析影响是任务指令，不能证明学生本人完成了影响分析，故不外推到评价或创造层级。",
+          "contribution_level": 4,
+          "contribution_evidence": "我比较了两种假设：固定需求忽略了季节性，随机需求会改变库存约束",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "Google Gemini",
+        "judgment": {
+          "level": 4,
+          "probabilities": [
+            0.0,
+            0.15,
+            0.1,
+            0.7,
+            0.05,
+            0.0
+          ],
+          "evidence": "我比较了两种假设：固定需求忽略了季节性，随机需求会改变库存约束，请分析影响。",
+          "reason": "学生要求“分析影响”，此任务需要识别和检视两种不同假设（固定需求vs随机需求）与系统其他部分（季节性、库存约束）之间的关系，并推导其后果。这种拆解问题、识别变量间关联并进行比较的任务，核心是分析关系，是L4的典型操作。",
+          "contribution_level": 4,
+          "contribution_evidence": "我比较了两种假设：固定需求忽略了季节性，随机需求会改变库存约束",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "deepseek-v4.1-flash",
+        "family": "DeepSeek",
+        "judgment": {
+          "level": 4,
+          "probabilities": [
+            0.02,
+            0.08,
+            0.05,
+            0.78,
+            0.04,
+            0.03
+          ],
+          "evidence": "我比较了两种假设：固定需求忽略了季节性，随机需求会改变库存约束，请分析影响。",
+          "reason": "核心请求是“请分析影响”，需要在固定需求与随机需求两种假设之间拆解差异，并推断其对库存约束等的影响，属于分析关系/拆解比较的L4；不是单纯记忆、解释或应用方法，也未要求评价标准或提出新方案。",
+          "contribution_level": 4,
+          "contribution_evidence": "我比较了两种假设：固定需求忽略了季节性，随机需求会改变库存约束",
+          "uncertain": false
+        },
+        "error": null
+      }
+    ],
+    "peer": [
+      {
+        "model": "claude-sonnet-5",
+        "family": "Anthropic Claude",
+        "judgment": {
+          "level": 4,
+          "probabilities": [
+            0.0,
+            0.1,
+            0.08,
+            0.72,
+            0.07,
+            0.03
+          ],
+          "evidence": "我比较了两种假设：固定需求忽略了季节性，随机需求会改变库存约束，请分析影响。",
+          "reason": "学生自己已完成对两种假设的初步比较，指出各自局限（忽略季节性、改变库存约束），这是拆解并对比两模型关系，属于L4分析。请求AI进一步分析影响是任务指令，不能证明学生本人完成了完整影响分析，故不外推至L5/L6。",
+          "contribution_level": 4,
+          "contribution_evidence": "我比较了两种假设：固定需求忽略了季节性，随机需求会改变库存约束",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "Google Gemini",
+        "judgment": {
+          "level": 4,
+          "probabilities": [
+            0.0,
+            0.1,
+            0.1,
+            0.75,
+            0.05,
+            0.0
+          ],
+          "evidence": "我比较了两种假设：固定需求忽略了季节性，随机需求会改变库存约束，请分析影响。",
+          "reason": "学生要求“分析影响”，这需要拆解固定需求与随机需求两种假设，检视它们各自与系统其他部分（如季节性、库存约束）的关系，并推断其后果。这种识别不同要素间的关联、进行比较并推导结论的任务，核心是分析关系，是典型的L4操作。",
+          "contribution_level": 4,
+          "contribution_evidence": "我比较了两种假设：固定需求忽略了季节性，随机需求会改变库存约束",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "deepseek-v4.1-flash",
+        "family": "DeepSeek",
+        "judgment": {
+          "level": 4,
+          "probabilities": [
+            0.0,
+            0.1,
+            0.05,
+            0.75,
+            0.07,
+            0.03
+          ],
+          "evidence": "我比较了两种假设：固定需求忽略了季节性，随机需求会改变库存约束，请分析影响。",
+          "reason": "核心请求是“请分析影响”，要求分析固定需求与随机需求两种假设对季节性、库存约束等关系及后果的影响，属于拆解比较与分析关系，不是评价、反驳或提出新方案。学生自己已初步对比两种假设及其特征；后续影响分析交给AI，不计为学生本人完成。",
+          "contribution_level": 4,
+          "contribution_evidence": "我比较了两种假设：固定需求忽略了季节性，随机需求会改变库存约束",
+          "uncertain": false
+        },
+        "error": null
+      }
+    ],
+    "arbitration": null,
+    "single_model": 4,
+    "vote": 4,
+    "peer_vote": 4,
+    "final": 4,
+    "truth_status": "constructed_control_not_independent_human_gold"
+  },
+  {
+    "record": {
+      "id": "control-4",
+      "student": "S006",
+      "term": "synthetic",
+      "timestamp": "2026-01-07",
+      "question": "模型假设观测独立，但同一个学生有多次记录。我认为标准误偏小，应按学生聚类，你怎么看？",
+      "agent": "数模匹配",
+      "session": "5-session",
+      "label": 5,
+      "confidence": 0.8,
+      "source": "synthetic teaching examples",
+      "label_status": "constructed_truth",
+      "evidence": "模型假设观测独立，但同一个学生有多次记录。我认为标准误偏小，应按学生聚类",
+      "student_contribution": true
+    },
+    "independent": [
+      {
+        "model": "claude-sonnet-5",
+        "family": "Anthropic Claude",
+        "judgment": {
+          "level": 5,
+          "probabilities": [
+            0,
+            0,
+            0,
+            0.15,
+            0.65,
+            0.2
+          ],
+          "evidence": "我认为标准误偏小，应按学生聚类",
+          "reason": "学生识别出独立性假设与数据结构（同一学生多次记录）的冲突，并依据统计原则（组内相关导致标准误低估）提出评价性判断和改进方案（按学生聚类）。这既是对既有方法缺陷的评价（L5），也带有提出解决方案的成分（L6），但方案本身是标准做法（聚类稳健标准误）而非创新整合，故以L5为主，向L6留有概率。",
+          "contribution_level": 5,
+          "contribution_evidence": "我认为标准误偏小，应按学生聚类，你怎么看？",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "Google Gemini",
+        "judgment": {
+          "level": 6,
+          "probabilities": [
+            0.0,
+            0.0,
+            0.05,
+            0.2,
+            0.25,
+            0.5
+          ],
+          "evidence": "我认为标准误偏小，应按学生聚类，你怎么看？",
+          "reason": "学生识别出模型假设（观测独立）与数据结构（同一个学生有多次记录）的矛盾（L4分析），并评价其统计后果（L5：标准误偏小），最终提出一个具体、恰当的修正方案（L6：按学生聚类）。提问“你怎么看”是请求对这个整合了分析与评价后提出的新方案进行确认或反馈，其核心认知操作是提出新方案。",
+          "contribution_level": 6,
+          "contribution_evidence": "我认为标准误偏小，应按学生聚类",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "deepseek-v4.1-flash",
+        "family": "DeepSeek",
+        "judgment": {
+          "level": 5,
+          "probabilities": [
+            0.01,
+            0.02,
+            0.07,
+            0.15,
+            0.65,
+            0.1
+          ],
+          "evidence": "模型假设观测独立，但同一个学生有多次记录。我认为标准误偏小，应按学生聚类，你怎么看？",
+          "reason": "学生指出独立性假设与同一学生多次记录冲突，判断标准误偏小并提出按学生聚类，最后征询看法。核心是依据模型假设和推断标准评价既有做法并寻求评价，属L5；按学生聚类是既有方法，不是新方案。",
+          "contribution_level": 5,
+          "contribution_evidence": "我认为标准误偏小，应按学生聚类",
+          "uncertain": false
+        },
+        "error": null
+      }
+    ],
+    "peer": [
+      {
+        "model": "claude-sonnet-5",
+        "family": "Anthropic Claude",
+        "judgment": {
+          "level": 5,
+          "probabilities": [
+            0.0,
+            0.0,
+            0.02,
+            0.13,
+            0.65,
+            0.2
+          ],
+          "evidence": "我认为标准误偏小，应按学生聚类，你怎么看？",
+          "reason": "学生识别出独立性假设与重复观测数据结构的冲突，并依据统计推断标准判断其后果（标准误被低估），这是依据准则评价既有方法的L5核心操作。按学生聚类是统计学中处理组内相关的标准既有方法，学生是恰当地应用/建议了它，而非整合出新方案，故不定为L6，但保留一定概率因其判断带有方案建议成分。",
+          "contribution_level": 5,
+          "contribution_evidence": "我认为标准误偏小，应按学生聚类",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "Google Gemini",
+        "judgment": {
+          "level": 5,
+          "probabilities": [
+            0.0,
+            0.0,
+            0.05,
+            0.2,
+            0.65,
+            0.1
+          ],
+          "evidence": "模型假设观测独立，但同一个学生有多次记录。我认为标准误偏小，应按学生聚类，你怎么看？",
+          "reason": "学生识别出模型的独立性假设与数据结构（同一学生多次记录）的矛盾（L4），并据此评价现有方法的后果（“标准误偏小”），这属于依据统计原则进行的L5评价。学生提出的“按学生聚类”是针对该问题的标准修正方法，是评价性反驳的一部分，而非创造新方案（L6）。征求意见的形式也支持这是一个评价与论证的请求。",
+          "contribution_level": 5,
+          "contribution_evidence": "我认为标准误偏小，应按学生聚类",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "deepseek-v4.1-flash",
+        "family": "DeepSeek",
+        "judgment": {
+          "level": 5,
+          "probabilities": [
+            0.01,
+            0.02,
+            0.08,
+            0.18,
+            0.62,
+            0.09
+          ],
+          "evidence": "模型假设观测独立，但同一个学生有多次记录。我认为标准误偏小，应按学生聚类，你怎么看？",
+          "reason": "学生将观测独立假设与同一学生多次记录相对照，判断标准误偏小，并主张按学生聚类。这是依据统计推断标准对既有模型/推断的评价与更正建议，核心为L5；聚类稳健标准误属既有方法，不是提出新方案，故L6仅留低概率。“你怎么看”是征询反馈，不改变主要操作。",
+          "contribution_level": 5,
+          "contribution_evidence": "我认为标准误偏小，应按学生聚类",
+          "uncertain": false
+        },
+        "error": null
+      }
+    ],
+    "arbitration": null,
+    "single_model": 5,
+    "vote": 5,
+    "peer_vote": 5,
+    "final": 5,
+    "truth_status": "constructed_control_not_independent_human_gold"
+  },
+  {
+    "record": {
+      "id": "control-5",
+      "student": "S006",
+      "term": "synthetic",
+      "timestamp": "2026-01-06",
+      "question": "我提出一个新方案：先按成本分层抽样，再用残差校正标签，最后用模拟检验覆盖率。请质疑我的设计。",
+      "agent": "逆行侠",
+      "session": "5-session",
+      "label": 6,
+      "confidence": 0.8,
+      "source": "synthetic teaching examples",
+      "label_status": "constructed_truth",
+      "evidence": "我提出一个新方案：先按成本分层抽样，再用残差校正标签，最后用模拟检验覆盖",
+      "student_contribution": true
+    },
+    "independent": [
+      {
+        "model": "claude-sonnet-5",
+        "family": "Anthropic Claude",
+        "judgment": {
+          "level": 6,
+          "probabilities": [
+            0,
+            0,
+            0,
+            0,
+            0.1,
+            0.9
+          ],
+          "evidence": "我提出一个新方案：先按成本分层抽样，再用残差校正标签，最后用模拟检验覆盖率",
+          "reason": "学生整合分层抽样、残差校正、模拟检验三个环节，构建了一套新的分析设计方案，属于提出/整合新方案，对应L6。末句请求AI质疑设计，属于任务要求本身，不能证明学生已完成创造，但方案陈述由学生给出，可作为其贡献证据。",
+          "contribution_level": 6,
+          "contribution_evidence": "我提出一个新方案：先按成本分层抽样，再用残差校正标签，最后用模拟检验覆盖率",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "Google Gemini",
+        "judgment": {
+          "level": 5,
+          "probabilities": [
+            0.0,
+            0.05,
+            0.0,
+            0.1,
+            0.85,
+            0.0
+          ],
+          "evidence": "请质疑我的设计。",
+          "reason": "学生要求他人“质疑我的设计”。这个指令的核心是要求对一个既有方案进行评判，找出其潜在问题、逻辑漏洞或不足之处。这属于依据特定标准（如有效性、可行性、稳健性）进行评价和反驳，是L5的典型认知操作。该要求并非解释方案（L2）或提出新方案（L6）。",
+          "contribution_level": 6,
+          "contribution_evidence": "我提出一个新方案：先按成本分层抽样，再用残差校正标签，最后用模拟检验覆盖率。",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "deepseek-v4.1-flash",
+        "family": "DeepSeek",
+        "judgment": {
+          "level": 5,
+          "probabilities": [
+            0,
+            0,
+            0.05,
+            0.1,
+            0.7,
+            0.15
+          ],
+          "evidence": "请质疑我的设计",
+          "reason": "提问核心是要求对已提出的设计进行质疑，属于依据标准评价/反驳，而非记忆、解释、应用或比较。虽含“新方案”的创造表述，但该句的任务要求是评价设计，故主认知操作为L5。",
+          "contribution_level": 6,
+          "contribution_evidence": "我提出一个新方案：先按成本分层抽样，再用残差校正标签，最后用模拟检验覆盖率。",
+          "uncertain": false
+        },
+        "error": null
+      }
+    ],
+    "peer": [
+      {
+        "model": "claude-sonnet-5",
+        "family": "Anthropic Claude",
+        "judgment": {
+          "level": 5,
+          "probabilities": [
+            0,
+            0,
+            0.05,
+            0.1,
+            0.75,
+            0.1
+          ],
+          "evidence": "请质疑我的设计。",
+          "reason": "提问句是给AI的任务指令，其核心认知要求是对已陈述方案进行依据标准的评价/反驳，对应L5。前半句方案陈述本身是学生的既有内容表述，不是本次提问要求AI执行的认知操作；提问要求AI做的事不能反过来证明学生完成了L6创造。故主认知操作判为L5。",
+          "contribution_level": 6,
+          "contribution_evidence": "我提出一个新方案：先按成本分层抽样，再用残差校正标签，最后用模拟检验覆盖率。",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "gemini-2.5-pro",
+        "family": "Google Gemini",
+        "judgment": {
+          "level": 5,
+          "probabilities": [
+            0.0,
+            0.0,
+            0.05,
+            0.1,
+            0.8,
+            0.05
+          ],
+          "evidence": "请质疑我的设计。",
+          "reason": "学生的核心要求是“质疑我的设计”，即要求他人依据研究设计的有效性、可行性等标准，对其方案进行评判、寻找潜在问题。这种基于标准进行判断、辩护或反驳的活动是典型的L5（评价/反驳）认知操作。该提问本身并非提出新方案（L6）。",
+          "contribution_level": 6,
+          "contribution_evidence": "我提出一个新方案：先按成本分层抽样，再用残差校正标签，最后用模拟检验覆盖率。",
+          "uncertain": false
+        },
+        "error": null
+      },
+      {
+        "model": "deepseek-v4.1-flash",
+        "family": "DeepSeek",
+        "judgment": {
+          "level": 5,
+          "probabilities": [
+            0,
+            0,
+            0.05,
+            0.1,
+            0.75,
+            0.1
+          ],
+          "evidence": "请质疑我的设计。",
+          "reason": "提问核心是要求对已提出的设计进行质疑，需依据标准评价其漏洞、有效性或可行性，属于L5评价/反驳。方案陈述显示学生自己的贡献，但提问要求AI做的是质疑，不是再提出新方案。",
+          "contribution_level": 6,
+          "contribution_evidence": "我提出一个新方案：先按成本分层抽样，再用残差校正标签，最后用模拟检验覆盖率。",
+          "uncertain": false
+        },
+        "error": null
+      }
+    ],
+    "arbitration": null,
+    "single_model": 6,
+    "vote": 5,
+    "peer_vote": 5,
+    "final": 5,
+    "truth_status": "constructed_control_not_independent_human_gold"
+  }
+]

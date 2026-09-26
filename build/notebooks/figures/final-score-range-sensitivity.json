@@ -1,0 +1,26 @@
+{
+  "id": "final-score-range-sensitivity",
+  "caption": "356个有任务候选的学生—学期单位；按ceil(εn)改标，缺失CTQ及工具情景保留；稳定配对仅在同学期内比较。",
+  "kind": "conditional",
+  "notebook": "05_指标性质与不确定性.ipynb",
+  "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+  "files": {
+    "pdf": "figures/final-score-range-sensitivity.pdf",
+    "svg": "figures/final-score-range-sensitivity.svg",
+    "png": "figures/final-score-range-sensitivity.png"
+  },
+  "sources": [
+    {
+      "path": "results/final-analysis/score-range-sensitivity.csv",
+      "sha256": "a4674ebd51093893398034352e1cf80c3478cb714c4d57562dc660a633516936"
+    },
+    {
+      "path": "results/final-analysis/summary.json",
+      "sha256": "a181f0840a47c129aeb148f1ea5b36c5941a0943cd5fb1ebfa2acd8bfc28a64c"
+    },
+    {
+      "path": "aiv/notebook_materials.py",
+      "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+    }
+  ]
+}

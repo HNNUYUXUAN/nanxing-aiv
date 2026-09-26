@@ -1,0 +1,10 @@
+﻿id,item,dependency,estimate,denominator,status
+batch_coverage,真实回合结算完成率,等待冻结批次的结算完成数与计划数,,,待接入
+review_agreement,两快独立标注与两强独立复核,等待分阶段配对分母与冻结输出,,,待接入
+repeat_stability,同模型重复稳定性,等待可比较的重复调用,,,待接入
+runtime_cost,调用账本与 token,等待冻结运行账本,,,待接入
+real_distribution,真实任务层级分布,等待冻结标签；说明抽样范围,,,待接入
+real_calibration,真实总体校准结果,需要独立人工参考标签及适用的抽样设计,,,待接入
+real_ctq,真实会话转移质量 CTQ,需要经核验的相邻回合、会话边界与时间顺序,,,当前不可识别
+real_aiv,完整真实 AIV 与排名,需要五项指标的完整可观测性及误差审计,,,当前不可识别
+learning_gain,独立学习增量,目前缺少独立学习结果与识别设计,,,当前不可识别

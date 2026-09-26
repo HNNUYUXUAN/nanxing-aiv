@@ -1,0 +1,149 @@
+[
+  {
+    "case": "baseline",
+    "model": "claude-sonnet-5",
+    "level": 2.0,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "baseline",
+    "model": "gemini-2.5-pro",
+    "level": 2.0,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "baseline",
+    "model": "deepseek-v4.1-flash",
+    "level": 2.0,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "repetition",
+    "model": "claude-sonnet-5",
+    "level": 1.0,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "repetition",
+    "model": "gemini-2.5-pro",
+    "level": 2.0,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "repetition",
+    "model": "deepseek-v4.1-flash",
+    "level": 2.0,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "verbosity",
+    "model": "claude-sonnet-5",
+    "level": 1.0,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "verbosity",
+    "model": "gemini-2.5-pro",
+    "level": 2.0,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "verbosity",
+    "model": "deepseek-v4.1-flash",
+    "level": 2.0,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "verbs",
+    "model": "claude-sonnet-5",
+    "level": 2.0,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "verbs",
+    "model": "gemini-2.5-pro",
+    "level": 2.0,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "verbs",
+    "model": "deepseek-v4.1-flash",
+    "level": 2.0,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "copied_ai",
+    "model": "claude-sonnet-5",
+    "level": null,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "copied_ai",
+    "model": "gemini-2.5-pro",
+    "level": null,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "copied_ai",
+    "model": "deepseek-v4.1-flash",
+    "level": null,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "tool_stacking",
+    "model": "claude-sonnet-5",
+    "level": 2.0,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "tool_stacking",
+    "model": "gemini-2.5-pro",
+    "level": 2.0,
+    "contribution_level": 1.0,
+    "error": null
+  },
+  {
+    "case": "tool_stacking",
+    "model": "deepseek-v4.1-flash",
+    "level": 2.0,
+    "contribution_level": null,
+    "error": null
+  },
+  {
+    "case": "improvement",
+    "model": "claude-sonnet-5",
+    "level": 4.0,
+    "contribution_level": 4.0,
+    "error": null
+  },
+  {
+    "case": "improvement",
+    "model": "gemini-2.5-pro",
+    "level": 4.0,
+    "contribution_level": 4.0,
+    "error": null
+  },
+  {
+    "case": "improvement",
+    "model": "deepseek-v4.1-flash",
+    "level": 4.0,
+    "contribution_level": 4.0,
+    "error": null
+  }
+]

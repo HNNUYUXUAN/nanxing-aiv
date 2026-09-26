@@ -1,0 +1,5 @@
+﻿kind,contrast,dimension,metric,candidate_only_difference,all_turn_lower,all_turn_upper
+conditional,spring_minus_autumn,task,abl_raw,-0.820182149994148,-3.837595392174653,3.1105542908352994
+conditional,spring_minus_autumn,task,hot,-0.11492962386589736,-0.7601303300167112,0.629499606585279
+conditional,spring_minus_autumn,contribution,abl_raw,-0.4113656433432027,-4.008340154370707,3.9837372734497754
+conditional,spring_minus_autumn,contribution,hot,-0.12680899693522418,-0.8073864505276036,0.7910290350364928

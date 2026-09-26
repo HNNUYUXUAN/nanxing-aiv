@@ -1,0 +1,268 @@
+{
+  "schema_version": "nanxing-concept-illustrations-v1",
+  "status": "visually_accepted",
+  "kind": "conceptual",
+  "language": "zh-CN",
+  "generation_surface": "Chrome / ChatGPT / 插图绘制",
+  "style": {
+    "background": "white",
+    "ink": "black",
+    "chinese_typeface": "宋体",
+    "latin_typeface": "Times New Roman",
+    "layout": "two-dimensional; large text; narrow white margins"
+  },
+  "acceptance": [
+    "逐字核对中文、模型独立关系、箭头与流程条件",
+    "白底黑线、无彩色、无立体、无小字、无截断",
+    "仅裁剪外围白边，保留完整图形与窄边距",
+    "公开概念内容，不含学生原文、个人标识或密钥",
+    "不含编造的实验数值、完成状态或因果效果",
+    "逐图视觉核验通过后写入 qa=passed、裁剪后 sha256 和 native_dimensions"
+  ],
+  "notebook_markdown_base": "../assets/illustrations/",
+  "html_asset_directory": "build/assets/illustrations/",
+  "delivered_html_asset_directory": "deliverables/assets/illustrations/",
+  "figures": [
+    {
+      "id": "process-overview",
+      "file": "assets/illustrations/process-overview.png",
+      "prompt": "assets/illustrations/prompts/process-overview.txt",
+      "title": "研究流程",
+      "alt": "原始证据、认知标注、识别条件、指标合成、反例回验与分层建议的研究流程",
+      "caption": "研究依次检查证据、标签、识别条件和指标定义域，再以反例回验约束建议强度。概念图说明方法关系，实验状态以本页结果与冻结清单为准。",
+      "sources": ["paper/main.tex", "aiv/metrics.py", "aiv/models.py"],
+      "notebooks": ["notebooks/00_论文材料总览.ipynb"],
+      "paper_target": "问题重述与统一研究对象",
+      "readme": true,
+      "qa": "passed",
+      "sha256": "439f20c1a2e7a90c363f475f438733408bfdc6c4d250baca0e4415070d538d83",
+      "native_dimensions": [1536, 890],
+      "generation": {
+        "surface": "Chrome / ChatGPT / 插图绘制",
+        "conversation_url": "https://chatgpt.com/g/g-p-6a98db59d2a881918feab418f7f21543-cha-tu-hui-zhi/c/6ab8176e-bc00-83e9-86b9-05d914177d9e",
+        "download": "native PNG",
+        "original_path": "runtime/illustrations/originals/process-overview.png",
+        "original_dimensions": [1536, 1024],
+        "original_sha256": "c254d0ffee184d45068c6b19ee5f7645faea90144054bd5e1d97c193c1590177",
+        "revision_prompt": "assets/illustrations/prompts/process-overview-revision-01.txt",
+        "revision_record_scope": "Accepted revision target, reconstructed from the generating agent's report; not a verbatim conversation transcript"
+      },
+      "postprocess": {
+        "surface": "same Chrome / ChatGPT conversation",
+        "operation": "crop outer white margins only",
+        "safe_margin_px": 12,
+        "white_difference_threshold": 2,
+        "redrawn": false,
+        "rescaled": false,
+        "exact_crop_box": [0, 52, 1536, 942],
+        "crop_coordinate_convention": "left, top, right-exclusive, bottom-exclusive",
+        "pixel_equality_to_original_crop": true
+      },
+      "visual_review": {
+        "date": "2026-09-27",
+        "status": "passed",
+        "confirmed": [
+          "六节点蛇形主流程与文字均正确",
+          "修订虚线从反例回验向上指向认知标注",
+          "白底黑线、粗大宋体、四边完整且保留窄边距",
+          "无学生原文、身份、数值结果或运行完成声明"
+        ],
+        "local_file_hash_rechecked": true,
+        "original_file_hash_rechecked": true,
+        "original_crop_pixels_rechecked": true
+      }
+    },
+    {
+      "id": "system-architecture",
+      "file": "assets/illustrations/system-architecture.png",
+      "prompt": "assets/illustrations/prompts/system-architecture.txt",
+      "title": "系统模块",
+      "alt": "工作台连接导入质检、任务调度与统计报告，底层保留来源回合、调用账本和冻结快照",
+      "caption": "工作台组织资料、任务和报告；模型调用由调度与账本管理，冻结快照供统计和交付读取。模块图展示实现职责，不代表特定批次的运行完成状态。",
+      "sources": ["aiv/server.py", "aiv/workbench.py", "aiv/workbench_imports.py", "aiv/pool.py", "aiv/full_turn_reporting.py"],
+      "notebooks": ["notebooks/07_教育报告与复用.ipynb"],
+      "paper_target": "从诊断到教学行动",
+      "readme": true,
+      "qa": "passed",
+      "sha256": "b23337e9fada57b25db65b5209f11841bb5b3bd5433286db7942843cc0828096",
+      "native_dimensions": [1532, 851],
+      "generation": {
+        "surface": "Chrome / ChatGPT / 插图绘制",
+        "conversation_url": "https://chatgpt.com/g/g-p-6a98db59d2a881918feab418f7f21543-cha-tu-hui-zhi/c/6ab81794-758c-83e9-b5ad-0738e6becc3c",
+        "download": "native PNG",
+        "original_path": "runtime/illustrations/originals/system-architecture.png",
+        "original_dimensions": [1536, 1024],
+        "original_sha256": "fd284690f210378fcad3ae52f389bb9cb0b074e09ce76e7ce96079fc3a563671",
+        "revision_prompt": "assets/illustrations/prompts/system-architecture-revision-01.txt",
+        "revision_record_scope": "Accepted seven-module revision target checked against the final image; not a verbatim conversation transcript"
+      },
+      "postprocess": {
+        "surface": "same Chrome / ChatGPT conversation",
+        "operation": "crop outer white margins only",
+        "exact_crop_box": [1, 74, 1533, 925],
+        "crop_coordinate_convention": "left, top, right-exclusive, bottom-exclusive",
+        "redrawn": false,
+        "rescaled": false,
+        "pixel_equality_to_original_crop": true
+      },
+      "visual_review": {
+        "date": "2026-09-27",
+        "status": "passed",
+        "confirmed": [
+          "运营工作台与三个业务模块分别双向连接",
+          "导入与质检、任务调度、统计与报告按顺序连接",
+          "导入向来源与回合写入，任务调度与调用账本双向连接",
+          "调用账本进入冻结快照，冻结快照供统计与报告读取",
+          "最终七框职责清楚，文字与线条完整，白底黑线无数值结果"
+        ],
+        "local_file_hash_rechecked": true,
+        "original_file_hash_rechecked": true,
+        "original_crop_pixels_rechecked": true
+      }
+    },
+    {
+      "id": "model-review",
+      "file": "assets/illustrations/model-review.png",
+      "prompt": "assets/illustrations/prompts/model-review.txt",
+      "title": "独立判断与复核",
+      "alt": "两个基础模型独立判断，同题随机或风险复核进入两个独立复核模型，配对复跑另测稳定性",
+      "caption": "两基础模型与两复核模型分别独立判断任务、贡献两维。随机复核、风险复核和配对复跑保留各自分母；结论可继续弃权或保留争议。模型一致性与重复性各有对应统计量。",
+      "sources": ["aiv/full_turn_workflow.py", "aiv/fast_strong_workflow.py", "paper/main.tex"],
+      "notebooks": ["notebooks/02_标注与互评.ipynb", "notebooks/09_Agent批量结果与互评.ipynb"],
+      "paper_target": "带弃权的认知测量与有限校验",
+      "readme": true,
+      "qa": "passed",
+      "sha256": "8429f1dc155311377a0982fb295258729d91994ccd4833ed6fdb0c40fba66afa",
+      "native_dimensions": [1530, 739],
+      "generation": {
+        "surface": "Chrome / ChatGPT / 插图绘制",
+        "conversation_url": "https://chatgpt.com/g/g-p-6a98db59d2a881918feab418f7f21543-cha-tu-hui-zhi/c/6ab817a7-b6ac-83ea-8414-8363326aa1bb",
+        "download": "native PNG",
+        "original_path": "runtime/illustrations/originals/model-review.png",
+        "original_dimensions": [1536, 1024],
+        "original_sha256": "11cec9ce91054f79788090d488dbf440c21f7536c348e2ab248d60a0919583dc",
+        "revision_prompt": "assets/illustrations/prompts/model-review-revision-01.txt",
+        "revision_record_scope": "Accepted revision target checked against the final image; not a verbatim conversation transcript"
+      },
+      "postprocess": {
+        "surface": "same Chrome / ChatGPT conversation",
+        "operation": "crop outer white margins only",
+        "exact_crop_box": [4, 157, 1534, 896],
+        "crop_coordinate_convention": "left, top, right-exclusive, bottom-exclusive",
+        "redrawn": false,
+        "rescaled": false,
+        "pixel_equality_to_original_crop": true
+      },
+      "visual_review": {
+        "date": "2026-09-27",
+        "status": "passed",
+        "confirmed": [
+          "同一原文分别进入基础模型 A/B，二者之间无连线",
+          "候选与弃权向下选择回合，经随机与风险选样后进入原文独立复核",
+          "复核模型 C/D 作为同组模块表示两独立复核角色，不存在互相传答案的连线",
+          "基础与复核路径汇入保留结论与争议",
+          "配对复跑到同模型稳定性是独立旁路，不连接最终裁决",
+          "中文清楚、白底黑线、框线与箭头完整，无原文或数值结果"
+        ],
+        "local_file_hash_rechecked": true,
+        "original_file_hash_rechecked": true,
+        "original_crop_pixels_rechecked": true
+      }
+    },
+    {
+      "id": "evidence-chain",
+      "file": "assets/illustrations/evidence-chain.png",
+      "prompt": "assets/illustrations/prompts/evidence-chain.txt",
+      "title": "证据追溯",
+      "alt": "原文片段、模型判断、指标计算和教学建议通过版本与来源索引逐级回查",
+      "caption": "来源位置与版本将原文、判断、计算和建议连接起来。回查须核对各层适用条件；材料本身只允许在相应授权范围内读取。",
+      "sources": ["aiv/turns.py", "aiv/evidence.py", "aiv/full_turn_workflow.py", "aiv/full_turn_reporting.py", "aiv/guidance.py"],
+      "notebooks": ["notebooks/01_数据与问题.ipynb", "notebooks/08_真实数据与封存记录.ipynb"],
+      "paper_target": "数据单位、预处理与证据链",
+      "readme": true,
+      "qa": "passed",
+      "sha256": "55ca6cbdce0e8cd4d98ef4784699254dd62aa77ecf03f4c4b9c7e631f22b783a",
+      "native_dimensions": [1513, 721],
+      "generation": {
+        "surface": "Chrome / ChatGPT / 插图绘制",
+        "conversation_url": "https://chatgpt.com/g/g-p-6a98db59d2a881918feab418f7f21543-cha-tu-hui-zhi/c/6ab81955-4940-83ea-b159-485edd5aa57e",
+        "download": "native PNG",
+        "original_path": "runtime/illustrations/originals/evidence-chain.png",
+        "original_dimensions": [1536, 1024],
+        "original_sha256": "78be86ab3fd21cb9e00deb68c062d3546af1f122ae034b85df92c7c7d695eade"
+      },
+      "postprocess": {
+        "surface": "same Chrome / ChatGPT conversation",
+        "operation": "crop outer white margins only",
+        "exact_crop_box": [12, 153, 1525, 874],
+        "crop_coordinate_convention": "left, top, right-exclusive, bottom-exclusive",
+        "redrawn": false,
+        "rescaled": false,
+        "pixel_equality_to_original_crop": true
+      },
+      "visual_review": {
+        "date": "2026-09-27",
+        "status": "passed",
+        "confirmed": [
+          "原文片段、模型判断、指标计算、教学建议依次向右连接",
+          "各框准确保留源行位置、任务贡献、定义域公式与证据等级",
+          "虚线路径以逐级回查标注，具有逐层向左的方向",
+          "版本与来源索引连接全部四层",
+          "中文清楚、白底黑线、框线箭头完整，无原文或数值结果"
+        ],
+        "local_file_hash_rechecked": true,
+        "original_file_hash_rechecked": true,
+        "original_crop_pixels_rechecked": true
+      }
+    },
+    {
+      "id": "reproducibility",
+      "file": "assets/illustrations/reproducibility.png",
+      "prompt": "assets/illustrations/prompts/reproducibility.txt",
+      "title": "离线复现",
+      "alt": "冻结快照经清单校验进入共享统计核心，形成论文、Notebook、学生学期CSV和可离线复算的研究包",
+      "caption": "同一冻结快照及统计核心支撑论文、Notebook 和学生学期表。复现包先核对清单再离线重算，实际验收状态与耗时由对应回执记录。",
+      "sources": ["aiv/full_turn_reporting.py", "scripts/run_all.py", "scripts/package_research.py", "paper/update_results.py", "scripts/execute_notebooks.py"],
+      "notebooks": ["notebooks/00_论文材料总览.ipynb", "notebooks/07_教育报告与复用.ipynb"],
+      "paper_target": "独立互验、敏感性与主动证伪",
+      "readme": true,
+      "qa": "passed",
+      "sha256": "e6230e685a864c9c4ee7373c26b2fa4b76e4a974aacb53a5561d4d3169bc8326",
+      "native_dimensions": [1510, 708],
+      "generation": {
+        "surface": "Chrome / ChatGPT / 插图绘制",
+        "conversation_url": "https://chatgpt.com/g/g-p-6a98db59d2a881918feab418f7f21543-cha-tu-hui-zhi/c/6ab81957-9b0c-83ea-8672-09e1b2755e54",
+        "download": "native PNG",
+        "original_path": "runtime/illustrations/originals/reproducibility.png",
+        "original_dimensions": [1536, 1024],
+        "original_sha256": "7f8603d66518caee43fdc4dc13d2d7db341c844e464df21e734e04f176560899",
+        "original_download_status": "downloaded"
+      },
+      "postprocess": {
+        "surface": "same Chrome / ChatGPT conversation",
+        "operation": "crop outer white margins only",
+        "exact_crop_box": [14, 150, 1524, 858],
+        "crop_coordinate_convention": "left, top, right-exclusive, bottom-exclusive",
+        "safe_margin_px": 12,
+        "redrawn": false,
+        "rescaled": false,
+        "pixel_equality_to_original_crop": true,
+        "pixel_verification_status": "passed"
+      },
+      "visual_review": {
+        "date": "2026-09-27",
+        "status": "passed",
+        "confirmed": [
+          "冻结快照经清单校验进入共享统计核心",
+          "统计核心分支输出论文图表、Notebook、学生学期 CSV 后进入复现包",
+          "性质检查与共享统计核心双向连接",
+          "复现包进入离线复算并回到共享统计核心",
+          "白底黑线、中文与西文清楚、框线箭头完整，无数值或完成状态"
+        ],
+        "local_file_hash_rechecked": true,
+        "original_file_hash_rechecked": true,
+        "original_crop_pixels_rechecked": true
+      }
+    }
+  ]
+}

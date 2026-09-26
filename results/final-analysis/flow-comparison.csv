@@ -1,0 +1,17 @@
+﻿kind,stratum,dimension,method,turn_denominator,agreed,abstained,disagreement,uncertain,technical_failure,candidate_coverage,status_changed_from_strict,label_or_null_changed_from_strict,both_candidate_pairs,candidate_label_changed,gained_candidate,lost_candidate,final_fast_fallback
+real,random_audit,task,deepseek-v4.1-flash,352,128,208,0,16,0,0.36363636363636365,50,18,110,0,18,0,0
+real,random_audit,task,glm-5.3-flash,352,142,189,0,9,12,0.4034090909090909,43,32,110,0,32,0,0
+real,random_audit,task,fast_strict,352,110,184,35,11,12,0.3125,0,0,110,0,0,0,0
+real,random_audit,task,final_review_merge,352,86,129,122,12,3,0.24431818181818182,129,42,79,4,7,31,7
+real,random_audit,contribution,deepseek-v4.1-flash,352,101,251,0,0,0,0.2869318181818182,42,37,64,0,37,0,0
+real,random_audit,contribution,glm-5.3-flash,352,88,252,0,0,12,0.25,30,24,64,0,24,0,0
+real,random_audit,contribution,fast_strict,352,64,246,30,0,12,0.18181818181818182,0,0,64,0,0,0,0
+real,random_audit,contribution,final_review_merge,352,52,261,38,0,1,0.14772727272727273,56,43,39,5,13,25,9
+real,high_risk,task,deepseek-v4.1-flash,827,206,472,0,146,3,0.24909310761789602,453,167,39,0,167,0,0
+real,high_risk,task,glm-5.3-flash,827,310,325,0,106,86,0.37484885126964934,373,271,39,0,271,0,0
+real,high_risk,task,fast_strict,827,39,273,329,100,86,0.0471584038694075,0,0,39,0,0,0,0
+real,high_risk,task,final_review_merge,827,98,173,482,64,10,0.1185006045949214,445,93,22,0,76,17,5
+real,high_risk,contribution,deepseek-v4.1-flash,827,452,372,0,0,3,0.5465538089480049,440,391,61,0,391,0,0
+real,high_risk,contribution,glm-5.3-flash,827,328,413,0,0,86,0.3966142684401451,357,267,61,0,267,0,0
+real,high_risk,contribution,fast_strict,827,61,323,357,0,86,0.07376058041112454,0,0,61,0,0,0,0
+real,high_risk,contribution,final_review_merge,827,132,452,230,0,13,0.1596130592503023,314,134,31,3,101,30,2

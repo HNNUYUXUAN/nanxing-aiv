@@ -1,0 +1,30 @@
+{
+  "id": "synthetic-04-01",
+  "caption": "合成实验：已知真值实验",
+  "kind": "synthetic",
+  "notebook": "04_识别边界与模拟.ipynb",
+  "notebook_code_sha256": "047b409fbec30e726d960feb4915f7cdf58dea52d463545b27c324fd8a660c09",
+  "files": {
+    "pdf": "figures/synthetic-04-01.pdf",
+    "svg": "figures/synthetic-04-01.svg",
+    "png": "figures/synthetic-04-01.png"
+  },
+  "sources": [
+    {
+      "path": "aiv/data.py",
+      "sha256": "60b1c0c78f2c5faef8545ff72aa5ae7b2ea515f1d18ebacac19105cc9917bf4e"
+    },
+    {
+      "path": "aiv/analysis.py",
+      "sha256": "dc6a51f7e3bd8db9bb8021732c83e520234e8867f61ad6e87015b9b85ee6ce82"
+    },
+    {
+      "path": "aiv/metrics.py",
+      "sha256": "fbadbed350e50cd016faddf4d065c4122d6387122bb60ceb798fa36265255a90"
+    },
+    {
+      "path": "aiv/notebook_materials.py",
+      "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+    }
+  ]
+}

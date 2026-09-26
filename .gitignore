@@ -1,0 +1,15 @@
+.env
+.env.*
+.venv/
+runtime/
+__pycache__/
+.pytest_cache/
+.ipynb_checkpoints/
+node_modules/
+build/*
+!build/paper/
+build/paper/*
+!build/paper/main.pdf
+!build/notebooks/
+!build/assets/
+workbench/research/

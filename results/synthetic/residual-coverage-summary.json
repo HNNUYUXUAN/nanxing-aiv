@@ -1,0 +1,12 @@
+{
+  "replications": 500,
+  "population": 400,
+  "human_sample": 40,
+  "truth": 0.45,
+  "prediction_mean": 0.5614228265071635,
+  "bias": -0.0009698579570713524,
+  "coverage": 0.946,
+  "coverage_monte_carlo_se": 0.010107818755794947,
+  "mean_width": 0.1480321087199041,
+  "scope": "fixed synthetic finite population; SRS; not real clustered coverage"
+}

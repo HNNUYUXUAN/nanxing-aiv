@@ -1,0 +1,42 @@
+{
+  "id": "synthetic-03-02",
+  "caption": "合成实验：有限总体覆盖率模拟",
+  "kind": "synthetic",
+  "notebook": "03_人审与校准.ipynb",
+  "notebook_code_sha256": "3b7c28c4dd508d62184d38a96117268f3b4332b06940761b502819e986198f66",
+  "files": {
+    "pdf": "figures/synthetic-03-02.pdf",
+    "svg": "figures/synthetic-03-02.svg",
+    "png": "figures/synthetic-03-02.png"
+  },
+  "sources": [
+    {
+      "path": "aiv/calibration.py",
+      "sha256": "77f78855e4fdff3fa611ef91be63cea68383b93ecbbbb9171a0e37289d5e7faf"
+    },
+    {
+      "path": "aiv/data.py",
+      "sha256": "60b1c0c78f2c5faef8545ff72aa5ae7b2ea515f1d18ebacac19105cc9917bf4e"
+    },
+    {
+      "path": "aiv/analysis.py",
+      "sha256": "dc6a51f7e3bd8db9bb8021732c83e520234e8867f61ad6e87015b9b85ee6ce82"
+    },
+    {
+      "path": "aiv/metrics.py",
+      "sha256": "fbadbed350e50cd016faddf4d065c4122d6387122bb60ceb798fa36265255a90"
+    },
+    {
+      "path": "results/synthetic/residual-coverage-summary.json",
+      "sha256": "ce2473ae5e8bfc77b5dc29a899969c50a4bd5785264c30fa79368a47b33e84d6"
+    },
+    {
+      "path": "results/synthetic/residual-coverage-trials.csv",
+      "sha256": "1e4d56fae6ce0910df9571f5872a0989f2bee79a48797718c6784c5a46a83221"
+    },
+    {
+      "path": "aiv/notebook_materials.py",
+      "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+    }
+  ]
+}

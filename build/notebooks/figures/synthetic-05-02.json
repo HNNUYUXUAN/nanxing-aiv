@@ -1,0 +1,34 @@
+{
+  "id": "synthetic-05-02",
+  "caption": "合成实验：权重敏感性",
+  "kind": "synthetic",
+  "notebook": "05_指标性质与不确定性.ipynb",
+  "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+  "files": {
+    "pdf": "figures/synthetic-05-02.pdf",
+    "svg": "figures/synthetic-05-02.svg",
+    "png": "figures/synthetic-05-02.png"
+  },
+  "sources": [
+    {
+      "path": "aiv/data.py",
+      "sha256": "60b1c0c78f2c5faef8545ff72aa5ae7b2ea515f1d18ebacac19105cc9917bf4e"
+    },
+    {
+      "path": "aiv/analysis.py",
+      "sha256": "dc6a51f7e3bd8db9bb8021732c83e520234e8867f61ad6e87015b9b85ee6ce82"
+    },
+    {
+      "path": "aiv/metrics.py",
+      "sha256": "fbadbed350e50cd016faddf4d065c4122d6387122bb60ceb798fa36265255a90"
+    },
+    {
+      "path": "results/synthetic/label-dependence.csv",
+      "sha256": "8a67c52b44c3d6ceb58a59f83cebb57a0f193126007e7d226b1b250d456e0cc7"
+    },
+    {
+      "path": "aiv/notebook_materials.py",
+      "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+    }
+  ]
+}
