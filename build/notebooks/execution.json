@@ -9,7 +9,11 @@
       "html": "00_论文材料总览.html",
       "html_sha256": "be6e77f6f602b57e86226a46e3b412358034bf178230434fcb9a5e0846ca3857",
       "figures_in_outputs": 0,
-      "notebook_source_sha256": "ad8e1b6106aea4adbf64502f26e7389187c0f2e92b2872e3505a8cd7d2049c04"
+      "notebook_source_sha256": "ad8e1b6106aea4adbf64502f26e7389187c0f2e92b2872e3505a8cd7d2049c04",
+      "published_notebook_sha256": "98822e5bcdf6c2e0cabded685792c503e52cf6dfb8a9f805e1a0df63568a1e61",
+      "concept_attachment_sha256": {
+        "concept-process-overview.png": "439f20c1a2e7a90c363f475f438733408bfdc6c4d250baca0e4415070d538d83"
+      }
     },
     {
       "notebook": "01_数据与问题.ipynb",
@@ -20,7 +24,11 @@
       "html": "01_数据与问题.html",
       "html_sha256": "9f8eafea0d8d954350ad81dcede21237564e370928c3ad5f65aa2ef8453eb313",
       "figures_in_outputs": 1,
-      "notebook_source_sha256": "d9b04500826ab1e373f92b450aa185a8db01d71cd4a7c27ce388d3449f0a0bab"
+      "notebook_source_sha256": "d9b04500826ab1e373f92b450aa185a8db01d71cd4a7c27ce388d3449f0a0bab",
+      "published_notebook_sha256": "a7de3e874cce08955651aaf405315832752bd703c5f010dc3a1268725e4d8a4a",
+      "concept_attachment_sha256": {
+        "concept-evidence-chain.png": "55ca6cbdce0e8cd4d98ef4784699254dd62aa77ecf03f4c4b9c7e631f22b783a"
+      }
     },
     {
       "notebook": "02_标注与互评.ipynb",
@@ -31,7 +39,11 @@
       "html": "02_标注与互评.html",
       "html_sha256": "92748fb22eb7d956c06601fb5d4746a92c9dce05249e89f4fd3e84face4fc79a",
       "figures_in_outputs": 1,
-      "notebook_source_sha256": "a5b6e5192232eba51915d7dd188c5eab942712cea2633ee89ab828fc9cd8299a"
+      "notebook_source_sha256": "a5b6e5192232eba51915d7dd188c5eab942712cea2633ee89ab828fc9cd8299a",
+      "published_notebook_sha256": "a99bcf6cf6b62d08401e15fc6848328ff59456a5c0241429c3fbc64c3b7d4dd6",
+      "concept_attachment_sha256": {
+        "concept-model-review.png": "8429f1dc155311377a0982fb295258729d91994ccd4833ed6fdb0c40fba66afa"
+      }
     },
     {
       "notebook": "03_人审与校准.ipynb",
@@ -42,7 +54,9 @@
       "html": "03_人审与校准.html",
       "html_sha256": "8174ba1d54833d307e6a048de85471848d6d974fa53507d4d9c9ab1df06c9d47",
       "figures_in_outputs": 3,
-      "notebook_source_sha256": "e65c0c3484097c06d4aeebce2b921b1e07963c4e337da4ad84cd4fe5f76da2b1"
+      "notebook_source_sha256": "e65c0c3484097c06d4aeebce2b921b1e07963c4e337da4ad84cd4fe5f76da2b1",
+      "published_notebook_sha256": "2dce6b136625f0596e42c5f21c2f208add39bb9562d7e8fee3463657e79cc770",
+      "concept_attachment_sha256": {}
     },
     {
       "notebook": "04_识别边界与模拟.ipynb",
@@ -53,7 +67,9 @@
       "html": "04_识别边界与模拟.html",
       "html_sha256": "7872d41822b33dfd729c192a69eafb77d2ab3eea86e69c4b15301618b4c71569",
       "figures_in_outputs": 1,
-      "notebook_source_sha256": "d4f4d58875d049079c3c0ed9118ecfd49159f64236eb1d0e607c62f8d3a7449f"
+      "notebook_source_sha256": "d4f4d58875d049079c3c0ed9118ecfd49159f64236eb1d0e607c62f8d3a7449f",
+      "published_notebook_sha256": "d5fcaa7ab9353d60afd369b84c0961a75b767793fd50c8496499033c384c00d6",
+      "concept_attachment_sha256": {}
     },
     {
       "notebook": "05_指标性质与不确定性.ipynb",
@@ -64,7 +80,9 @@
       "html": "05_指标性质与不确定性.html",
       "html_sha256": "f865ac7c84c7f5ac89188f340fbedddc5b325cb47d45d45a2b77e5d96c83c10d",
       "figures_in_outputs": 5,
-      "notebook_source_sha256": "8f173071742174c57f31197eb9712317183bb0b5fd07e45939100755a16b67bd"
+      "notebook_source_sha256": "8f173071742174c57f31197eb9712317183bb0b5fd07e45939100755a16b67bd",
+      "published_notebook_sha256": "542bc4233ace7ef3c21aa73c4af473c5f71a127760798be3ef48789c0a983fec",
+      "concept_attachment_sha256": {}
     },
     {
       "notebook": "06_红队与失败边界.ipynb",
@@ -75,7 +93,9 @@
       "html": "06_红队与失败边界.html",
       "html_sha256": "4ec95af8bfa3456aa019084f0898127024d274e39632736568c156255a965604",
       "figures_in_outputs": 2,
-      "notebook_source_sha256": "0959c46e6d50acacf9d9fb9dce7316f884dbb9cfb054affd762de2f856bf8de5"
+      "notebook_source_sha256": "0959c46e6d50acacf9d9fb9dce7316f884dbb9cfb054affd762de2f856bf8de5",
+      "published_notebook_sha256": "09cf0d8433809a7d15ae8a6b1ddc4f4f15e6a5aa4f7a943528a252790920bd3b",
+      "concept_attachment_sha256": {}
     },
     {
       "notebook": "07_教育报告与复用.ipynb",
@@ -86,7 +106,11 @@
       "html": "07_教育报告与复用.html",
       "html_sha256": "e8e2a220a38744cbf73d39ccbabca973ee1d85b7147e797dd08392e3d06c438d",
       "figures_in_outputs": 1,
-      "notebook_source_sha256": "8aeeabffd1a1e69837002e1aac9aa6a90120b822ddf3d71d0a82ce597339df11"
+      "notebook_source_sha256": "8aeeabffd1a1e69837002e1aac9aa6a90120b822ddf3d71d0a82ce597339df11",
+      "published_notebook_sha256": "70df66f97e5520f5ff7ca48e1d61fa8dd0d1265284dcc5f352b99f86a4e9ae97",
+      "concept_attachment_sha256": {
+        "concept-system-architecture.png": "b23337e9fada57b25db65b5209f11841bb5b3bd5433286db7942843cc0828096"
+      }
     },
     {
       "notebook": "08_真实数据与封存记录.ipynb",
@@ -97,7 +121,11 @@
       "html": "08_真实数据与封存记录.html",
       "html_sha256": "4556bf2012924da225b1d05d72d148acdd55d8be0e81bdd987e270c80c8b09c1",
       "figures_in_outputs": 0,
-      "notebook_source_sha256": "2ffb76fa2e4a533ce55feedc31001284c08a7e3ec86a9a41191efc22bdd341bd"
+      "notebook_source_sha256": "2ffb76fa2e4a533ce55feedc31001284c08a7e3ec86a9a41191efc22bdd341bd",
+      "published_notebook_sha256": "b9588030dd91d36dd9db917793a9978cade4f630ebc237adad83cf797df0cb61",
+      "concept_attachment_sha256": {
+        "concept-evidence-chain.png": "55ca6cbdce0e8cd4d98ef4784699254dd62aa77ecf03f4c4b9c7e631f22b783a"
+      }
     },
     {
       "notebook": "09_Agent批量结果与互评.ipynb",
@@ -108,7 +136,11 @@
       "html": "09_Agent批量结果与互评.html",
       "html_sha256": "ed2fd63cc678ab0dbc6293c0ce3e0b012749ecc8cd44fdb8d35319718db26bbc",
       "figures_in_outputs": 2,
-      "notebook_source_sha256": "8dfb2b63485c648f4a5962a1544cf8a7715a4ece8be7d72b39a60252abe6416b"
+      "notebook_source_sha256": "8dfb2b63485c648f4a5962a1544cf8a7715a4ece8be7d72b39a60252abe6416b",
+      "published_notebook_sha256": "b7c8b1b044dbcbc1273d69fef8af79817046e2dc889b4b3aa9c854d739ddd6b7",
+      "concept_attachment_sha256": {
+        "concept-model-review.png": "8429f1dc155311377a0982fb295258729d91994ccd4833ed6fdb0c40fba66afa"
+      }
     }
   ],
   "wall_seconds": 51.73,
@@ -131,5 +163,6 @@
   },
   "input_scope": "public_aggregate_and_synthetic",
   "notebook_outputs_preserved": true,
-  "private_inputs_disconnected": true
+  "private_inputs_disconnected": true,
+  "notebook_publication_transform": "reviewed-concept-png-attachments-v1"
 }
