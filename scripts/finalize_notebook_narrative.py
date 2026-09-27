@@ -5,12 +5,17 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+import re
 from textwrap import dedent
 
 import nbformat as nbf
 
 ROOT = Path(__file__).resolve().parents[1]
 TAG = "final-analysis-v1"
+VISUAL_TAG = "reviewer-visual-v1"
+NEXT_TAG = "reviewer-next-v1"
+MANAGED_TAGS = {TAG, VISUAL_TAG, NEXT_TAG}
+CONCEPT_IDS = ["process-overview", "system-architecture", "model-review", "evidence-chain", "reproducibility"]
 
 
 def md(text):
@@ -38,12 +43,10 @@ def final_csv(name):
     return pd.read_csv(FINAL_DIR / name) if final_summary is not None else pd.DataFrame()
 
 if final_summary is None:
-    display(Markdown("本目录未附真实聚合分析；以下真实结果保持空白，前面的合成实验仍可复算。"))
+    display(Markdown("未找到公开汇总 `results/final-analysis/summary.json`；合成计算可独立运行。"))
 else:
     display(pd.DataFrame([{
-        "分析输入": "results/final-analysis/summary.json",
-        "冻结修订": final_summary["source"]["revision"],
-        "快照清单 SHA-256": final_summary["source"]["manifest_sha256"],
+        "汇总版本": final_summary["source"]["revision"],
         "真实回合": final_summary["denominators"]["real_turns"],
         "学生—学期": final_summary["denominators"]["student_terms"],
     }]))
@@ -52,34 +55,8 @@ else:
 
 def sections(prefix):
     if prefix == "00":
-        return [
-            md("""
-            ## 成稿论文的五张彩色数据图
-            下列输出直接嵌入 `results/final-analysis/` 的成稿 PNG，与论文 PDF 和 README 使用同一组图。
-            先生成 10 张独立子图，再由论文的 LaTeX 模板排成五组；图题居中，图题和表题遵循 CUMCM 模板的小四号，图注另起一行、9 pt 左对齐。
-            PNG 为 600 dpi，中文使用宋体（SimSun），西文与数字使用 Times New Roman；论文按同一模板直接嵌入独立子图 PDF。
-            各图的可编辑计算及来源表分别保存在 02、03、05、09 本，统计分母与条件说明保持一致。
-            """), code('''
-            from IPython.display import Image, Markdown, display
-            from PIL import Image as PILImage
-            paper_figures = [
-                ("fig01_dimensions", "任务与贡献的六级分布及同回合共同候选", "09"),
-                ("fig02_random_flow", "固定随机复核子集的流程状态比较", "02"),
-                ("fig03_unknown_labels", "未知标签下的平均层级与高阶比例范围", "05"),
-                ("fig04_human_pairs", "同题人审耗时与判断一致性", "03"),
-                ("fig05_score_sensitivity", "标签、缺失指标与权重下的条件分数范围", "05"),
-            ]
-            for figure_id, caption, companion in paper_figures:
-                figure_path = ROOT / "results" / "final-analysis" / f"{figure_id}.png"
-                if not figure_path.is_file():
-                    display(Markdown(f"**{caption}**：本目录未附成稿图；可编辑计算见 {companion} 本。"))
-                    continue
-                with PILImage.open(figure_path) as raster:
-                    assert all(abs(value - 600) < 1 for value in raster.info.get("dpi", (0, 0))), f"Unexpected DPI: {figure_path.name}"
-                display(Markdown(f"### {caption}\\n可编辑计算见 {companion} 本。"))
-                display(Image(filename=str(figure_path), width=1100))
-            '''),
-        ]
+        # The overview is a launch page; each paper figure belongs beside its analysis.
+        return []
     if prefix == "02":
         return [
             md("""
@@ -312,8 +289,8 @@ def sections(prefix):
     if prefix == "07":
         return [
             md("""
-            ## 现场复算：资料完整与缺少证据的两例
-            两例共用已保存的**合成任务标签** `[2, 3, 4, 5]`，现场调用 `scripts.demo_evidence_chain.run_case` 与共享指标函数。
+            ## 比较完整证据与缺失证据
+            两例共用保存的**合成任务标签** `[2, 3, 4, 5]`，调用 `scripts.demo_evidence_chain.run_case` 与共享指标函数。
             `complete` 具有已知合成会话边和两种工具；`missing_evidence` 将会话及工具身份设为未知。两例均不发起实时模型调用。
             """), code('''
             from scripts.demo_evidence_chain import run_case
@@ -410,7 +387,7 @@ def sections(prefix):
     return []
 
 
-def revise_existing(nb, prefix):
+def _repair_legacy(nb, prefix):
     """Keep existing experiments while updating their reader-facing interpretation."""
     replacements = {
         "批量 agent 调用与互评由另一对话执行。本页重放已有合成缓存；完成批次通过 09 本的文件接口接入。": "本页重放合成缓存，并读取固定随机子集的真实流程比较；09 本继续展示全回合分布与同回合双维候选。",
@@ -455,34 +432,179 @@ def revise_existing(nb, prefix):
                 cell.source += " 原始索引的时间字段描述来源记录；3,515 个真实回合均无已观测逐回合时间戳，不能据此建立严格前瞻次序。"
 
 
+
+# Reader guidance is separate from computation and its source-specific caveats.
+INTRODUCTIONS = {
+    "01": ("认识输入、观测单位与缺失", "核对记录粒度、字段和六级分布。", "固定种子合成样本，24名合成学生、192条提问。", "修改 synthetic_records(seed=26) 的种子；改变样本规模时同步调整数量检查。"),
+    "02": ("标签证据与复核流程", "校验连续引文，重放合成缓存，再比较同题复核状态。", "合成问句和缓存；t3流程表及早期真实、合成各6题的汇总。", "修改 question、example 的证据或投票组合，观察结构校验与弃权。"),
+    "03": ("人工复核的预算与观察结果", "分配人工预算，检查残差校正，再读取同题复评的时间与一致性。", "合成有限总体与覆盖率试验；16对同题同角色的真实聚合记录。", "调整 allocate_review 的分层比例、标准差、成本和 budget；残差示例可调整抽样量。"),
+    "04": ("比较资格与因果识别边界", "用已知真值检查混杂，再核对日志的时间和结果条件。", "真效应0.4的合成机制；公开汇总中的真实时间资格检查。", "为 causal_simulation(seed=26, n=1000) 指定种子和样本量，比较估计变化。"),
+    "05": ("指标、权重与条件范围", "计算五项指标，观察未知标签、改标预算与权重如何改变范围。", "合成记录与标签误差模拟；公开未知标签范围和评分敏感性表。", "调整 weight_sensitivity(scores, seed=26, draws=200)；真实汇总按既定权重与预算分组读取。"),
+    "06": ("用反例检查评分激励", "比较固定标签攻击、保存的文本测试与MAB消融。", "合成反例、旧模型与提示条件的文本缓存、公开反例汇总。", "比较各场景相对基线的 delta，再对照MAB权重置零后的变化。"),
+    "07": ("从指标生成可行动的报告", "比较三类角色报告，运行完整与缺失证据两例，并核对补证建议。", "合成记录与保存的任务标签[2,3,4,5]；工作台配图另标明构造资料。", "切换 educational_report 的 role；比较 run_case('complete') 与 run_case('missing_evidence')。"),
+}
+CHECKS = {
+    "01": "检查记录数、学生数、唯一ID及L1–L6取值。",
+    "02": "检查票不齐时保留弃权，并确认本页只重放保存的输入。",
+    "03": "检查分配不超预算，以及全量参考下校正值等于已知总体均值。",
+    "04": "检查模拟来源与已知效应，再读取真实时间资格计数。",
+    "05": "检查DHI目标分布值、缺少会话边时的CTQ与合成分数取值。",
+    "06": "检查分段后点分缺失，以及工具堆叠对当前公式的增分。",
+    "07": "检查合成来源；两例计算还检查缺证时CTQ、MAB与点分保持None。",
+}
+NEXT = {
+    "00": ("01_数据与问题.ipynb", "01 · 检查输入与观测单位"),
+    "01": ("08_真实数据与封存记录.ipynb", "08 · 核对真实范围与来源"),
+    "08": ("02_标注与互评.ipynb", "02 · 检查证据与复核流程"),
+    "02": ("09_Agent批量结果与互评.ipynb", "09 · 阅读全回合双维结果"),
+    "09": ("03_人审与校准.ipynb", "03 · 人工复评与校准条件"),
+    "03": ("04_识别边界与模拟.ipynb", "04 · 检查比较资格"),
+    "04": ("05_指标性质与不确定性.ipynb", "05 · 计算指标与条件范围"),
+    "05": ("06_红队与失败边界.ipynb", "06 · 检验评分反例"),
+    "06": ("07_教育报告与复用.ipynb", "07 · 将结果写成行动建议"),
+    "07": ("00_论文材料总览.ipynb", "返回总览，选择其他计算或论文入口"),
+}
+
+# Each tuple is (repository-relative path, evidence kind, caption, insertion anchor).
+VISUALS = {
+    "00": [("slides/roadshow/images/03.png", "concept", "路演03｜测量、比较、指标、反例与教学行动的反馈链。", "overview")],
+    "01": [("slides/roadshow/images/02.png", "concept", "路演02｜先区分评价对象，再决定需要哪些输入。", "overview")],
+    "02": [
+        ("slides/roadshow/images/04.png", "concept", "路演04｜独立标注与独立复核；随机和风险子集分别解释。", "overview"),
+        ("results/final-analysis/fig02_random_flow.png", "real", "论文图2｜固定随机352回合的同题状态；下方保留从汇总表重绘的代码。", "### t3：固定随机子集的同题状态")],
+    "03": [
+        ("slides/roadshow/images/15.png", "real", "路演15｜同题人工复评；固定顺序与共同推荐限制因果解释。", "overview"),
+        ("results/final-analysis/fig04_human_pairs.png", "real", "论文图4｜配对时间与一致性，分别保留两位评审和共同弃权。", "## 真实观察：同题人审的耗时与判断")],
+    "04": [("slides/roadshow/images/13.png", "concept", "路演13｜增量解释所需的可比条件、时间与独立结果。", "overview")],
+    "05": [
+        ("slides/roadshow/images/06.png", "conditional", "路演06｜已观测子指标与条件范围；完整AIV仍受缺失证据约束。", "overview"),
+        ("results/final-analysis/fig03_unknown_labels.png", "conditional", "论文图3｜固定已有候选，未知标签取遍L1–L6的范围。", "## 条件分析：把未知标签保留在学期分母中"),
+        ("results/final-analysis/fig05_score_sensitivity.png", "conditional", "论文图5｜缺失指标、向上取整的改标预算与权重扰动。", "## 条件分析：缺失指标、改标预算与权重")],
+    "06": [("slides/roadshow/images/07.png", "synthetic", "路演07｜保持标签不变的合成工具堆叠反例与MAB消融。", "overview")],
+    "07": [
+        ("slides/roadshow/images/11.jpg", "engineering", "路演11｜两条构造输入经实际模型调用后的教师简报；与本页合成报告计算分别解释。", "after_reports"),
+        ("slides/roadshow/images/09.png", "synthetic", "路演09｜保存的合成标签与完整证据；界面将计算值61.65显示为61.7。", "after_demo"),
+        ("slides/roadshow/images/10.png", "synthetic", "路演10｜同一标签缺少会话和工具来源后，保留36–76的条件范围及补证建议。", "after_demo")],
+    "08": [("slides/roadshow/images/14.png", "concept", "路演14｜任务要求与已展示贡献分别定位到原文证据。", "overview")],
+    "09": [
+        ("slides/roadshow/images/05.png", "real", "路演05｜3,515个真实回合的双维候选；配对比较使用同回合共同候选。", "overview"),
+        ("results/final-analysis/fig01_dimensions.png", "real", "论文图1｜六级边际分布与同回合配对；下面保留汇总表和绘图计算。", "## 真实观察：六级分布与同回合双维比较")],
+}
+
+
+def revise_existing(nb, prefix):
+    """Keep calculations and qualifications while replacing repetitive handoff prose."""
+    _repair_legacy(nb, prefix)
+    if prefix in INTRODUCTIONS:
+        title, objective, inputs, parameters = INTRODUCTIONS[prefix]
+        nb.cells[0].source = f"# {prefix} · {title}\n\n**运行目标：** {objective}\n\n**输入：** {inputs}\n\n**可调整：** {parameters}"
+        nb.cells[0].metadata["tags"] = sorted(set(nb.cells[0].metadata.get("tags", [])) | {"reviewer-intro"})
+    retained = []
+    for cell in nb.cells:
+        if cell.cell_type == "markdown":
+            heading = cell.source.strip().splitlines()[0] if cell.source.strip() else ""
+            if heading in {"## 继续研究", "## 材料衔接", "## Next Steps"}:
+                continue
+            if cell.source.strip() == "公开复现材料通过白名单整理为独立仓库，包含获准发布的源码、合成样本、图文和环境说明。":
+                continue
+            if heading == "## 计算检查" and prefix in CHECKS:
+                cell.source = "## 计算检查\n" + CHECKS[prefix]
+            if prefix == "07" and cell.source.strip() == "## 复现与导出":
+                cell.source = "## 检查导出字段\n查看种子、记录数与来源范围，便于交接计算。"
+        retained.append(cell)
+    nb.cells = retained
+
+
+def managed_cell(cell, prefix, key, tag, previous):
+    """Stable IDs preserve saved outputs when source code has not changed."""
+    cell.id = hashlib.sha256(f"{tag}:{prefix}:{key}".encode()).hexdigest()[:12]
+    cell.metadata["tags"] = [tag]
+    old = previous.get(cell.id)
+    if old is not None and old.cell_type == cell.cell_type and old.source == cell.source:
+        old.metadata.update(cell.metadata)
+        return old
+    return cell
+
+
+def visual_cell(spec, prefix, previous):
+    relative_path, kind, caption, _ = spec
+    cell = code("\n".join([
+        "from IPython.display import Image, Markdown, display",
+        f"reference_path = ROOT / {relative_path!r}",
+        "if reference_path.is_file():",
+        "    display(Image(filename=str(reference_path), width=960))",
+        f"    display(Markdown({caption!r}))",
+        "else:",
+        "    display(Markdown('配图未附于本地副本：`' + reference_path.name + '`。可继续执行下方计算。'))",
+    ]))
+    cell.metadata["reviewed_visual"] = {"relative_path": relative_path, "kind": kind, "caption": caption}
+    return managed_cell(cell, prefix, relative_path, VISUAL_TAG, previous)
+
+
+def visual_position(cells, anchor):
+    """Return a boundary after setup or the calculation illustrated by a reference."""
+    if anchor == "overview":
+        public = next((i for i, c in enumerate(cells) if c.cell_type == "code" and "reviewer-public-load" in c.metadata.get("tags", [])), None)
+        if public is not None:
+            return public + 1
+        setup = next((i for i, c in enumerate(cells) if c.cell_type == "code" and "ROOT =" in c.source), None)
+        if setup is None:
+            raise ValueError("A ROOT setup cell is required before an inline image")
+        return setup + 1
+    if anchor in {"after_reports", "after_demo"}:
+        pattern = r"educational_report\(\s*records\s*,\s*role\s*\)" if anchor == "after_reports" else r"\bdemo_cases\s*="
+        position = next((i for i, c in enumerate(cells) if c.cell_type == "code" and re.search(pattern, c.source)), None)
+    else:
+        position = next((i for i, c in enumerate(cells) if c.cell_type == "markdown" and anchor in c.source), None)
+    if position is None:
+        raise ValueError(f"Reference image anchor not found: {anchor}")
+    return position + 1
+
+
+def transform(nb, prefix):
+    """Update a Notebook in memory; callers own serialization and execution."""
+    previous = {c.id: c for c in nb.cells if MANAGED_TAGS.intersection(c.metadata.get("tags", []))}
+    nb.cells = [c for c in nb.cells if not MANAGED_TAGS.intersection(c.metadata.get("tags", []))]
+    if prefix in VISUALS:
+        nb.metadata["concept_illustrations_excluded"] = CONCEPT_IDS[:]
+        nb.cells = [c for c in nb.cells if "concept-illustration-v1" not in c.metadata.get("tags", [])
+                    and not (c.cell_type == "markdown" and "<!-- concept-illustration-v1:" in c.source)]
+    revise_existing(nb, prefix)
+    extra = [managed_cell(cell, prefix, str(i), TAG, previous) for i, cell in enumerate(sections(prefix))]
+    insertion = next((i for i, c in enumerate(nb.cells) if "authorized-source" in c.metadata.get("tags", [])), len(nb.cells)) if prefix == "09" else len(nb.cells)
+    nb.cells[insertion:insertion] = extra
+    boundaries = {}
+    for spec in VISUALS.get(prefix, []):
+        boundaries.setdefault(visual_position(nb.cells, spec[3]), []).append(visual_cell(spec, prefix, previous))
+    rebuilt = []
+    for i, cell in enumerate(nb.cells):
+        rebuilt.extend(boundaries.get(i, []))
+        rebuilt.append(cell)
+    rebuilt.extend(boundaries.get(len(nb.cells), []))
+    if prefix in NEXT:
+        target, label = NEXT[prefix]
+        rebuilt.append(managed_cell(md(f"**下一步：** [{label}]({target})"), prefix, "navigation", NEXT_TAG, previous))
+    nb.cells = rebuilt
+    if extra:
+        nb.metadata["material_role"] = "research_companion_with_synthetic_experiments"
+    nbf.validate(nb)
+    return nb
+
+
 def finalize(root=ROOT):
     root = Path(root).resolve()
     changes = []
     for path in sorted((root / "notebooks").glob("[0-9][0-9]_*.ipynb")):
         original = path.read_bytes()
         nb = nbf.reads(original.decode("utf-8"), as_version=4)
-        prefix = path.name[:2]
-        old_managed = {c.id: c for c in nb.cells if TAG in c.metadata.get("tags", [])}
-        nb.cells = [c for c in nb.cells if TAG not in c.metadata.get("tags", [])]
-        if prefix in {"00", "07"}:
-            nb.metadata["concept_illustrations_excluded"] = ["reproducibility"]
-            nb.cells = [c for c in nb.cells if not (c.cell_type == "markdown" and "<!-- concept-illustration-v1:reproducibility -->" in c.source)]
-        revise_existing(nb, prefix)
-        extra = sections(prefix)
-        for i, cell in enumerate(extra):
-            cell.id = hashlib.sha256(f"{TAG}:{prefix}:{i}".encode()).hexdigest()[:12]
-            cell.metadata["tags"] = [TAG]
-            previous = old_managed.get(cell.id)
-            if previous is not None and previous.cell_type == cell.cell_type and previous.source == cell.source:
-                cell = previous
-            nb.cells.append(cell)
-        if extra:
-            nb.metadata["material_role"] = "research_companion_with_synthetic_experiments"
-        nbf.validate(nb)
+        transform(nb, path.name[:2])
         content = nbf.writes(nb).encode("utf-8")
         if content != original:
             path.write_bytes(content)
-        changes.append({"notebook": path.name, "managed_cells": len(extra), "changed": content != original})
+        changes.append({"notebook": path.name,
+                        "managed_cells": sum(TAG in c.metadata.get("tags", []) for c in nb.cells),
+                        "reference_images": sum(VISUAL_TAG in c.metadata.get("tags", []) for c in nb.cells),
+                        "changed": content != original})
     return changes
 
 

@@ -3,7 +3,7 @@
   "caption": "合成实验：固定标签攻击",
   "kind": "synthetic",
   "notebook": "06_红队与失败边界.ipynb",
-  "notebook_code_sha256": "91634e7d1a144fc7df2cd4a2d705110d0d87687ba4cc0fd0c676981c7de80bb9",
+  "notebook_code_sha256": "fab1cc5f9ab67bd438c32175b4c33622a0b30c738eee2f3bd82339ba211cdd29",
   "rendering": {
     "raster_dpi": 600,
     "fonts": {

@@ -3,7 +3,7 @@
   "caption": "合成实验：检查分布",
   "kind": "synthetic",
   "notebook": "01_数据与问题.ipynb",
-  "notebook_code_sha256": "5c4ac7a37964aa08b0ea42e8eaed34cb8191d41295b2e8611864b4914b88e704",
+  "notebook_code_sha256": "a19cd96a6a7b274ad8f2987d5b915eba587d829fcf350eef76b0afbfabbfe812",
   "rendering": {
     "raster_dpi": 600,
     "fonts": {

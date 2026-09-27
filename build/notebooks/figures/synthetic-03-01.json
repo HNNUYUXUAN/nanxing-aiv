@@ -3,7 +3,7 @@
   "caption": "合成实验：残差校正模拟",
   "kind": "synthetic",
   "notebook": "03_人审与校准.ipynb",
-  "notebook_code_sha256": "3b7c28c4dd508d62184d38a96117268f3b4332b06940761b502819e986198f66",
+  "notebook_code_sha256": "ce4c1e22af45d2d1048552cb2948f975317bb76c073664c2f1a41a84b6ba8057",
   "rendering": {
     "raster_dpi": 600,
     "fonts": {

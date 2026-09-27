@@ -3,7 +3,7 @@
   "caption": "合成实验：已知真值实验",
   "kind": "synthetic",
   "notebook": "04_识别边界与模拟.ipynb",
-  "notebook_code_sha256": "047b409fbec30e726d960feb4915f7cdf58dea52d463545b27c324fd8a660c09",
+  "notebook_code_sha256": "6a693eb5a6f1b70f624a21a00e6aeb3c027aabad8231f84f16a6ae9d580dde32",
   "rendering": {
     "raster_dpi": 600,
     "fonts": {

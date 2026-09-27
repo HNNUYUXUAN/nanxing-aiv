@@ -3,7 +3,7 @@
   "caption": "线段为未知标签任取L1–L6的条件范围，菱形为候选子集点值；已判定标签暂视为正确。",
   "kind": "conditional",
   "notebook": "05_指标性质与不确定性.ipynb",
-  "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+  "notebook_code_sha256": "ec70d4571bde4567d9f6bd75e8d289d20aa03390c35770eb2fa21060b1078568",
   "rendering": {
     "raster_dpi": 600,
     "fonts": {

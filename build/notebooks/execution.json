@@ -2,151 +2,120 @@
   "results": [
     {
       "notebook": "00_论文材料总览.ipynb",
-      "seconds": 2.14,
+      "seconds": 2.23,
       "status": "executed",
-      "role": "tutorial",
-      "sha256": "f0d2beb6eeffe08c5e759b60001253951daea4665b79e36ebbf954b9239416a7",
+      "role": "research_companion",
+      "sha256": "05993fa261eb227de7a6ce837c3010d550bf7243cb63833d39ca87e737aea5c5",
       "html": "00_论文材料总览.html",
-      "html_sha256": "e8cc22cba6c8e3f673ea29ef8cc45ba79b39f9dff4e55246b04423b03d370798",
-      "figures_in_outputs": 5,
-      "notebook_source_sha256": "524fcf9f3d3b4a55d32e419a40cd941f2a7b41db60309544e08bb24dc63cbeed",
-      "published_notebook_sha256": "8f28f56105c3e1bab81841fde567a1963bc288aba9c8fef275dca1cf54776362",
-      "concept_attachment_sha256": {
-        "concept-process-overview.png": "439f20c1a2e7a90c363f475f438733408bfdc6c4d250baca0e4415070d538d83"
-      }
+      "html_sha256": "11a727bfecbd3d3e09c0ba1c2411af0d29790c07d5b390c088834a4f1eb57190",
+      "figures_in_outputs": 1,
+      "reference_images_in_outputs": 1
     },
     {
       "notebook": "01_数据与问题.ipynb",
-      "seconds": 3.44,
+      "seconds": 3.68,
       "status": "executed",
-      "role": "tutorial",
-      "sha256": "9f1c8029c18638e45b934dd0164da391a70fae4ac0f5e6948522a9d8ee10f015",
+      "role": "synthetic_tutorial",
+      "sha256": "05d4c29c8c7c179676b4e54863bcd9a9e7ff15ac62338248b7900a47cc9993b0",
       "html": "01_数据与问题.html",
-      "html_sha256": "fbfde66307409598f25936d877dfb53a710a8e5e0126e4021911d5c33092f6cc",
-      "figures_in_outputs": 1,
-      "notebook_source_sha256": "d9b04500826ab1e373f92b450aa185a8db01d71cd4a7c27ce388d3449f0a0bab",
-      "published_notebook_sha256": "d243c3df9502bf9793ae2a040f9e2d2ccb037ba7c6c4cdf365a423584b1a163d",
-      "concept_attachment_sha256": {
-        "concept-evidence-chain.png": "55ca6cbdce0e8cd4d98ef4784699254dd62aa77ecf03f4c4b9c7e631f22b783a"
-      }
+      "html_sha256": "3ebf26c7e41d80abe98b832a8259d4128f22b825fb04cd4e2bb5330a56178b19",
+      "figures_in_outputs": 2,
+      "reference_images_in_outputs": 1
     },
     {
       "notebook": "02_标注与互评.ipynb",
-      "seconds": 4.14,
+      "seconds": 4.73,
       "status": "executed",
-      "role": "tutorial",
-      "sha256": "82074f5e9d31e5282a0593f72207322774d7e04de8c6de297987df04b3c2c3f5",
+      "role": "research_companion_with_synthetic_experiments",
+      "sha256": "e6baeb67777b33149f67dc25c34402086027b6f9e433f7d0df7734d84bd17c75",
       "html": "02_标注与互评.html",
-      "html_sha256": "23f8692f268de97cf2c550d2160b00f77551f341f2548df1913d3a7bb34a34ff",
-      "figures_in_outputs": 1,
-      "notebook_source_sha256": "f56113ee0694aa8b54117cde28476d4f6514893ffdc6e1fadc5a828da6f464e2",
-      "published_notebook_sha256": "6ee05841c08a99381bcf68c63efa077330842a4d9f87a61e156cfd7fc0951d89",
-      "concept_attachment_sha256": {
-        "concept-model-review.png": "8429f1dc155311377a0982fb295258729d91994ccd4833ed6fdb0c40fba66afa"
-      }
+      "html_sha256": "d2dbb107696ea83e0740ef439ad0c14de6bb712b7eef773371778d071eb669a7",
+      "figures_in_outputs": 3,
+      "reference_images_in_outputs": 2
     },
     {
       "notebook": "03_人审与校准.ipynb",
-      "seconds": 6.07,
+      "seconds": 7.23,
       "status": "executed",
-      "role": "tutorial",
-      "sha256": "848e29a69a41518000f5fffa4f833e914852be8bd2d3cb4d1799f311c131acc0",
+      "role": "research_companion_with_synthetic_experiments",
+      "sha256": "1bb18cbdbf2c1f165d8e21a49b044a9cbea5e878c761c0d5f45d34a69e669dd7",
       "html": "03_人审与校准.html",
-      "html_sha256": "1bc4b383f4ff87aaef8c22d55eef8ec18bf10af83f7b0e3d5b5a279be22f969d",
-      "figures_in_outputs": 3,
-      "notebook_source_sha256": "e65c0c3484097c06d4aeebce2b921b1e07963c4e337da4ad84cd4fe5f76da2b1",
-      "published_notebook_sha256": "848e29a69a41518000f5fffa4f833e914852be8bd2d3cb4d1799f311c131acc0",
-      "concept_attachment_sha256": {}
+      "html_sha256": "98d314cef28f9ebd9856c73d23e4ad249fac60f688dca810c8ae4355e13a1110",
+      "figures_in_outputs": 5,
+      "reference_images_in_outputs": 2
     },
     {
       "notebook": "04_识别边界与模拟.ipynb",
-      "seconds": 4.81,
+      "seconds": 5.29,
       "status": "executed",
-      "role": "tutorial",
-      "sha256": "ea75c01134c5cf26edcb1c05536a0c1fe156e8a71c92ea8122bccaa0fb74d81e",
+      "role": "research_companion_with_synthetic_experiments",
+      "sha256": "8a717c6ffaa7d0863f3b5e821f117dca2b0e8d2da81c2c276285b463c7c65e45",
       "html": "04_识别边界与模拟.html",
-      "html_sha256": "dc7abe05cfdfffc50fe7ca3b71ca8165193d3ce8c3c114f9e3ae97971f0b049c",
-      "figures_in_outputs": 1,
-      "notebook_source_sha256": "d4f4d58875d049079c3c0ed9118ecfd49159f64236eb1d0e607c62f8d3a7449f",
-      "published_notebook_sha256": "ea75c01134c5cf26edcb1c05536a0c1fe156e8a71c92ea8122bccaa0fb74d81e",
-      "concept_attachment_sha256": {}
+      "html_sha256": "5b5a2bbcfcc28c988da1949490ed538f77c5e7885e4a1ee8383d78d415a83f1d",
+      "figures_in_outputs": 2,
+      "reference_images_in_outputs": 1
     },
     {
       "notebook": "05_指标性质与不确定性.ipynb",
-      "seconds": 7.21,
+      "seconds": 8.87,
       "status": "executed",
-      "role": "tutorial",
-      "sha256": "b37c0fb7b061df47808e2824a3d4ac64cff09749214a5f7804347f1c9dbb6b2d",
+      "role": "research_companion_with_synthetic_experiments",
+      "sha256": "6ac87c257a61c2941de7043ca7fa577b051a416b4b80bd343082a7da7d3588fc",
       "html": "05_指标性质与不确定性.html",
-      "html_sha256": "24555330d9291e0434b20e5bbc5e3b173dbc06cd1b48f5e6ed1c6a06175f8088",
-      "figures_in_outputs": 5,
-      "notebook_source_sha256": "8f173071742174c57f31197eb9712317183bb0b5fd07e45939100755a16b67bd",
-      "published_notebook_sha256": "b37c0fb7b061df47808e2824a3d4ac64cff09749214a5f7804347f1c9dbb6b2d",
-      "concept_attachment_sha256": {}
+      "html_sha256": "5d0599d80deabdeb28080c19e0953910e750c1ecb17964f8c5a79e885cd86b99",
+      "figures_in_outputs": 8,
+      "reference_images_in_outputs": 3
     },
     {
       "notebook": "06_红队与失败边界.ipynb",
-      "seconds": 4.34,
+      "seconds": 4.86,
       "status": "executed",
-      "role": "tutorial",
-      "sha256": "9142633353e5cc693b95a698584c79367df7df903f80a9be3fe5bf3169a2277a",
+      "role": "research_companion_with_synthetic_experiments",
+      "sha256": "80943465988dc7d743e90443e0e0888ce9571b418fa98cc1d71cdeaeba57db40",
       "html": "06_红队与失败边界.html",
-      "html_sha256": "663ee726601a3b0291d7688ecdc14b4a3048ea634700826139c33d0761a8bd95",
-      "figures_in_outputs": 2,
-      "notebook_source_sha256": "0959c46e6d50acacf9d9fb9dce7316f884dbb9cfb054affd762de2f856bf8de5",
-      "published_notebook_sha256": "9142633353e5cc693b95a698584c79367df7df903f80a9be3fe5bf3169a2277a",
-      "concept_attachment_sha256": {}
+      "html_sha256": "bba537ee93139dbe681bd2bb4baf5578eb405fb70ddb9dfec5e9a172fe896a21",
+      "figures_in_outputs": 3,
+      "reference_images_in_outputs": 1
     },
     {
       "notebook": "07_教育报告与复用.ipynb",
-      "seconds": 3.71,
+      "seconds": 4.0,
       "status": "executed",
-      "role": "tutorial",
-      "sha256": "f429137a0fe41670eac5acbd01be1df06735e905f1109f3d73429a59937d767c",
+      "role": "research_companion_with_synthetic_experiments",
+      "sha256": "2483aee317f74e257750dfe3f6f86d0eae747fd21c6a51b66314e6fea1362c65",
       "html": "07_教育报告与复用.html",
-      "html_sha256": "31fbc621b2295120a3a8f2f36bb38edae1880c5744b80e4f502a1ba6a27247a9",
-      "figures_in_outputs": 1,
-      "notebook_source_sha256": "8aeeabffd1a1e69837002e1aac9aa6a90120b822ddf3d71d0a82ce597339df11",
-      "published_notebook_sha256": "6c8325e4c1b711ae4cd8cb936c6dc5a0103d01d97b591a8c7658cf8b0cb304e5",
-      "concept_attachment_sha256": {
-        "concept-system-architecture.png": "b23337e9fada57b25db65b5209f11841bb5b3bd5433286db7942843cc0828096"
-      }
+      "html_sha256": "e90a2639cc6db625efada1b0a10164d21d8f40e8763927cc6c860ed08890d331",
+      "figures_in_outputs": 4,
+      "reference_images_in_outputs": 3
     },
     {
       "notebook": "08_真实数据与封存记录.ipynb",
-      "seconds": 1.93,
+      "seconds": 4.11,
       "status": "executed",
-      "role": "tutorial",
-      "sha256": "c8a8f40f12ba1f119d2b341261123335a2d84634604483a7ca887298d108570f",
+      "role": "research_companion",
+      "sha256": "f787567fc8ebb867a5153f57cb4435a635cf4701ca09516c4f1d062d5810bf71",
       "html": "08_真实数据与封存记录.html",
-      "html_sha256": "4556bf2012924da225b1d05d72d148acdd55d8be0e81bdd987e270c80c8b09c1",
-      "figures_in_outputs": 0,
-      "notebook_source_sha256": "2ffb76fa2e4a533ce55feedc31001284c08a7e3ec86a9a41191efc22bdd341bd",
-      "published_notebook_sha256": "7d3069d4bebb421a4e68a35960428fc5d1ac9e990f9571f463a3f00b2454e7ee",
-      "concept_attachment_sha256": {
-        "concept-evidence-chain.png": "55ca6cbdce0e8cd4d98ef4784699254dd62aa77ecf03f4c4b9c7e631f22b783a"
-      }
+      "html_sha256": "d085aa7adf208d2e4cca06ec64413633bf2bc21ccc01a1db526d38a9ce6279ae",
+      "figures_in_outputs": 2,
+      "reference_images_in_outputs": 1
     },
     {
       "notebook": "09_Agent批量结果与互评.ipynb",
-      "seconds": 6.29,
+      "seconds": 7.35,
       "status": "executed",
-      "role": "tutorial",
-      "sha256": "ed974e41375f1d567ec02ccf5c6b274d0ffd4005c36a351bb311fdd1713023da",
+      "role": "research_companion_with_synthetic_experiments",
+      "sha256": "d39cfda8a7aea82f34c2b142980b4846d48dd9837a6e750198ab5b84684b92a1",
       "html": "09_Agent批量结果与互评.html",
-      "html_sha256": "0ea6564c7de1072d183d7cecf79db2b0cb871f635a17029eaf78ab004b0caa7b",
-      "figures_in_outputs": 2,
-      "notebook_source_sha256": "8dfb2b63485c648f4a5962a1544cf8a7715a4ece8be7d72b39a60252abe6416b",
-      "published_notebook_sha256": "103a2bc6352b1bad682c6f520c91401c202176040df33bb97c1d42ca8a11b7fd",
-      "concept_attachment_sha256": {
-        "concept-model-review.png": "8429f1dc155311377a0982fb295258729d91994ccd4833ed6fdb0c40fba66afa"
-      }
+      "html_sha256": "766691f888b0ea281276b2850d063f4cb071cca0826bf7c8c88441e93b41d859",
+      "figures_in_outputs": 4,
+      "reference_images_in_outputs": 2
     }
   ],
-  "wall_seconds": 46.86,
+  "wall_seconds": 56.29,
   "live_api": false,
   "python": "Python 3.13.9",
-  "figures": 16,
+  "figures": 17,
+  "input_scope": "public_aggregate_and_synthetic",
   "concept_illustrations": {
     "status": "accepted",
     "manifest_sha256": "fb022c88c400c50cf5d905e3808d9cda63373554988f82b5c525a679a8882d79",
@@ -160,9 +129,5 @@
     },
     "integration_script_sha256": "ad0c1ee16e213c303a65640024264e1e40b222a6e13326bea6769cd3d6a3862b",
     "images": 5
-  },
-  "input_scope": "public_aggregate_and_synthetic",
-  "notebook_outputs_preserved": true,
-  "private_inputs_disconnected": true,
-  "notebook_publication_transform": "reviewed-concept-png-attachments-v1"
+  }
 }

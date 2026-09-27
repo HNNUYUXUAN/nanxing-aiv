@@ -3,7 +3,7 @@
   "caption": "各维度分别以自身候选为分母；两个候选集合并非同一批回合。",
   "kind": "real",
   "notebook": "09_Agent批量结果与互评.ipynb",
-  "notebook_code_sha256": "00eabe021c33b0eff580a3eab39c9f1a8016ff1059abd2c7ae8e7cf85d865f53",
+  "notebook_code_sha256": "9be91219db888a47816152712a1873860efefe6d5cdd93c49b27dbf4a4d9e7b5",
   "rendering": {
     "raster_dpi": 600,
     "fonts": {

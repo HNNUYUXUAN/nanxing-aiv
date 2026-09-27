@@ -4,7 +4,7 @@
     "caption": "各维度分别以自身候选为分母；两个候选集合并非同一批回合。",
     "kind": "real",
     "notebook": "09_Agent批量结果与互评.ipynb",
-    "notebook_code_sha256": "00eabe021c33b0eff580a3eab39c9f1a8016ff1059abd2c7ae8e7cf85d865f53",
+    "notebook_code_sha256": "9be91219db888a47816152712a1873860efefe6d5cdd93c49b27dbf4a4d9e7b5",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {
@@ -48,7 +48,7 @@
     "caption": "同题8项、两角色共16对；时间包含停顿，固定顺序与共同推荐限制因果解释。",
     "kind": "real",
     "notebook": "03_人审与校准.ipynb",
-    "notebook_code_sha256": "3b7c28c4dd508d62184d38a96117268f3b4332b06940761b502819e986198f66",
+    "notebook_code_sha256": "ce4c1e22af45d2d1048552cb2948f975317bb76c073664c2f1a41a84b6ba8057",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {
@@ -88,7 +88,7 @@
     "caption": "48条同回合双维非空候选；任务较高13条、相同29条、贡献较高6条。",
     "kind": "real",
     "notebook": "09_Agent批量结果与互评.ipynb",
-    "notebook_code_sha256": "00eabe021c33b0eff580a3eab39c9f1a8016ff1059abd2c7ae8e7cf85d865f53",
+    "notebook_code_sha256": "9be91219db888a47816152712a1873860efefe6d5cdd93c49b27dbf4a4d9e7b5",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {
@@ -124,11 +124,51 @@
     ]
   },
   {
+    "id": "final-public-term-scope",
+    "caption": "各学期的学生Q回合与学生—学期规模；两图分别保留观察单位。",
+    "kind": "real",
+    "notebook": "08_真实数据与封存记录.ipynb",
+    "notebook_code_sha256": "0a5ccbf755a80d0de53aab2df5e965989c150e84ee04fb63db6e35a550988230",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
+    "files": {
+      "pdf": "figures/final-public-term-scope.pdf",
+      "svg": "figures/final-public-term-scope.svg",
+      "png": "figures/final-public-term-scope.png"
+    },
+    "sources": [
+      {
+        "path": "results/final-analysis/descriptive.csv",
+        "sha256": "6d868656aa33bc5299ce6e6ff19643eebf3ba2d4ba23f557642ba552dd0cc686"
+      },
+      {
+        "path": "results/final-analysis/summary.json",
+        "sha256": "a181f0840a47c129aeb148f1ea5b36c5941a0943cd5fb1ebfa2acd8bfc28a64c"
+      },
+      {
+        "path": "aiv/notebook_materials.py",
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
+      }
+    ]
+  },
+  {
     "id": "final-random-review-flow",
     "caption": "固定随机复核子集的同题状态比较；每种方法、每个维度均保留全部352回合。",
     "kind": "real",
     "notebook": "02_标注与互评.ipynb",
-    "notebook_code_sha256": "71bf0686f05f645bf20025fbe8a3cb8094cc7aedb7694053beadefaae03ba393",
+    "notebook_code_sha256": "c60fec8d341b49d9b90829f9adfb5fc62bbf1566dc2e2dc514d10a5df189707b",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {
@@ -168,7 +208,7 @@
     "caption": "356个有任务候选的学生—学期单位；按ceil(εn)改标，缺失CTQ及工具情景保留；稳定配对仅在同学期内比较。",
     "kind": "conditional",
     "notebook": "05_指标性质与不确定性.ipynb",
-    "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+    "notebook_code_sha256": "ec70d4571bde4567d9f6bd75e8d289d20aa03390c35770eb2fa21060b1078568",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {
@@ -208,7 +248,7 @@
     "caption": "同一固定标签案例的工具堆叠增量；MAB权重置零也移除了工具广度奖励。",
     "kind": "synthetic",
     "notebook": "06_红队与失败边界.ipynb",
-    "notebook_code_sha256": "91634e7d1a144fc7df2cd4a2d705110d0d87687ba4cc0fd0c676981c7de80bb9",
+    "notebook_code_sha256": "fab1cc5f9ab67bd438c32175b4c33622a0b30c738eee2f3bd82339ba211cdd29",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {
@@ -248,7 +288,7 @@
     "caption": "线段为未知标签任取L1–L6的条件范围，菱形为候选子集点值；已判定标签暂视为正确。",
     "kind": "conditional",
     "notebook": "05_指标性质与不确定性.ipynb",
-    "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+    "notebook_code_sha256": "ec70d4571bde4567d9f6bd75e8d289d20aa03390c35770eb2fa21060b1078568",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {
@@ -288,7 +328,7 @@
     "caption": "合成实验：检查分布",
     "kind": "synthetic",
     "notebook": "01_数据与问题.ipynb",
-    "notebook_code_sha256": "5c4ac7a37964aa08b0ea42e8eaed34cb8191d41295b2e8611864b4914b88e704",
+    "notebook_code_sha256": "a19cd96a6a7b274ad8f2987d5b915eba587d829fcf350eef76b0afbfabbfe812",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {
@@ -332,7 +372,7 @@
     "caption": "合成实验：残差校正模拟",
     "kind": "synthetic",
     "notebook": "03_人审与校准.ipynb",
-    "notebook_code_sha256": "3b7c28c4dd508d62184d38a96117268f3b4332b06940761b502819e986198f66",
+    "notebook_code_sha256": "ce4c1e22af45d2d1048552cb2948f975317bb76c073664c2f1a41a84b6ba8057",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {
@@ -388,7 +428,7 @@
     "caption": "合成实验：有限总体覆盖率模拟",
     "kind": "synthetic",
     "notebook": "03_人审与校准.ipynb",
-    "notebook_code_sha256": "3b7c28c4dd508d62184d38a96117268f3b4332b06940761b502819e986198f66",
+    "notebook_code_sha256": "ce4c1e22af45d2d1048552cb2948f975317bb76c073664c2f1a41a84b6ba8057",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {
@@ -444,7 +484,7 @@
     "caption": "合成实验：已知真值实验",
     "kind": "synthetic",
     "notebook": "04_识别边界与模拟.ipynb",
-    "notebook_code_sha256": "047b409fbec30e726d960feb4915f7cdf58dea52d463545b27c324fd8a660c09",
+    "notebook_code_sha256": "6a693eb5a6f1b70f624a21a00e6aeb3c027aabad8231f84f16a6ae9d580dde32",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {
@@ -488,7 +528,7 @@
     "caption": "合成实验：三套固定权重",
     "kind": "synthetic",
     "notebook": "05_指标性质与不确定性.ipynb",
-    "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+    "notebook_code_sha256": "ec70d4571bde4567d9f6bd75e8d289d20aa03390c35770eb2fa21060b1078568",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {
@@ -536,7 +576,7 @@
     "caption": "合成实验：权重敏感性",
     "kind": "synthetic",
     "notebook": "05_指标性质与不确定性.ipynb",
-    "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+    "notebook_code_sha256": "ec70d4571bde4567d9f6bd75e8d289d20aa03390c35770eb2fa21060b1078568",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {
@@ -584,7 +624,7 @@
     "caption": "合成实验：标签共同误差敏感性",
     "kind": "synthetic",
     "notebook": "05_指标性质与不确定性.ipynb",
-    "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+    "notebook_code_sha256": "ec70d4571bde4567d9f6bd75e8d289d20aa03390c35770eb2fa21060b1078568",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {
@@ -632,7 +672,7 @@
     "caption": "合成实验：固定标签攻击",
     "kind": "synthetic",
     "notebook": "06_红队与失败边界.ipynb",
-    "notebook_code_sha256": "91634e7d1a144fc7df2cd4a2d705110d0d87687ba4cc0fd0c676981c7de80bb9",
+    "notebook_code_sha256": "fab1cc5f9ab67bd438c32175b4c33622a0b30c738eee2f3bd82339ba211cdd29",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {
@@ -680,7 +720,7 @@
     "caption": "已保存合成标签的现场计算；缺少会话边和工具时保留null指标及条件范围。",
     "kind": "synthetic",
     "notebook": "07_教育报告与复用.ipynb",
-    "notebook_code_sha256": "03f668f85b8c73f8115614b7f231833b66c8cd580d62f003ebe264facd054a20",
+    "notebook_code_sha256": "bdf14f6d1ddeaa231051b94fed8064b8a31b9f87ae90855a4fe176ac2c740d43",
     "rendering": {
       "raster_dpi": 600,
       "fonts": {

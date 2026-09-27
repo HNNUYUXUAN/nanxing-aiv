@@ -65,3 +65,19 @@ macOS / Linux 使用 `.venv/bin/python`。批量执行器使用启动命令对�
 | `descriptive.csv`、`level-distribution.csv`、`joint-levels.csv` | 09 |
 
 公开仓库的 `research-inputs.json` 保持原始输入断开，汇总验证与合成实验仍可运行。具有相应数据授权时，可按 [授权输入说明](../docs/复现说明.md)接入冻结记录重新计算。已执行内容和来源哈希共同说明每次复算的范围。
+
+<details>
+<summary>更新 Notebook 内容与查看授权原始输入</summary>
+
+在源文件中维护计算或叙述后，先重建，再执行：
+
+```powershell
+.venv\Scripts\python.exe -X utf8 -B scripts/build_research_notebooks.py
+.venv\Scripts\python.exe -X utf8 -B scripts/execute_notebooks.py --workers 1
+```
+
+生成器重建 00 / 08 / 09，并更新各本的分析与图像单元。默认使用公开汇总；需要检查本地授权记录的更细聚合时，在已配置冻结输入的研究环境运行 `scripts/build_research_notebooks.py --include-authorized-sections`，再执行 Notebook。
+
+原始统计的重新计算仍使用 [复现说明](../docs/复现说明.md)中的 `--authorized-inputs` 入口；生成 Notebook 不会重新运行模型。
+
+</details>

@@ -1,6 +1,6 @@
 {
   "notebooks_executed": 10,
-  "figures": 16,
+  "figures": 17,
   "export_formats": [
     "pdf",
     "svg",
@@ -10,8 +10,8 @@
   "all_export_files_present": true,
   "inline_figure_outputs_verified": true,
   "live_api": false,
-  "wall_seconds": 46.86,
-  "turn_snapshot": "pending",
+  "wall_seconds": 56.29,
+  "turn_snapshot": "not_included",
   "snapshot_manifest_sha256": null,
   "materials_manifest_sha256": null,
   "concept_illustrations": {

@@ -3,7 +3,7 @@
   "caption": "同题8项、两角色共16对；时间包含停顿，固定顺序与共同推荐限制因果解释。",
   "kind": "real",
   "notebook": "03_人审与校准.ipynb",
-  "notebook_code_sha256": "3b7c28c4dd508d62184d38a96117268f3b4332b06940761b502819e986198f66",
+  "notebook_code_sha256": "ce4c1e22af45d2d1048552cb2948f975317bb76c073664c2f1a41a84b6ba8057",
   "rendering": {
     "raster_dpi": 600,
     "fonts": {

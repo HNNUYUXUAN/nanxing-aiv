@@ -3,7 +3,7 @@
   "caption": "固定随机复核子集的同题状态比较；每种方法、每个维度均保留全部352回合。",
   "kind": "real",
   "notebook": "02_标注与互评.ipynb",
-  "notebook_code_sha256": "71bf0686f05f645bf20025fbe8a3cb8094cc7aedb7694053beadefaae03ba393",
+  "notebook_code_sha256": "c60fec8d341b49d9b90829f9adfb5fc62bbf1566dc2e2dc514d10a5df189707b",
   "rendering": {
     "raster_dpi": 600,
     "fonts": {
