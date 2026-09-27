@@ -1,0 +1,371 @@
+{
+  "edition": "南行20页路演版",
+  "count": 20,
+  "main_pages": 12,
+  "qa_pages": 7,
+  "closing_pages": 1,
+  "main_seconds": 270,
+  "source_policy": "native_byte_copy_pinned_sha256",
+  "pages": [
+    {
+      "number": 1,
+      "title": "封面：方法与落地贯通",
+      "section": "主讲",
+      "seconds": 15,
+      "source_id": "F01",
+      "source_path": "slides/final/images/01.png",
+      "source_sha256": "c139cedc5e6569f67a7bd008328c064c626ebda354e83e4ed2996888ee197560",
+      "target": "images/01.png",
+      "target_sha256": "c139cedc5e6569f67a7bd008328c064c626ebda354e83e4ed2996888ee197560",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "问题与研究思路",
+      "evidence_scope": "研究主张",
+      "status": "approved"
+    },
+    {
+      "number": 2,
+      "title": "问题：评价有证据的变化",
+      "section": "主讲",
+      "seconds": 25,
+      "source_id": "R02A",
+      "source_path": "slides/rich/images/R02A-question.png",
+      "source_sha256": "3f14e3fecf1610719367daa3961641e7115aaab6f045b6fd59e9ac17e4237c93",
+      "target": "images/02.png",
+      "target_sha256": "3f14e3fecf1610719367daa3961641e7115aaab6f045b6fd59e9ac17e4237c93",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "问题与研究思路",
+      "evidence_scope": "问题定义",
+      "status": "approved"
+    },
+    {
+      "number": 3,
+      "title": "A—E 递进建模链",
+      "section": "主讲",
+      "seconds": 30,
+      "source_id": "R04A",
+      "source_path": "slides/rich/images/R04A-chain.png",
+      "source_sha256": "c2ee4b24646307d2f7f28f8529ea2b76bd818d2b1fce7cd49af797bc450c11cf",
+      "target": "images/03.png",
+      "target_sha256": "c2ee4b24646307d2f7f28f8529ea2b76bd818d2b1fce7cd49af797bc450c11cf",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "问题与研究思路；A—E",
+      "evidence_scope": "模型结构",
+      "status": "approved"
+    },
+    {
+      "number": 4,
+      "title": "双模型标注与独立复核",
+      "section": "主讲",
+      "seconds": 25,
+      "source_id": "R06B",
+      "source_path": "slides/rich/images/R06B-annotation.png",
+      "source_sha256": "a333d051a7756d5ec545f78ed9dde5a9f75f9bdac421c8491fbc1c802d43a5f9",
+      "target": "images/04.png",
+      "target_sha256": "a333d051a7756d5ec545f78ed9dde5a9f75f9bdac421c8491fbc1c802d43a5f9",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "A：认知测量与 AI 辅助校验",
+      "evidence_scope": "测评流程",
+      "status": "approved"
+    },
+    {
+      "number": 5,
+      "title": "真实结果：同回合双维候选",
+      "section": "主讲",
+      "seconds": 35,
+      "source_id": "F05",
+      "source_path": "slides/final/images/05.png",
+      "source_sha256": "b7931e3f9ca38d565717065a09b6ea9ce561061b83677e61b6382de83c8567f0",
+      "target": "images/05.png",
+      "target_sha256": "b7931e3f9ca38d565717065a09b6ea9ce561061b83677e61b6382de83c8567f0",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "A：真实双维分布与层级解释",
+      "evidence_scope": "t3冻结真实回合",
+      "status": "approved"
+    },
+    {
+      "number": 6,
+      "title": "五维条件范围与稳健决策",
+      "section": "主讲",
+      "seconds": 45,
+      "source_id": "F07",
+      "source_path": "slides/final/images/07.png",
+      "source_sha256": "ad0a8fcc0aad9c3dc9bd9cdae4287bc9379092c128567b25a451551cb4405c05",
+      "target": "images/06.png",
+      "target_sha256": "ad0a8fcc0aad9c3dc9bd9cdae4287bc9379092c128567b25a451551cb4405c05",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "C：标签与权重扰动的求解及结果",
+      "evidence_scope": "条件情景；真实样本的候选标签",
+      "status": "approved"
+    },
+    {
+      "number": 7,
+      "title": "合成反例与抗操纵回验",
+      "section": "主讲",
+      "seconds": 25,
+      "source_id": "F08",
+      "source_path": "slides/final/images/08.png",
+      "source_sha256": "81620d771e43e5fd34c052a1150e74365e8c3a19ce4a39fab2910e72aa16bc22",
+      "target": "images/07.png",
+      "target_sha256": "81620d771e43e5fd34c052a1150e74365e8c3a19ce4a39fab2910e72aa16bc22",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "D：主动检验与上游反馈",
+      "evidence_scope": "工程合成反例",
+      "status": "approved"
+    },
+    {
+      "number": 8,
+      "title": "平台入口：扫码查看演示",
+      "section": "主讲",
+      "seconds": 10,
+      "source_id": "QR",
+      "source_path": "slides/roadshow/source/deployment-entry.png",
+      "source_sha256": "899fc45e425ea37303ee85a88c2bdf27befca605040055fadd9149f39f847a61",
+      "target": "images/08.png",
+      "target_sha256": "899fc45e425ea37303ee85a88c2bdf27befca605040055fadd9149f39f847a61",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "E：真实诊断与教学行动",
+      "evidence_scope": "部署入口；非研究数据",
+      "status": "approved"
+    },
+    {
+      "number": 9,
+      "title": "完整证据下的指标演示",
+      "section": "主讲",
+      "seconds": 10,
+      "source_id": "web05",
+      "source_path": "slides/final/images/web-05-完整证据计算.png",
+      "source_sha256": "4d41a1b5ae28d19c825cf3a182465812403a4471899d93d6deab021e8969f317",
+      "target": "images/09.png",
+      "target_sha256": "4d41a1b5ae28d19c825cf3a182465812403a4471899d93d6deab021e8969f317",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "C：有界指标与真实条件范围",
+      "evidence_scope": "保存的合成标签确定性计算（61.7）",
+      "status": "approved"
+    },
+    {
+      "number": 10,
+      "title": "缺失证据下的条件范围与补采",
+      "section": "主讲",
+      "seconds": 15,
+      "source_id": "web06",
+      "source_path": "slides/final/images/web-06-缺失证据响应.png",
+      "source_sha256": "c61738d40e43561720a22ddf00637a78d80232fd5c394ed3e81733adc6f511d6",
+      "target": "images/10.png",
+      "target_sha256": "c61738d40e43561720a22ddf00637a78d80232fd5c394ed3e81733adc6f511d6",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "C：有界指标与真实条件范围",
+      "evidence_scope": "保存的合成标签确定性计算（36—76）",
+      "status": "approved"
+    },
+    {
+      "number": 11,
+      "title": "教师报告与下一步行动",
+      "section": "主讲",
+      "seconds": 25,
+      "source_id": "web04",
+      "source_path": "slides/final/images/web-04-教师简报与行动建议.jpg",
+      "source_sha256": "58336fa6b4f37dc7a1683fbef280a573ea2fd4e88b8c0ad98907e9abf49878f3",
+      "target": "images/11.jpg",
+      "target_sha256": "58336fa6b4f37dc7a1683fbef280a573ea2fd4e88b8c0ad98907e9abf49878f3",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "E：真实诊断与教学行动",
+      "evidence_scope": "两条构造输入的真实模型运行",
+      "status": "approved"
+    },
+    {
+      "number": 12,
+      "title": "汇报完毕，敬请指教",
+      "section": "主讲",
+      "seconds": 10,
+      "source_id": "F10",
+      "source_path": "slides/final/images/10.png",
+      "source_sha256": "32c03d390e9d57db28ae0c38d0db38040b4fa384f96dc628a8dbdb2ae5a5e371",
+      "target": "images/12.png",
+      "target_sha256": "32c03d390e9d57db28ae0c38d0db38040b4fa384f96dc628a8dbdb2ae5a5e371",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "讨论与结论",
+      "evidence_scope": "演讲封底",
+      "status": "approved"
+    },
+    {
+      "number": 13,
+      "title": "备答：因果增量识别",
+      "section": "备答",
+      "seconds": 0,
+      "source_id": "F06",
+      "source_path": "slides/final/images/06.png",
+      "source_sha256": "f6073e95112fa95f77aaa364ad1228b4504e8837e1a16d4623eabb3f62b9f6dd",
+      "target": "images/13.png",
+      "target_sha256": "f6073e95112fa95f77aaa364ad1228b4504e8837e1a16d4623eabb3f62b9f6dd",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "B：可比性、过程关联与增量目标",
+      "evidence_scope": "识别条件与局限",
+      "status": "approved"
+    },
+    {
+      "number": 14,
+      "title": "备答：任务与贡献的测量",
+      "section": "备答",
+      "seconds": 0,
+      "source_id": "F11",
+      "source_path": "slides/final/images/11.png",
+      "source_sha256": "583f960e0d5fcd0b6072523b3f25353ee7e416b93e5031b08114210b878894a8",
+      "target": "images/14.png",
+      "target_sha256": "583f960e0d5fcd0b6072523b3f25353ee7e416b93e5031b08114210b878894a8",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "A：两维标签、决策规则与共同样本比较",
+      "evidence_scope": "示意文本；非学生原文",
+      "status": "approved"
+    },
+    {
+      "number": 15,
+      "title": "备答：人工复评的口径",
+      "section": "备答",
+      "seconds": 0,
+      "source_id": "F04",
+      "source_path": "slides/final/images/04.png",
+      "source_sha256": "168ebaea98a8857b1b8710d8c53276e92d0377f0b5a676a7d3aa590f07fbd243",
+      "target": "images/15.png",
+      "target_sha256": "168ebaea98a8857b1b8710d8c53276e92d0377f0b5a676a7d3aa590f07fbd243",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "A：独立判断到 AI 推荐辅助复评",
+      "evidence_scope": "人工过程观察；非因果效应",
+      "status": "approved"
+    },
+    {
+      "number": 16,
+      "title": "备答：权重敏感性",
+      "section": "备答",
+      "seconds": 0,
+      "source_id": "F14",
+      "source_path": "slides/final/images/14.png",
+      "source_sha256": "845e3d6aaf9723388f1e191823b6d1c40a8b07a550dfeed4dc9e374b6a36e2c6",
+      "target": "images/16.png",
+      "target_sha256": "845e3d6aaf9723388f1e191823b6d1c40a8b07a550dfeed4dc9e374b6a36e2c6",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "C：标签与权重扰动的求解及结果",
+      "evidence_scope": "条件模型",
+      "status": "approved"
+    },
+    {
+      "number": 17,
+      "title": "备答：原文追溯与人工核验",
+      "section": "备答",
+      "seconds": 0,
+      "source_id": "web03",
+      "source_path": "slides/final/images/web-03-原文与人工复核.jpg",
+      "source_sha256": "72c1b6eda4cd3a9b31b6c460857e237118a1353026058300260465c17ef15fdb",
+      "target": "images/17.jpg",
+      "target_sha256": "72c1b6eda4cd3a9b31b6c460857e237118a1353026058300260465c17ef15fdb",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "A：认知测量与 AI 辅助校验",
+      "evidence_scope": "构造输入的真实模型运行",
+      "status": "approved"
+    },
+    {
+      "number": 18,
+      "title": "备答：四模型任务记录",
+      "section": "备答",
+      "seconds": 0,
+      "source_id": "web02",
+      "source_path": "slides/final/images/web-02-四模型任务记录.png",
+      "source_sha256": "634e28d54e3afc8e850571c6033d5bbb68547d8f3f5663c10e34019ea3486a68",
+      "target": "images/18.png",
+      "target_sha256": "634e28d54e3afc8e850571c6033d5bbb68547d8f3f5663c10e34019ea3486a68",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "A：认知测量与 AI 辅助校验",
+      "evidence_scope": "构造输入；工程控制运行",
+      "status": "approved"
+    },
+    {
+      "number": 19,
+      "title": "备答：仓库与复现",
+      "section": "备答",
+      "seconds": 0,
+      "source_id": "F16",
+      "source_path": "slides/final/images/16.png",
+      "source_sha256": "fb77c4b51082d7e2c8568959e4d1fb2b93ceec93663b6072771e442d92094761",
+      "target": "images/19.png",
+      "target_sha256": "fb77c4b51082d7e2c8568959e4d1fb2b93ceec93663b6072771e442d92094761",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "讨论与结论",
+      "evidence_scope": "复现路径",
+      "status": "approved"
+    },
+    {
+      "number": 20,
+      "title": "感谢各位评委的指导",
+      "section": "致谢",
+      "seconds": 0,
+      "source_id": "F17",
+      "source_path": "slides/final/images/17.png",
+      "source_sha256": "d035a87614fd1903aa379dcb69cc400800111b5c30d2ae81f73041b4952acb0b",
+      "target": "images/20.png",
+      "target_sha256": "d035a87614fd1903aa379dcb69cc400800111b5c30d2ae81f73041b4952acb0b",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "paper_anchor": "讨论与结论",
+      "evidence_scope": "问答封底",
+      "status": "approved"
+    }
+  ]
+}

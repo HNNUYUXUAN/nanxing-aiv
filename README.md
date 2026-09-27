@@ -1,102 +1,103 @@
 # 南行 · AI 辅助学习的增量价值评价
 
-**把任务要求、学生贡献与评价不确定性连接起来，让教学建议有可核查的依据。**
+**从学习过程中的证据出发，区分任务要求与学生贡献，让评价走向可核查的教学行动。**
 
-学习平台保存了提问、回复和工具使用记录。我们研究这些资料能支持怎样的认知评价，并把证据缺口、模型分歧与指标的可操纵性传递到最终的报告动作。
+[论文 PDF](build/paper/main.pdf) · [20 页路演](slides/README.md) · [Notebook](notebooks/README.md) · [运行指南](docs/复现说明.md) · [体验工作台](https://math.hnnu.team)
 
-| 从这里开始 | 可以看到什么 |
-| --- | --- |
-| [论文 PDF](build/paper/main.pdf) · [论文源码](paper/main.tex) | 资料 → A 测量 → B 可比性 → C 指标 → D 检验反馈 → E 决策 |
-| [Notebook 导读](notebooks/README.md) · [已执行页面](build/notebooks/index.html) | 真实观察、条件分析与合成实验的计算过程 |
-| [演示与讲稿](slides/README.md) | 研究故事、AI 工作流、实际发现及答问证据 |
-| [测评工作台](https://math.hnnu.team) · [本地合成示例](workbench/README.md) | 资料、评审、争议核查与报告的交互入口 |
-| [离线运行说明](docs/复现说明.md) | 合成案例、汇总结果验证与授权资料复算 |
+![南行：面向 AI 辅助学习的增量价值评价](slides/roadshow/images/01.png)
 
-## 一条带反馈的建模链
+学习平台记录了提问、回复和工具使用，但这些记录能支持多强的评价？南行把认知标注、比较条件、指标范围、反例检验和教师报告连在一起，保留证据缺口与判断分歧。
 
-```mermaid
-flowchart LR
-  R[资料与来源] --> A[A 任务与贡献测量]
-  A --> B[B 比较条件]
-  B --> C[C 指标与范围]
-  A --> C
-  C --> D[D 抗操纵检验]
-  D --> E[E 教学行动]
-  D --> A
-  D --> C
-```
-
-三项贡献分别落实到可检查的结果：
-
-1. **连接任务、贡献与不确定性。** 两维候选分别统计；只有同一回合都存在候选，才进行配对比较。缺失标签继续进入总体范围分析。
-2. **组织多模型与人机协作评审。** 独立判断、随机复核、高风险复核和真人辅助复评保留各自的条件、分母及记录。
-3. **用反例改变指标的使用。** 工具堆叠、分布贴合和权重扰动用于确定何时给范围、核查争议、补充证据或暂缓比较。
-
-## 主要发现
-
-冻结记录包含 **3,515 个真实回合、401 个学生—学期单位**。模型最终提供 1,010 个任务候选与 776 个贡献候选；两类候选的选择机制和覆盖不同。
-
-| 观察量 | 任务要求 | 学生贡献 | 解释范围 |
-| --- | ---: | ---: | --- |
-| 候选覆盖 | 28.73% | 22.08% | 分母均为 3,515 个真实回合 |
-| 候选内高阶占比 | 15.54% | 35.31% | 分母分别为 1,010、776，不能据边际差异推出同一学生的贡献更高 |
-| 同回合双候选 | 48 | 48 | 任务较高 13、相同 29、贡献较高 6 |
-
-![真实回合中的任务与贡献](results/final-analysis/fig01_dimensions.png)
-
-固定随机复核的 **352 回合**构成同条件流程比较；高风险 827 回合单列。覆盖、弃权和判断改变用于解释组件作用；标注准确性仍需适用的独立参考。
-
-![同条件流程比较](results/final-analysis/fig02_random_flow.png)
-
-无候选回合仍进入总体范围分析。下图将未知标签取为 L1–L6，展示任务与贡献的条件范围；候选子集点值与总体范围使用各自的分母。
-
-![未知标签下的条件范围](results/final-analysis/fig03_unknown_labels.png)
-
-真人探索包含 **16 对同题、同评审角色记录**。独立评审到 AI 辅助复评的记录时间从 24.55 到 19.41 人分钟；两名评审的变化方向不同。固定顺序、重复题目与共享建议共同限制了因果解释。
-
-![人审配对观察](results/final-analysis/fig04_human_pairs.png)
-
-逐回合时间戳的实际可用数为 0，严格时间有序关联的合格记录为 0。B 问据此报告分层观察及选择性缺失范围。C 问对 356 个有任务候选的学生—学期单位求条件范围；缺失 CTQ 和工具信息保留为未知，完整 AIV 可用数为 0。
-
-![标签与权重变化下的条件范围](results/final-analysis/fig05_score_sensitivity.png)
-
-数值、分母和来源哈希统一见 [结果清单](results/final-analysis/summary.json)。[结果阅读指南](docs/结果阅读指南.md)将每项发现对应到图表、计算入口与教学动作。
-
-五组彩色统计图先生成 **10 张独立子图**，再按论文的 [LaTeX 模板](paper/figure_groups/) 排成组；图题居中，图题和表题遵循 CUMCM 模板的小四号，图注另起一行、9 pt 左对齐。图表统一使用**宋体（SimSun）中文、Times New Roman 西文及数字**，PNG 按 **600 dpi** 导出，并保留 PDF／SVG；绘图环境要求见[复现说明](docs/复现说明.md)。
-
-| 统计图 | 高清 PNG | 矢量 PDF | 矢量 SVG |
+| 研究资料 | 双维测量 | 同条件复核 | 实际可计算范围 |
 | --- | --- | --- | --- |
-| 任务与贡献 | [PNG](results/final-analysis/fig01_dimensions.png) | [PDF](results/final-analysis/fig01_dimensions.pdf) | [SVG](results/final-analysis/fig01_dimensions.svg) |
-| 同条件流程比较 | [PNG](results/final-analysis/fig02_random_flow.png) | [PDF](results/final-analysis/fig02_random_flow.pdf) | [SVG](results/final-analysis/fig02_random_flow.svg) |
-| 未知标签范围 | [PNG](results/final-analysis/fig03_unknown_labels.png) | [PDF](results/final-analysis/fig03_unknown_labels.pdf) | [SVG](results/final-analysis/fig03_unknown_labels.svg) |
-| 人审配对观察 | [PNG](results/final-analysis/fig04_human_pairs.png) | [PDF](results/final-analysis/fig04_human_pairs.pdf) | [SVG](results/final-analysis/fig04_human_pairs.svg) |
-| 标签与权重敏感性 | [PNG](results/final-analysis/fig05_score_sensitivity.png) | [PDF](results/final-analysis/fig05_score_sensitivity.pdf) | [SVG](results/final-analysis/fig05_score_sensitivity.svg) |
+| **3,515** 个真实回合 | **1,010 / 776** 个任务 / 贡献候选 | **352** 个固定随机回合 | **356** 个学生—学期的条件评分范围 |
+| 来自 **401** 个学生—学期单位 | 同回合双候选 **48** 条 | 高风险 **827** 回合另列 | 完整 AIV 可用数 **0** |
 
-## 理解 AI 解题过程
+## 选择你的入口
 
-[AI 解题过程](docs/AI解题过程.md)说明资料清洗、文献回查、提示结构、多模型探索、人工介入及 ChatGPT 生图的采用依据。探索与失败修正在对应 Notebook 和论文附录中保留。
+| 想做什么 | 从哪里开始 | 你会得到什么 |
+| --- | --- | --- |
+| 看研究结论 | [论文](build/paper/main.pdf) → [结果阅读指南](docs/结果阅读指南.md) | 五组统计图、分母、条件与解释 |
+| 看完整演示 | [路演图页与讲稿](slides/README.md) | 12 页主讲、7 页备答、1 页致谢 |
+| 动手复算 | [Notebook 导读](notebooks/README.md) → [00 总览](notebooks/00_论文材料总览.ipynb) | 十本已执行 Notebook、合成案例和公开汇总验证 |
+| 体验教学流程 | [在线工作台](https://math.hnnu.team) · [本地运行](workbench/README.md) | 资料导入、模型判断、争议核查和报告 |
+| 复用方法与代码 | [复现说明](docs/复现说明.md) · [指标定义](docs/指标定义与性质.md) | 输入要求、计算入口、依赖与迁移方式 |
 
-## 运行两个案例
+GitHub 可直接浏览 Notebook 中保存的图表；下载仓库后，可在浏览器打开 [离线图文目录](build/notebooks/index.html) 和 [路演播放器](slides/roadshow/player/index.html)。
 
-在项目环境中执行：
+## 从证据到行动
+
+![A–E 递进建模链：测量、识别、指标、检验与决策](slides/roadshow/images/03.png)
+
+| 环节 | 要解决的问题 | 可检查的实现 |
+| --- | --- | --- |
+| **A · 测量** | 提问需要什么认知活动？学生实际展示了什么？ | 两维独立标注、多模型复核、同题人工比较 |
+| **B · 比较** | 数据是否支持把变化归因于 AI？ | 时间顺序、处理定义、可比人群与缺失条件 |
+| **C · 指标** | 证据不足时怎样报告分数？ | 五维指标、未知项范围、权重与标签敏感性 |
+| **D · 检验** | 增加工具或贴合目标分布能否操纵分数？ | 合成反例与规则修正 |
+| **E · 行动** | 教师下一步应核查什么、补充什么？ | 证据摘要、争议提示和补采建议 |
+
+AI 独立判断、随机复核、高风险复核和真人辅助复评的角色与条件见 [AI 解题过程](docs/AI解题过程.md)。
+
+## 先运行两个案例
+
+需要 **Python 3.13**。在仓库根目录创建环境并安装锁定依赖：
 
 ```powershell
+python -m venv .venv
+.venv\Scripts\python.exe -m pip install -r requirements-lock.txt
 .venv\Scripts\python.exe -X utf8 -B scripts/demo_evidence_chain.py
 ```
 
-第一个案例从保存的**合成标签**实际计算五项指标与解释；第二个案例移除会话和工具证据，展示停止计算的指标、条件范围及补采提示。两例均无需实时模型响应。
+macOS / Linux 将 `.venv\Scripts\python.exe` 换成 `.venv/bin/python`。这两个案例使用已保存的**合成标签**，离线运行，无需 API 密钥或 TeX。
 
-完整运行和输入字段见 [复现说明](docs/复现说明.md)。公共资料支持合成实验与已发布汇总表的验证；从逐回合冻结记录重新生成全部真实统计需要相应数据授权。
+| 完整证据 | 缺失会话和工具证据 |
+| --- | --- |
+| ![完整证据的合成演示](slides/roadshow/images/09.png) | ![缺失证据的合成演示](slides/roadshow/images/10.png) |
+| 五项指标可计算，均衡分约 **61.65** | CTQ、MAB 和点分为 `null`；条件范围 **36–76** |
+| 阅读已观测证据与行动建议 | 查看需要补充的相邻关系和工具来源 |
 
-## 阅读与复用
+接着可执行十本 Notebook；图表需要 **SimSun 和 Times New Roman**，环境要求及其他复算方式见 [复现说明](docs/复现说明.md)。
+
+```powershell
+.venv\Scripts\python.exe -X utf8 -B scripts/execute_notebooks.py --workers 1
+```
+
+## 结果怎样读
+
+### 任务要求与学生贡献：先核对共同样本
+
+![任务与贡献的六级分布及同回合比较](results/final-analysis/fig01_dimensions.png)
+
+任务、贡献的候选覆盖分别为 **28.73%** 和 **22.08%**，分母均为 3,515。候选内高阶占比分别为 15.54% 和 35.31%，使用各自的 1,010、776 个候选作为分母。**同回合双候选只有 48 条**：任务较高 13 条、相同 29 条、贡献较高 6 条。两维边际占比不能替代同回合比较。
+
+### 缺失标签：把未知保留在范围中
+
+![未知标签下的平均层级与高阶比例范围](results/final-analysis/fig03_unknown_labels.png)
+
+无候选回合仍属于总体。将未知标签取为 L1–L6，得到上图的条件范围；候选子集点值与总体范围各用自己的分母。逐回合时间戳可用数为 0，严格时间有序关联的合格记录为 0，当前结果支持分层观察及条件分析。
+
+### 流程、人审与稳健性：继续核查三组结果
+
+| 结果图 | 观察与解释 | 计算入口 |
+| --- | --- | --- |
+| [随机复核流程](results/final-analysis/fig02_random_flow.png) | 同一组 352 回合比较输出状态；候选变化不等于准确率变化 | [02 标注与互评](notebooks/02_标注与互评.ipynb) |
+| [同题人工复评](results/final-analysis/fig04_human_pairs.png) | 16 对同题同角色记录，24.55 → 19.41 人分钟；两位评审方向不同，固定顺序等条件限制因果解释 | [03 人审与校准](notebooks/03_人审与校准.ipynb) |
+| [标签与权重敏感性](results/final-analysis/fig05_score_sensitivity.png) | 356 个有任务候选的学生—学期单位；缺失 CTQ 和工具信息保留为未知 | [05 指标与不确定性](notebooks/05_指标性质与不确定性.ipynb) |
+
+五组图的 PNG、PDF、SVG、输入表及计算说明见 [结果阅读指南](docs/结果阅读指南.md)；数值与来源版本见 [结果清单](results/final-analysis/summary.json)。
+
+## 复用与许可
 
 | 目录 | 内容 |
 | --- | --- |
-| `aiv/`、`tests/` | 指标、模型协议、统计与针对性检查 |
-| `scripts/` | 离线计算、结果生成与复现入口 |
-| `notebooks/` | 十本可执行的研究说明 |
-| `results/final-analysis/` | 汇总表、结果清单与研究图 |
-| `paper/`、`slides/` | 论文与演示材料 |
-| `examples/` | 合成输入和已保存的合成模型响应 |
+| [`aiv/`](aiv/) · [`tests/`](tests/) | 指标、判断协议、统计与计算检查 |
+| [`scripts/`](scripts/) · [`examples/`](examples/) | 复算入口、合成输入和保存的合成响应 |
+| [`notebooks/`](notebooks/) | 十本可执行研究说明 |
+| [`results/final-analysis/`](results/final-analysis/) | 公开汇总表、来源清单与论文图 |
+| [`paper/`](paper/) · [`slides/`](slides/) | 论文源稿、演示图页与讲稿 |
+| [`workbench/`](workbench/) | 本地工作台与合成示例 |
 
-原创代码采用 MIT；原创文稿与图表采用 CC BY 4.0。第三方资源按各自许可使用，见[许可范围](LICENSES.md)。原始竞赛资料、学生记录和凭据在授权研究环境中保管。
+公开材料支持合成实验和已发布汇总表的验证；从逐回合冻结记录重新生成真实统计需要相应数据授权。原始竞赛资料、学生记录及凭据在授权研究环境中保管。
+
+原创代码采用 **MIT**；原创文稿与图表采用 **CC BY 4.0**。第三方资源按各自许可使用，见 [许可范围](LICENSES.md)。

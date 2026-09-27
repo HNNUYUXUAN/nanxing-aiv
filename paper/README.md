@@ -1,62 +1,72 @@
-# 论文与结果入口
+# 论文、图表与计算依据
 
-主稿沿资料、A 认知测量、B 比较资格、C 指标与条件范围、D 检验反馈、E 教学行动组织。正文采用最终 t3 的真实聚合结果；早期首问与三模型流程探索、合成分配对照及 AI 采用记录在附录中单列。
+[阅读论文 PDF](../build/paper/main.pdf) · [Markdown 全文](研究论文.md) · [五组结果解读](../docs/结果阅读指南.md) · [运行 Notebook](../notebooks/README.md)
 
-- [论文 PDF](../build/paper/main.pdf)：正式排版；正文和参考文献与附录分别计页。
-- [Markdown 阅读稿](研究论文.md)：由当前 LaTeX 展开生成，五张统计图使用 PNG 预览。
-- [聚合结果与方法条件](../results/final-analysis/summary.json)：真实、条件情景、合成计算及早期探索分别标识。
-- [复现说明](../docs/复现说明.md)：仓库固定版本、公开聚合与授权输入的不同计算范围。
+论文围绕一个问题展开：**AI 学习记录能支持怎样的评价，教师据此能采取什么行动？** 从任务与贡献测量、比较资格、指标与条件范围出发，用反例检查结论，再回到补证与教学决策。
 
-`main.tex` 是论文结构与数学定义源，`final_analysis_results.tex` 接入最终聚合段落、表格及五组统计图，`appendix_reproducibility.tex` 记录数据单位和计算方法，`appendix_ai_usage.tex` 记录 AI 使用与人工采用。结果段落由 `generate_final_analysis.py` 从固定汇总生成。当前主稿引用 17 篇已核验文献。
+![认知标注、增量识别、指标构造、反例回验与教学决策之间的关系](../slides/roadshow/images/03.png)
 
-彩色数据图先由 `scripts/build_final_analysis.py` 分别生成十个独立子图，再由 `paper/figure_groups/` 中的五份 LaTeX 模板组合；`paper/figure_style.tex` 统一子图题、居中的主图题以及另起一行、9 pt 左对齐的图注。图题与表题继承 CUMCM 模板的小四号加粗设置。论文直接读取组图模板，`scripts/build_figure_groups.py` 用同一模板导出 README 和 Notebook 的完整组图预览。
+## 按问题阅读
 
-## 编译与同步
+| 想了解什么 | 论文入口 | 可运行或可核对的材料 |
+| --- | --- | --- |
+| 任务要求与已展示贡献怎样区分 | A：双维认知测量 | [六级分布与同回合配对](../results/final-analysis/fig01_dimensions.png)、Notebook 02 / 09 |
+| 日志支持哪些比较 | B：比较资格与识别边界 | [未知标签范围](../results/final-analysis/fig03_unknown_labels.png)、Notebook 04 |
+| 缺失证据怎样进入指标与综合评价 | C：指标性质与条件范围 | [敏感性结果](../results/final-analysis/fig05_score_sensitivity.png)、Notebook 05 |
+| 多模型、人工复评与反例带来什么反馈 | D：检验与反馈 | [随机复核流程](../results/final-analysis/fig02_random_flow.png)、[人工复评](../results/final-analysis/fig04_human_pairs.png)、Notebook 03 / 06 |
+| 怎样生成可行动的报告 | E：教学行动 | [Notebook 07](../notebooks/07_教育报告与复用.ipynb)、[两例合成计算](../scripts/demo_evidence_chain.py) |
 
-论文使用现有多文件 XeLaTeX/Biber 工具链。已配置工作区直接执行：
+早期首问与三模型流程探索、合成分配对照、复现方法和 AI 采用记录在附录中单列。[Notebook 导读](../notebooks/README.md)提供完整计算导航。
+
+## 两张图抓住结果范围
+
+| 真实回合的双维候选 | 缺失与扰动下的条件范围 |
+| --- | --- |
+| ![任务与贡献的分布及共同候选](../results/final-analysis/fig01_dimensions.png) | ![标签与权重扰动下的分数范围](../results/final-analysis/fig05_score_sensitivity.png) |
+| 3,515 个真实回合；任务候选 1,010、贡献候选 776，同回合共同候选 48。 | 356 个有任务候选的学生—学期单元；完整 AIV 可计算单元为 0，图示保守外包范围。 |
+
+完整数值、分母、方法条件与来源哈希见 [summary.json](../results/final-analysis/summary.json)。五组图均提供 PNG / PDF / SVG，下载入口见[结果阅读指南](../docs/结果阅读指南.md)。
+
+## 源文件地图
+
+| 文件 | 内容 |
+| --- | --- |
+| [main.tex](main.tex) | 论文结构、数学定义与主体论证 |
+| [final_analysis_results.tex](final_analysis_results.tex) | t3 聚合结果、表格与统计图引用 |
+| [appendix_reproducibility.tex](appendix_reproducibility.tex) | 观测单位、计算方法与复现范围 |
+| [appendix_ai_usage.tex](appendix_ai_usage.tex) | AI 使用、探索过程与人工采用 |
+| [references.bib](references.bib) | 参考文献 |
+| [figure_groups](figure_groups/) / [figure_style.tex](figure_style.tex) | 五组统计图的 LaTeX 组合与样式 |
+
+## 编译与更新
+
+阅读成品无需安装 TeX。编译源稿需先按 [TEMPLATE.md](TEMPLATE.md)取得固定版本 CUMCMThesis 类文件和样式，并准备 XeLaTeX / Biber、SimSun / SimHei、Times New Roman。
+
+在已配置的仓库根目录执行：
 
 ```powershell
 powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build_latex.ps1 -Source paper/main.tex -OutputDirectory build/paper
 ```
 
-从固定聚合结果生成论文结果段落与表格：
+结果段落由固定汇总生成，Markdown 阅读稿由当前 LaTeX 展开：
 
 ```powershell
-.venv/Scripts/python.exe -X utf8 paper/generate_final_analysis.py
+.venv\Scripts\python.exe -X utf8 paper/generate_final_analysis.py --check
+.venv\Scripts\python.exe -X utf8 paper/update_results.py --mirror-only
 ```
 
-生成器核对汇总文件 SHA-256，生成流程、分布、敏感性表及图路径；解释段落与该结果版本绑定。`--check` 检查输出字节一致性而不写文件。源结果变更时需同步审阅解释并更新明确的版本标识。
+`--check` 核对结果段落与汇总的一致性；去掉该参数可重新生成。更新源结果后，应同步核查解释、图表、PDF 和阅读稿。图表重绘命令与字体检查见[复现说明](../docs/复现说明.md)。
 
-仅同步 Markdown 阅读稿：
+<details>
+<summary>核对当前结果版本与 SHA-256</summary>
 
-```powershell
-.venv/Scripts/python.exe -X utf8 paper/update_results.py --mirror-only
-```
+主分析版本为逐回合 **t3**。固定随机复核 352 回合、高风险复核 827 回合分别报告。
 
-`--mirror-only` 展开当前主稿、结果段落及附录。结果生成、排版与阅读稿同步分别使用上述命令，Notebook 的执行入口见[复现说明](../docs/复现说明.md)。
+| 对象 | SHA-256 |
+| --- | --- |
+| 冻结清单 | `7e885ceecf12a180349369ed9ddfc962ad71f1ea270f68b037a86a396430631d` |
+| 最终分析 summary.json | `a181f0840a47c129aeb148f1ea5b36c5941a0943cd5fb1ebfa2acd8bfc28a64c` |
 
-## 结果版本
+公共仓库提供聚合统计、合成演示和原创论文。逐条记录的重算需要授权输入，范围见[复现说明](../docs/复现说明.md)。
 
-主分析快照为逐回合 t3，真实学生回合 3515，固定随机复核 352，高风险复核 827。任务与贡献候选分别为 1010、776，共同非空配对为 48。分数敏感性针对 356 个具有任务候选的学生—学期单元，完整 AIV 可计算单元数为 0，点分保持缺失；图中范围为明确情景下的保守外包。
-
-冻结清单 SHA-256：
-
-```text
-7e885ceecf12a180349369ed9ddfc962ad71f1ea270f68b037a86a396430631d
-```
-
-最终分析 `summary.json` SHA-256：
-
-```text
-a181f0840a47c129aeb148f1ea5b36c5941a0943cd5fb1ebfa2acd8bfc28a64c
-```
-
-图表来源为 `results/final-analysis/fig01_dimensions` 至 `fig05_score_sensitivity` 的 PDF/PNG/SVG，独立子图文件保存在同一目录。五组彩色统计图的中文使用宋体（SimSun），西文与数字使用 Times New Roman，PNG 按 600 dpi 导出；论文通过 LaTeX 组合独立的矢量 PDF 子图。各格式下载入口见[根目录图表清单](../README.md#主要发现)。论文的源文件及 PDF 哈希随实际交付清单记录；复现代码提交通过仓库交付说明固定。
-
-统计图与 Notebook 共用字体规范。重绘设备须安装可由 Matplotlib 识别的 SimSun 和 Times New Roman；缺少任一字体时应先补齐已有授权的字体，再执行重绘。字体文件属于运行环境依赖，不随仓库分发；已导出的 PNG/PDF/SVG 可直接阅读。完整环境要求见[复现说明](../docs/复现说明.md)。
-
-## 模板与数据范围
-
-排版基于 `templates/CUMCMThesis/` 固定版本，字体为 SimSun/SimHei、Times New Roman。模板固定版本与公开分发范围见 [第三方资源来源](../docs/第三方资源来源.md)。编译需要取得对应类文件及字体；成品 PDF 可直接阅读。
-
-公开材料提供聚合结果、合成演示和论文，不包含学生原文、私有标识、数据库与凭据。授权输入的来源清单、哈希及原始逐条结果保留在私有研究环境中。
+</details>
