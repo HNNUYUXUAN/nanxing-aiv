@@ -49,7 +49,9 @@ powershell -NoProfile -ExecutionPolicy Bypass -File scripts/build_latex.ps1 -Sou
 a181f0840a47c129aeb148f1ea5b36c5941a0943cd5fb1ebfa2acd8bfc28a64c
 ```
 
-图表来源为 `results/final-analysis/fig01_dimensions` 至 `fig05_score_sensitivity` 的 PDF/PNG。论文的源文件及 PDF 哈希随实际交付清单记录；复现代码提交通过仓库交付说明固定。
+图表来源为 `results/final-analysis/fig01_dimensions` 至 `fig05_score_sensitivity` 的 PDF/PNG/SVG。五张彩色统计图的中文使用宋体（SimSun），西文与数字使用 Times New Roman，PNG 按 600 dpi 导出；论文嵌入矢量 PDF。各格式下载入口见[根目录图表清单](../README.md#主要发现)。论文的源文件及 PDF 哈希随实际交付清单记录；复现代码提交通过仓库交付说明固定。
+
+统计图与 Notebook 共用字体规范。重绘设备须安装可由 Matplotlib 识别的 SimSun 和 Times New Roman；缺少任一字体时应先补齐已有授权的字体，再执行重绘。字体文件属于运行环境依赖，不随仓库分发；已导出的 PNG/PDF/SVG 可直接阅读。完整环境要求见[复现说明](../docs/复现说明.md)。
 
 ## 模板与数据范围
 

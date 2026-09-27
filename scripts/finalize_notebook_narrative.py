@@ -51,6 +51,34 @@ else:
 
 
 def sections(prefix):
+    if prefix == "00":
+        return [
+            md("""
+            ## 成稿论文的五张彩色数据图
+            下列输出直接嵌入 `results/final-analysis/` 的成稿 PNG，与论文 PDF 和 README 使用同一组图。
+            PNG 为 600 dpi，中文使用宋体（SimSun），西文与数字使用 Times New Roman；论文排版使用相应的矢量 PDF。
+            各图的可编辑计算及来源表分别保存在 02、03、05、09 本，统计分母与条件说明保持一致。
+            """), code('''
+            from IPython.display import Image, Markdown, display
+            from PIL import Image as PILImage
+            paper_figures = [
+                ("fig01_dimensions", "任务与贡献的六级分布及同回合共同候选", "09"),
+                ("fig02_random_flow", "固定随机复核子集的流程状态比较", "02"),
+                ("fig03_unknown_labels", "未知标签下的平均层级与高阶比例范围", "05"),
+                ("fig04_human_pairs", "同题人审耗时与判断一致性", "03"),
+                ("fig05_score_sensitivity", "标签、缺失指标与权重下的条件分数范围", "05"),
+            ]
+            for figure_id, caption, companion in paper_figures:
+                figure_path = ROOT / "results" / "final-analysis" / f"{figure_id}.png"
+                if not figure_path.is_file():
+                    display(Markdown(f"**{caption}**：本目录未附成稿图；可编辑计算见 {companion} 本。"))
+                    continue
+                with PILImage.open(figure_path) as raster:
+                    assert all(abs(value - 600) < 1 for value in raster.info.get("dpi", (0, 0))), f"Unexpected DPI: {figure_path.name}"
+                display(Markdown(f"### {caption}\\n可编辑计算见 {companion} 本。"))
+                display(Image(filename=str(figure_path), width=1100))
+            '''),
+        ]
     if prefix == "02":
         return [
             md("""
@@ -97,7 +125,8 @@ def sections(prefix):
                         ax.barh(range(4), values, left=left, color=color, label=label)
                         for y, value, start in zip(range(4), values, left):
                             if value >= 15:
-                                ax.text(start + value / 2, y, str(int(value)), ha="center", va="center", fontsize=9)
+                                ax.text(start + value / 2, y, str(int(value)), ha="center", va="center", fontsize=9,
+                                        color="white" if status == "agreed" else "#202629")
                         left += values
                     ax.set_yticks(range(4), method_names)
                     ax.invert_yaxis()

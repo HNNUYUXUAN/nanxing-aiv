@@ -505,18 +505,16 @@ def make_plots(summary,tables,output):
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
-    from matplotlib import font_manager
-    available={f.name for f in font_manager.fontManager.ttflist}
-    font=next((f for f in ['Microsoft YaHei','Noto Sans CJK SC','SimHei','SimSun'] if f in available),None)
-    if font is None:raise RuntimeError('No installed Chinese plotting font')
-    plt.rcParams.update({'font.family':font,'font.size':11,'axes.titlesize':14,'axes.labelsize':11,'axes.unicode_minus':False,
+    from aiv.figure_style import configure_publication_style, RASTER_DPI
+    configure_publication_style()
+    plt.rcParams.update({'font.size':11,'axes.titlesize':14,'axes.labelsize':11,'axes.unicode_minus':False,
         'pdf.fonttype':42,'ps.fonttype':42,'axes.spines.top':False,'axes.spines.right':False,'savefig.facecolor':'white'})
     blue='#245A81';orange='#C47B29';gray='#697680'
     def save(fig,name,note):
         fig.text(.06,.025,note,fontsize=9,color='#4A5055',ha='left',va='bottom')
         fig.subplots_adjust(bottom=.19,top=.88,wspace=.32)
-        fig.savefig(output/(name+'.png'),dpi=210,bbox_inches='tight')
-        fig.savefig(output/(name+'.pdf'),bbox_inches='tight')
+        for extension in ('png','pdf','svg'):
+            fig.savefig(output/(name+'.'+extension),dpi=RASTER_DPI,bbox_inches='tight',metadata={'Date':None} if extension=='svg' else None)
         plt.close(fig)
     fig,axes=plt.subplots(1,2,figsize=(12,5.2))
     for dimension,color,offset,label in [('task',blue,-.18,'任务候选 n=1010'),('contribution',orange,.18,'贡献候选 n=776')]:
@@ -579,10 +577,12 @@ def make_plots(summary,tables,output):
         rows=[r for r in tables['score-range-sensitivity.csv'] if r['term']=='all' and r['scheme']==scheme and r['weight_relative_change']==.1]
         x=[r['label_error_fraction']*100 for r in rows]
         axes[0].plot(x,[r['width_median'] for r in rows],marker=marker,color=color,lw=1.8,label=SCHEME_NAMES[scheme])
-        axes[1].plot(x,[r['stable_pair_fraction']*100 for r in rows],marker=marker,color=color,lw=1.8,label=SCHEME_NAMES[scheme])
+        axes[1].plot(x,[r['stable_pair_fraction']*100 for r in rows],marker=marker,color=color,lw=1.8,
+            markersize={'balanced':9,'higher_order':7,'process':5}[scheme],markerfacecolor='none',
+            label=SCHEME_NAMES[scheme])
     for ax in axes:ax.set(xticks=[0,5,10,20],xlabel='名义改标预算 ε（%）；条数 ceil(εn)');ax.grid(alpha=.18)
     axes[0].set(ylabel='条件分数外包范围宽度中位数（分）',ylim=(0,100),title='标签误差与缺失扩大范围')
-    axes[1].set(ylabel='同学期可稳定区分的学生对（%）',ylim=(0,100),title='同学期的条件性稳定区分')
+    axes[1].set(ylabel='同学期可稳定区分的学生对（%）',ylim=(-3,100),title='同学期的条件性稳定区分')
     for ax in axes:
         ax.set_yticks([0,20,40,60,80,100])
         ax.tick_params(axis='y',labelleft=True)

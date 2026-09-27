@@ -4,6 +4,16 @@
   "kind": "synthetic",
   "notebook": "05_指标性质与不确定性.ipynb",
   "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+  "rendering": {
+    "raster_dpi": 600,
+    "fonts": {
+      "chinese": "SimSun",
+      "latin_and_digits": "Times New Roman"
+    },
+    "pdf_fonttype": 42,
+    "svg_fonttype": "path",
+    "inline_dpi": 120.0
+  },
   "files": {
     "pdf": "figures/synthetic-05-03.pdf",
     "svg": "figures/synthetic-05-03.svg",
@@ -28,7 +38,11 @@
     },
     {
       "path": "aiv/notebook_materials.py",
-      "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+    },
+    {
+      "path": "aiv/figure_style.py",
+      "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
     }
   ]
 }

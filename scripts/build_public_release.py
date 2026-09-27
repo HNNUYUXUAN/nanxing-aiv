@@ -11,11 +11,13 @@ import csv
 import hashlib
 import io
 import json
+import math
 from pathlib import Path, PurePosixPath
 import re
 import subprocess
 import sys
 import unicodedata
+import xml.etree.ElementTree as ET
 import zipfile
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -45,7 +47,7 @@ AIV_FILES = tuple('aiv/' + name for name in (
     '__init__.py', 'analysis.py', 'annotation.py', 'annotation_workflow.py', 'association.py',
     'calibration.py', 'data.py', 'evidence.py', 'fast_strong_workflow.py', 'final_verification.py',
     'full_turn_reporting.py', 'full_turn_workflow.py', 'guidance.py', 'media_workflow.py',
-    'metrics.py', 'models.py', 'notebook_materials.py', 'pool.py', 'pool_config.py',
+    'metrics.py', 'models.py', 'notebook_materials.py', 'figure_style.py', 'pool.py', 'pool_config.py',
     'review.py', 'server.py', 'solution_materials.py', 'turns.py', 'workbench.py', 'workbench_imports.py'))
 NOTEBOOK_FILES = tuple('notebooks/' + name for name in (
     '00_论文材料总览.ipynb', '01_数据与问题.ipynb', '02_标注与互评.ipynb',
@@ -235,6 +237,52 @@ def sensitive_inventory(root: Path) -> tuple[dict, dict]:
     return values, counts
 
 
+def numeric_svg_transform(value: str) -> bool:
+    """Accept only finite numeric SVG transforms with the required arity."""
+    number = r"[-+]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][-+]?\d+)?"
+    transform = re.compile(
+        r"(matrix|translate|scale|rotate|skewX|skewY)\s*\(\s*(" + number
+        + r"(?:(?:\s*,\s*|\s+)" + number + r")*)\s*\)")
+    arities = {"matrix": {6}, "translate": {1, 2}, "scale": {1, 2},
+               "rotate": {1, 3}, "skewX": {1}, "skewY": {1}}
+    position, found = 0, False
+    for match in transform.finditer(value):
+        gap = value[position:match.start()]
+        if (not found and gap.strip()) or (found and not re.fullmatch(r"\s*(?:,\s*)?", gap)):
+            return False
+        numbers = re.findall(number, match[2])
+        if len(numbers) not in arities[match[1]] or not all(math.isfinite(float(n)) for n in numbers):
+            return False
+        position, found = match.end(), True
+    return found and not value[position:].strip()
+
+
+def inspect_svg_text(data: bytes) -> str:
+    """Scan SVG content while excluding validated group geometry numbers.
+
+    Matplotlib positions glyphs with decimal transform coordinates; their
+    fractional digits are not identifiers. Text, metadata, comments, namespace
+    URIs and every other attribute remain part of the privacy scan. The caller
+    separately scans the original bytes for credentials and private keys.
+    """
+    text = data.decode("utf-8-sig", errors="strict")
+    root = ET.fromstring(text, parser=ET.XMLParser(target=ET.TreeBuilder(insert_comments=True, insert_pis=True)))
+    if root.tag != "{http://www.w3.org/2000/svg}svg":
+        raise ValueError("Expected an SVG namespace document")
+    pieces = re.findall(r"<[!?][\s\S]*?>", text)
+    pieces.extend(uri for _, (_, uri) in ET.iterparse(io.BytesIO(data), events=("start-ns",)))
+    for element in root.iter():
+        pieces.append(str(element.tag))
+        for key, value in element.attrib.items():
+            pieces.append(key)
+            if element.tag == "{http://www.w3.org/2000/svg}g" and key == "transform" and numeric_svg_transform(value):
+                pieces.append("numeric SVG transform")
+            else:
+                pieces.append(value)
+        pieces.extend(value for value in (element.text, element.tail) if value)
+    return "\n".join(pieces)
+
+
 def inspect_text(name: str, data: bytes) -> str:
     if name.endswith(".pdf"):
         import fitz
@@ -246,6 +294,8 @@ def inspect_text(name: str, data: bytes) -> str:
         from PIL import Image
         with Image.open(io.BytesIO(data)) as im:
             return json.dumps(im.info, ensure_ascii=False, default=str) + str(im.getexif())
+    if PurePosixPath(name).suffix.lower() == ".svg":
+        return inspect_svg_text(data)
     text = data.decode("utf-8-sig", errors="strict")
     if name.endswith((".json", ".ipynb")):
         def strings(value):

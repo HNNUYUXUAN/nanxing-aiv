@@ -60,6 +60,10 @@ flowchart LR
 
 ![同条件流程比较](results/final-analysis/fig02_random_flow.png)
 
+无候选回合仍进入总体范围分析。下图将未知标签取为 L1–L6，展示任务与贡献的条件范围；候选子集点值与总体范围使用各自的分母。
+
+![未知标签下的条件范围](results/final-analysis/fig03_unknown_labels.png)
+
 真人探索包含 **{h['paired_submissions']} 对同题、同评审角色记录**。独立评审到 AI 辅助复评的记录时间从 {h['before_person_minutes']:.2f} 到 {h['after_person_minutes']:.2f} 人分钟；两名评审的变化方向不同。固定顺序、重复题目与共享建议共同限制了因果解释。
 
 ![人审配对观察](results/final-analysis/fig04_human_pairs.png)
@@ -69,6 +73,16 @@ flowchart LR
 ![标签与权重变化下的条件范围](results/final-analysis/fig05_score_sensitivity.png)
 
 数值、分母和来源哈希统一见 [结果清单](results/final-analysis/summary.json)。[结果阅读指南](docs/结果阅读指南.md)将每项发现对应到图表、计算入口与教学动作。
+
+五张彩色统计图与 Notebook 数据图统一使用**宋体（SimSun）中文、Times New Roman 西文及数字**；PNG 按 **600 dpi** 导出。论文使用矢量 PDF，SVG 和 PDF 可用于放大阅读与排版，绘图环境要求见[复现说明](docs/复现说明.md)。
+
+| 统计图 | 高清 PNG | 矢量 PDF | 矢量 SVG |
+| --- | --- | --- | --- |
+| 任务与贡献 | [PNG](results/final-analysis/fig01_dimensions.png) | [PDF](results/final-analysis/fig01_dimensions.pdf) | [SVG](results/final-analysis/fig01_dimensions.svg) |
+| 同条件流程比较 | [PNG](results/final-analysis/fig02_random_flow.png) | [PDF](results/final-analysis/fig02_random_flow.pdf) | [SVG](results/final-analysis/fig02_random_flow.svg) |
+| 未知标签范围 | [PNG](results/final-analysis/fig03_unknown_labels.png) | [PDF](results/final-analysis/fig03_unknown_labels.pdf) | [SVG](results/final-analysis/fig03_unknown_labels.svg) |
+| 人审配对观察 | [PNG](results/final-analysis/fig04_human_pairs.png) | [PDF](results/final-analysis/fig04_human_pairs.pdf) | [SVG](results/final-analysis/fig04_human_pairs.svg) |
+| 标签与权重敏感性 | [PNG](results/final-analysis/fig05_score_sensitivity.png) | [PDF](results/final-analysis/fig05_score_sensitivity.pdf) | [SVG](results/final-analysis/fig05_score_sensitivity.svg) |
 
 ## 理解 AI 解题过程
 

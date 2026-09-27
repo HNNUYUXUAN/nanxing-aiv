@@ -3,7 +3,17 @@
   "caption": "固定随机复核子集的同题状态比较；每种方法、每个维度均保留全部352回合。",
   "kind": "real",
   "notebook": "02_标注与互评.ipynb",
-  "notebook_code_sha256": "a8c94b95636f966be61cf032fca57aec442d8491c8d358986ffc2c092fa26517",
+  "notebook_code_sha256": "71bf0686f05f645bf20025fbe8a3cb8094cc7aedb7694053beadefaae03ba393",
+  "rendering": {
+    "raster_dpi": 600,
+    "fonts": {
+      "chinese": "SimSun",
+      "latin_and_digits": "Times New Roman"
+    },
+    "pdf_fonttype": 42,
+    "svg_fonttype": "path",
+    "inline_dpi": 120.0
+  },
   "files": {
     "pdf": "figures/final-random-review-flow.pdf",
     "svg": "figures/final-random-review-flow.svg",
@@ -20,7 +30,11 @@
     },
     {
       "path": "aiv/notebook_materials.py",
-      "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+      "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+    },
+    {
+      "path": "aiv/figure_style.py",
+      "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
     }
   ]
 }

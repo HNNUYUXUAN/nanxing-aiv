@@ -10,8 +10,9 @@ import tempfile
 import time
 
 import matplotlib.pyplot as plt
-from matplotlib import font_manager
 import pandas as pd
+
+from aiv.figure_style import RASTER_DPI, configure_publication_style, publication_metadata
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "build/notebooks"
@@ -55,7 +56,7 @@ def atomic_save_figure(fig, path, fmt):
                     prefix="." + path.stem + ".", suffix="." + fmt,
                     delete=False) as stream:
                 temporary = Path(stream.name)
-            fig.savefig(temporary, format=fmt, bbox_inches="tight", facecolor="white")
+            fig.savefig(temporary, format=fmt, dpi=RASTER_DPI, bbox_inches="tight", facecolor="white", metadata={"Date": None} if fmt == "svg" else None)
             os.replace(temporary, path)
             return
         except Exception as error:
@@ -89,17 +90,14 @@ def configure_style():
         shell.run_line_magic("matplotlib", "inline")
         from matplotlib_inline.backend_inline import set_matplotlib_formats
         set_matplotlib_formats("png")
-    installed = {f.name for f in font_manager.fontManager.ttflist}
-    fonts = [f for f in ["Microsoft YaHei", "Noto Sans CJK SC", "SimHei", "DejaVu Sans"] if f in installed]
+    configure_publication_style()
     plt.rcParams.update({
-        "figure.figsize": (8.8, 4.6), "figure.dpi": 120, "savefig.dpi": 220,
-        "font.family": "sans-serif", "font.sans-serif": fonts,
+        "figure.figsize": (8.8, 4.6),
         "font.size": 11, "axes.titlesize": 14, "axes.titlepad": 16,
         "axes.spines.top": False, "axes.spines.right": False,
         "axes.unicode_minus": False, "axes.labelcolor": "#273949",
         "text.color": "#273949", "xtick.color": "#273949", "ytick.color": "#273949",
         "figure.facecolor": "white", "axes.facecolor": "white",
-        "pdf.fonttype": 42, "ps.fonttype": 42, "svg.fonttype": "path",
     })
 
 
@@ -125,7 +123,8 @@ def save_figure(fig, figure_id, caption, *, kind, sources, notebook):
     source_code = "\n\n".join(c.source for c in notebook_source.cells if c.cell_type == "code")
     meta = {"id": figure_id, "caption": caption, "kind": kind, "notebook": notebook,
             "notebook_code_sha256": hashlib.sha256(source_code.encode()).hexdigest(),
-            "files": paths, "sources": provenance(list(dict.fromkeys(sources + ["aiv/notebook_materials.py"])))}
+            "rendering": {**publication_metadata(), "inline_dpi": plt.rcParams["figure.dpi"]},
+            "files": paths, "sources": provenance(list(dict.fromkeys(sources + ["aiv/notebook_materials.py", "aiv/figure_style.py"])))}
     atomic_write_text(directory / f"{figure_id}.json", json.dumps(meta, ensure_ascii=False, indent=2))
     return paths
 

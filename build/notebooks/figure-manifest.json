@@ -5,6 +5,16 @@
     "kind": "real",
     "notebook": "09_Agent批量结果与互评.ipynb",
     "notebook_code_sha256": "00eabe021c33b0eff580a3eab39c9f1a8016ff1059abd2c7ae8e7cf85d865f53",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/final-dimension-level-distribution.pdf",
       "svg": "figures/final-dimension-level-distribution.svg",
@@ -25,7 +35,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   },
@@ -35,6 +49,16 @@
     "kind": "real",
     "notebook": "03_人审与校准.ipynb",
     "notebook_code_sha256": "3b7c28c4dd508d62184d38a96117268f3b4332b06940761b502819e986198f66",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/final-human-role-timing.pdf",
       "svg": "figures/final-human-role-timing.svg",
@@ -51,7 +75,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   },
@@ -61,6 +89,16 @@
     "kind": "real",
     "notebook": "09_Agent批量结果与互评.ipynb",
     "notebook_code_sha256": "00eabe021c33b0eff580a3eab39c9f1a8016ff1059abd2c7ae8e7cf85d865f53",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/final-joint-candidate-levels.pdf",
       "svg": "figures/final-joint-candidate-levels.svg",
@@ -77,7 +115,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   },
@@ -86,7 +128,17 @@
     "caption": "固定随机复核子集的同题状态比较；每种方法、每个维度均保留全部352回合。",
     "kind": "real",
     "notebook": "02_标注与互评.ipynb",
-    "notebook_code_sha256": "a8c94b95636f966be61cf032fca57aec442d8491c8d358986ffc2c092fa26517",
+    "notebook_code_sha256": "71bf0686f05f645bf20025fbe8a3cb8094cc7aedb7694053beadefaae03ba393",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/final-random-review-flow.pdf",
       "svg": "figures/final-random-review-flow.svg",
@@ -103,7 +155,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   },
@@ -113,6 +169,16 @@
     "kind": "conditional",
     "notebook": "05_指标性质与不确定性.ipynb",
     "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/final-score-range-sensitivity.pdf",
       "svg": "figures/final-score-range-sensitivity.svg",
@@ -129,7 +195,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   },
@@ -139,6 +209,16 @@
     "kind": "synthetic",
     "notebook": "06_红队与失败边界.ipynb",
     "notebook_code_sha256": "91634e7d1a144fc7df2cd4a2d705110d0d87687ba4cc0fd0c676981c7de80bb9",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/final-tool-stacking-comparison.pdf",
       "svg": "figures/final-tool-stacking-comparison.svg",
@@ -155,7 +235,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   },
@@ -165,6 +249,16 @@
     "kind": "conditional",
     "notebook": "05_指标性质与不确定性.ipynb",
     "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/final-unknown-label-bounds.pdf",
       "svg": "figures/final-unknown-label-bounds.svg",
@@ -181,7 +275,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   },
@@ -191,6 +289,16 @@
     "kind": "synthetic",
     "notebook": "01_数据与问题.ipynb",
     "notebook_code_sha256": "5c4ac7a37964aa08b0ea42e8eaed34cb8191d41295b2e8611864b4914b88e704",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/synthetic-01-01.pdf",
       "svg": "figures/synthetic-01-01.svg",
@@ -211,7 +319,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   },
@@ -221,6 +333,16 @@
     "kind": "synthetic",
     "notebook": "03_人审与校准.ipynb",
     "notebook_code_sha256": "3b7c28c4dd508d62184d38a96117268f3b4332b06940761b502819e986198f66",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/synthetic-03-01.pdf",
       "svg": "figures/synthetic-03-01.svg",
@@ -253,7 +375,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   },
@@ -263,6 +389,16 @@
     "kind": "synthetic",
     "notebook": "03_人审与校准.ipynb",
     "notebook_code_sha256": "3b7c28c4dd508d62184d38a96117268f3b4332b06940761b502819e986198f66",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/synthetic-03-02.pdf",
       "svg": "figures/synthetic-03-02.svg",
@@ -295,7 +431,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   },
@@ -305,6 +445,16 @@
     "kind": "synthetic",
     "notebook": "04_识别边界与模拟.ipynb",
     "notebook_code_sha256": "047b409fbec30e726d960feb4915f7cdf58dea52d463545b27c324fd8a660c09",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/synthetic-04-01.pdf",
       "svg": "figures/synthetic-04-01.svg",
@@ -325,7 +475,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   },
@@ -335,6 +489,16 @@
     "kind": "synthetic",
     "notebook": "05_指标性质与不确定性.ipynb",
     "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/synthetic-05-01.pdf",
       "svg": "figures/synthetic-05-01.svg",
@@ -359,7 +523,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   },
@@ -369,6 +537,16 @@
     "kind": "synthetic",
     "notebook": "05_指标性质与不确定性.ipynb",
     "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/synthetic-05-02.pdf",
       "svg": "figures/synthetic-05-02.svg",
@@ -393,7 +571,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   },
@@ -403,6 +585,16 @@
     "kind": "synthetic",
     "notebook": "05_指标性质与不确定性.ipynb",
     "notebook_code_sha256": "8d6897168a21c07206bceb47004c9b9a5e409dcacc92476c99e7c49c5c232f7d",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/synthetic-05-03.pdf",
       "svg": "figures/synthetic-05-03.svg",
@@ -427,7 +619,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   },
@@ -437,6 +633,16 @@
     "kind": "synthetic",
     "notebook": "06_红队与失败边界.ipynb",
     "notebook_code_sha256": "91634e7d1a144fc7df2cd4a2d705110d0d87687ba4cc0fd0c676981c7de80bb9",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/synthetic-06-01.pdf",
       "svg": "figures/synthetic-06-01.svg",
@@ -461,7 +667,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   },
@@ -471,6 +681,16 @@
     "kind": "synthetic",
     "notebook": "07_教育报告与复用.ipynb",
     "notebook_code_sha256": "03f668f85b8c73f8115614b7f231833b66c8cd580d62f003ebe264facd054a20",
+    "rendering": {
+      "raster_dpi": 600,
+      "fonts": {
+        "chinese": "SimSun",
+        "latin_and_digits": "Times New Roman"
+      },
+      "pdf_fonttype": 42,
+      "svg_fonttype": "path",
+      "inline_dpi": 120.0
+    },
     "files": {
       "pdf": "figures/synthetic-live-evidence-chain.pdf",
       "svg": "figures/synthetic-live-evidence-chain.svg",
@@ -491,7 +711,11 @@
       },
       {
         "path": "aiv/notebook_materials.py",
-        "sha256": "f28dcdf2ae656164eb7982558b51e6cd88132d0dfe66b119ad73ee4379e0d7b5"
+        "sha256": "7f5b20d6bc09fe23ef78e78e116e4af86cec96016f535384e8bdbd305dbd2cbc"
+      },
+      {
+        "path": "aiv/figure_style.py",
+        "sha256": "c458651bf444b2dd7ca16b47cbb59fdcd6efcee321883991db4526a6446f46a8"
       }
     ]
   }
