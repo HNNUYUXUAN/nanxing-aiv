@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>南行 · 最终答辩图页</title>
+  <style>
+    :root { color-scheme:light; --paper:#f7f4ed; --navy:#18324a; --red:#a94436; --line:#d9d9d3; }
+    * { box-sizing:border-box; }
+    body { margin:0; background:var(--paper); color:var(--navy); font-family:SimSun,"Songti SC",serif; }
+    button { font:inherit; cursor:pointer; }
+    .app { max-width:1920px; margin:auto; padding:16px 20px 24px; }
+    header { display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:13px; }
+    h1 { margin:0; font-size:22px; line-height:1.3; }
+    .sub { color:#667786; font-size:13px; margin-top:4px; }
+    .actions { display:flex; flex-wrap:wrap; gap:7px; }
+    .actions button,.controls button { border:1px solid var(--line); background:#fffdf8; color:var(--navy); border-radius:8px; padding:8px 12px; }
+    button:hover { border-color:var(--red); }
+    button:disabled { opacity:.45; cursor:default; }
+    .layout { display:grid; grid-template-columns:230px minmax(0,1fr); gap:16px; }
+    .rail { height:calc(100vh - 100px); min-height:500px; overflow:auto; background:#fffdf9; border:1px solid var(--line); border-radius:10px; padding:10px; }
+    .rail h2 { margin:13px 6px 7px; font-size:13px; color:#667786; font-weight:normal; }
+    .rail h2:first-child { margin-top:3px; }
+    .thumb { width:100%; display:grid; grid-template-columns:88px 1fr; align-items:center; gap:8px; text-align:left; border:1px solid transparent; border-radius:7px; padding:5px; margin:3px 0; background:transparent; color:var(--navy); }
+    .thumb:hover { background:#f0ede6; }
+    .thumb[aria-current="page"] { background:#e7e8e3; border-color:var(--red); }
+    .thumb-image { width:88px; aspect-ratio:16/9; display:grid; place-items:center; overflow:hidden; background:#eeeae1; color:#8b756f; font-size:12px; }
+    .thumb-image img { display:block; width:100%; height:100%; object-fit:contain; }
+    .thumb.missing .thumb-image img { display:none; }
+    .thumb-title { font-size:13px; line-height:1.35; }
+    .thumb-title strong { display:block; font-family:"Times New Roman",serif; font-size:18px; color:var(--red); }
+    .viewer { min-width:0; }
+    .meta { display:flex; justify-content:space-between; align-items:center; gap:10px; min-height:34px; margin-bottom:8px; }
+    .meta h2 { font-size:17px; margin:0; }
+    #stage { width:100%; aspect-ratio:16/9; background:#10283b; border-radius:10px; display:grid; place-items:center; overflow:hidden; position:relative; }
+    #stage.unavailable { background:var(--paper); }
+    #slideImage { width:100%; height:100%; object-fit:contain; }
+    #stage:fullscreen { width:100vw; height:100vh; aspect-ratio:auto; border-radius:0; cursor:none; }
+    .controls { display:flex; align-items:center; justify-content:space-between; gap:10px; margin-top:9px; }
+    .controls .counter { font-family:"Times New Roman",serif; color:#607585; }
+    .help { margin:10px 0 0; color:#667786; font-size:13px; line-height:1.5; }
+    @media (max-width:820px) { .app{padding:10px}.layout{display:flex;flex-direction:column}.rail{height:auto;min-height:0;max-height:145px;display:flex;gap:5px;overflow:auto}.rail h2{display:none}.thumb{min-width:120px;display:block}.thumb-image{width:100%}.thumb-title strong{display:inline;margin-right:5px} }
+  </style>
+</head>
+<body>
+  <div class="app">
+    <header>
+      <div><h1>南行 · 最终答辩图页</h1><div class="sub">原生 PNG 直接放映 · 10 主讲＋6 技术备答＋1 问答致谢</div></div>
+      <div class="actions"><button type="button" data-jump="1">主讲</button><button type="button" data-jump="11">技术备答</button><button type="button" data-jump="17">问答致谢</button><button type="button" id="fullscreen">全屏投影</button></div>
+    </header>
+    <div class="layout">
+      <nav class="rail" id="thumbnails" aria-label="17 页缩略图"></nav>
+      <main class="viewer">
+        <div class="meta"><h2 id="pageTitle"></h2></div>
+        <div id="stage" tabindex="0" aria-label="当前答辩图页"><img id="slideImage" alt=""></div>
+        <div class="controls"><button id="prev" type="button">← 上一页</button><span class="counter" id="counter"></span><button id="next" type="button">下一页 →</button></div>
+        <p class="help">← / →、Page Up / Down、空格翻页；Home / End 到首尾；F 全屏，Esc 退出。</p>
+      </main>
+    </div>
+  </div>
+  <script>
+    (() => {
+      "use strict";
+      const $ = id => document.getElementById(id);
+      const pages = Array.from({length:17},(_,i) => {
+        const number = i+1;
+        const section = number <= 10 ? "主讲" : number <= 16 ? "技术备答" : "问答致谢";
+        return {number, section, src:`../images/${String(number).padStart(2,"0")}.png`};
+      });
+      let current = 0;
+      const thumbs = [];
+      let section = "";
+      pages.forEach((page,index) => {
+        if (page.section !== section) {
+          section = page.section;
+          const heading = document.createElement("h2");
+          heading.textContent = section;
+          $("thumbnails").append(heading);
+        }
+        const button = document.createElement("button");
+        button.type = "button"; button.className = "thumb";
+        button.setAttribute("aria-label",`${String(page.number).padStart(2,"0")} ${page.section}`);
+        const preview = document.createElement("span"); preview.className="thumb-image";
+        const image = document.createElement("img"); image.loading="lazy"; image.alt="";
+        image.onerror = () => button.classList.add("missing");
+        image.onload = () => button.classList.remove("missing");
+        image.src = page.src;
+        preview.append(image);
+        const label = document.createElement("span"); label.className="thumb-title";
+        const number = document.createElement("strong"); number.textContent=String(page.number).padStart(2,"0");
+        label.append(number,document.createTextNode(page.section));
+        button.append(preview,label);
+        button.addEventListener("click",()=>show(index));
+        $("thumbnails").append(button); thumbs.push(button);
+      });
+      function show(index) {
+        current = Math.max(0,Math.min(pages.length-1,index));
+        const page = pages[current];
+        thumbs.forEach((button,i)=>i===current ? button.setAttribute("aria-current","page") : button.removeAttribute("aria-current"));
+        thumbs[current].scrollIntoView({block:"nearest",inline:"nearest"});
+        $("pageTitle").textContent=`${String(page.number).padStart(2,"0")} · ${page.section}`;
+        $("counter").textContent=`${page.number} / ${pages.length}`;
+        $("prev").disabled=current===0; $("next").disabled=current===pages.length-1;
+        $("slideImage").style.display="block";
+        $("stage").classList.remove("unavailable");
+        $("slideImage").onload=()=>{
+          if (page !== pages[current]) return;
+          $("stage").classList.remove("unavailable");
+        };
+        $("slideImage").onerror=()=>{
+          if (page !== pages[current]) return;
+          $("slideImage").style.display="none";
+          $("stage").classList.add("unavailable");
+        };
+        $("slideImage").alt=`第 ${page.number} 页，${page.section}`;
+        $("slideImage").src=page.src;
+      }
+      function move(delta) {show(current+delta);}
+      async function fullscreen() {
+        if (document.fullscreenElement) await document.exitFullscreen();
+        else {try {await $("stage").requestFullscreen();} catch (error) {console.warn("Fullscreen unavailable",error);}}
+      }
+      document.querySelectorAll("[data-jump]").forEach(b=>b.addEventListener("click",()=>show(Number(b.dataset.jump)-1)));
+      $("prev").addEventListener("click",()=>move(-1));
+      $("next").addEventListener("click",()=>move(1));
+      $("fullscreen").addEventListener("click",fullscreen);
+      document.addEventListener("keydown",e=>{
+        if (e.altKey||e.ctrlKey||e.metaKey||["INPUT","TEXTAREA","SELECT"].includes(e.target.tagName)) return;
+        if (["ArrowRight","PageDown"," "].includes(e.key)) {e.preventDefault();move(1);}
+        else if (["ArrowLeft","PageUp"].includes(e.key)) {e.preventDefault();move(-1);}
+        else if (e.key==="Home") show(0);
+        else if (e.key==="End") show(16);
+        else if (e.key==="Escape"&&document.fullscreenElement) document.exitFullscreen();
+        else if (e.key.toLowerCase()==="f") fullscreen();
+      });
+      show(0);
+    })();
+  </script>
+</body>
+</html>

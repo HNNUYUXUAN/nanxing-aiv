@@ -1,0 +1,248 @@
+{
+  "edition": "南行17页定稿",
+  "count": 17,
+  "main_pages": 10,
+  "qa_pages": 6,
+  "closing_pages": 1,
+  "source_policy": "native_png_byte_copy_after_independent_qa",
+  "pages": [
+    {
+      "number": 1,
+      "title": "封面",
+      "section": "主讲",
+      "target": "images/01.png",
+      "source_candidate": "01A",
+      "source": "../images/01A-cover.png",
+      "source_sha256": "c139cedc5e6569f67a7bd008328c064c626ebda354e83e4ed2996888ee197560",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 2,
+      "title": "递进建模主线",
+      "section": "主讲",
+      "target": "images/02.png",
+      "source_candidate": "02C",
+      "source": "../images/02C-model-chain.png",
+      "source_sha256": "d663c9616f9097cde444d50f54ef452ea283b49017be782d95f913cd4aa8eec0",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 3,
+      "title": "AI 协作流程与项目贡献",
+      "section": "主讲",
+      "target": "images/03.png",
+      "source_candidate": null,
+      "source": "source/03.png",
+      "source_sha256": "a497a0b9d7b3c6b2a745779a0966866a23d971403810572ceec088a6c195e578",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 4,
+      "title": "人工复评测试",
+      "section": "主讲",
+      "target": "images/04.png",
+      "source_candidate": null,
+      "source": "source/04.png",
+      "source_sha256": "168ebaea98a8857b1b8710d8c53276e92d0377f0b5a676a7d3aa590f07fbd243",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 5,
+      "title": "真实逐回合双维分析结果",
+      "section": "主讲",
+      "target": "images/05.png",
+      "source_candidate": null,
+      "source": "source/05.png",
+      "source_sha256": "b7931e3f9ca38d565717065a09b6ea9ce561061b83677e61b6382de83c8567f0",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 6,
+      "title": "增量识别条件",
+      "section": "主讲",
+      "target": "images/06.png",
+      "source_candidate": "04C",
+      "source": "../images/04C-identification.png",
+      "source_sha256": "f6073e95112fa95f77aaa364ad1228b4504e8837e1a16d4623eabb3f62b9f6dd",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 7,
+      "title": "新结果与后续评价",
+      "section": "主讲",
+      "target": "images/07.png",
+      "source_candidate": null,
+      "source": "source/07.png",
+      "source_sha256": "ad0a8fcc0aad9c3dc9bd9cdae4287bc9379092c128567b25a451551cb4405c05",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 8,
+      "title": "失败反例回验",
+      "section": "主讲",
+      "target": "images/08.png",
+      "source_candidate": "06A",
+      "source": "../images/06A-falsification.png",
+      "source_sha256": "81620d771e43e5fd34c052a1150e74365e8c3a19ce4a39fab2910e72aa16bc22",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 9,
+      "title": "运营评价闭环",
+      "section": "主讲",
+      "target": "images/09.png",
+      "source_candidate": "07C",
+      "source": "../images/07C-operations.png",
+      "source_sha256": "d98ab2f5fecf7f644e7ea736ece6556e155d0107c7696032e5516d585695cb67",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 10,
+      "title": "演讲封底",
+      "section": "主讲",
+      "target": "images/10.png",
+      "source_candidate": "08A",
+      "source": "../images/08A-speech-close.png",
+      "source_sha256": "32c03d390e9d57db28ae0c38d0db38040b4fa384f96dc628a8dbdb2ae5a5e371",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 11,
+      "title": "任务与贡献",
+      "section": "备答",
+      "target": "images/11.png",
+      "source_candidate": "09A",
+      "source": "../images/09A-task-contribution.png",
+      "source_sha256": "583f960e0d5fcd0b6072523b3f25353ee7e416b93e5031b08114210b878894a8",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 12,
+      "title": "人工核验",
+      "section": "备答",
+      "target": "images/12.png",
+      "source_candidate": "10B",
+      "source": "../images/10B-agreement.png",
+      "source_sha256": "377e7289eeb19a2ec7e99813e20d1b0cb7e5924b569be997fb1dbf0c0ae8b756",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 13,
+      "title": "因果识别条件",
+      "section": "备答",
+      "target": "images/13.png",
+      "source_candidate": "12B",
+      "source": "../images/12B-causal.png",
+      "source_sha256": "dfb4b324b5bc02b06a169c9cf28dbbb84245ba20274f60a24cb3073e886dc6be",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 14,
+      "title": "权重敏感性",
+      "section": "备答",
+      "target": "images/14.png",
+      "source_candidate": "13A",
+      "source": "../images/13A-weights.png",
+      "source_sha256": "845e3d6aaf9723388f1e191823b6d1c40a8b07a550dfeed4dc9e374b6a36e2c6",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 15,
+      "title": "抗操纵反例",
+      "section": "备答",
+      "target": "images/15.png",
+      "source_candidate": "06A",
+      "source": "../images/06A-falsification.png",
+      "source_sha256": "81620d771e43e5fd34c052a1150e74365e8c3a19ce4a39fab2910e72aa16bc22",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 16,
+      "title": "仓库与复现",
+      "section": "备答",
+      "target": "images/16.png",
+      "source_candidate": "14A",
+      "source": "../images/14A-repro.png",
+      "source_sha256": "fb77c4b51082d7e2c8568959e4d1fb2b93ceec93663b6072771e442d92094761",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    },
+    {
+      "number": 17,
+      "title": "问答结束致谢",
+      "section": "致谢",
+      "target": "images/17.png",
+      "source_candidate": "15A",
+      "source": "../images/15A-thanks.png",
+      "source_sha256": "d035a87614fd1903aa379dcb69cc400800111b5c30d2ae81f73041b4952acb0b",
+      "native_dimensions": [
+        1672,
+        941
+      ],
+      "qa": "passed"
+    }
+  ]
+}
