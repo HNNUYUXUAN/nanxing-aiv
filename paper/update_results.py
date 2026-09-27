@@ -8,6 +8,7 @@ from __future__ import annotations
 
 import argparse
 import hashlib
+import html
 import json
 from pathlib import Path
 import re
@@ -209,6 +210,25 @@ def markdown_mirror():
         directive = r"\input{" + name + "}"
         if directive in source:
             source = source.replace(directive, (PAPER / name).read_text("utf-8"))
+    # The shared LaTeX templates already place captions and notes in the
+    # exported group previews. Mirror that complete image only once.
+    figure_titles = {}
+    def group_preview(match):
+        name = match[1]
+        template = (PAPER / "figure_groups" / (name + ".tex")).read_text("utf-8")
+        main_caption = re.sub(r"\\begin\{subfigure\}.*?\\end\{subfigure\}", "", template, flags=re.S)
+        title = re.search(r"\\caption\{([^{}]+)\}", main_caption)
+        if title is None:
+            raise ValueError("Missing main caption in figure group: " + name)
+        figure_titles[name] = title[1]
+        return r"\includegraphics{../results/final-analysis/" + name + ".pdf}"
+    source = re.sub(r"\\input\{figure_groups/(fig[0-9]{2}_[a-z_]+)\.tex\}", group_preview, source)
+    source = source.replace(r"\input{figure_style.tex}", "")
+    # Preserve the independent note of the conceptual figure in the mirror.
+    source = re.sub(r"\\figurenote\{([^{}]*)\}",
+                    lambda m: r"\par FIGURENOTEOPEN 注：" + m[1] + r" FIGURENOTECLOSE\par", source)
+    if r"\figurenote{" in source:
+        raise ValueError("Figure note needs an explicit Markdown conversion")
     source = source.replace(r"\begin{abstract}", r"\section*{摘要}").replace(r"\end{abstract}", "")
     cited = list(dict.fromkeys(key for group in re.findall(r"\\cite\{([^}]+)\}", source) for key in group.split(",")))
     source = re.sub(r"\\cite\{([^}]+)\}", lambda m: r"\texttt{["+m[1].replace("_", r"\_")+"]}", source)
@@ -219,8 +239,14 @@ def markdown_mirror():
     note = "本文件由 `paper/main.tex` 与同一结果入口生成；正式排版、参考文献和页码以 [PDF](../build/paper/main.pdf) 为准。\n\n"
     references = bibliography_lines(cited)
     body = re.sub(r"(?m)^[ \t]+$", "", out.stdout)
-    body = re.sub(r'<embed src="(\.\./results/final-analysis/[^"<>]+)\.pdf"\s*/>',
-                  r'<img src="\1.png" alt="研究结果统计图" />', body)
+    body = re.sub(r'<embed src="(\.\./results/final-analysis/([^"<>/]+))\.pdf"\s*/>',
+                  lambda m: '<img src="' + m[1] + '.png" alt="'
+                  + html.escape(figure_titles.get(m[2], "研究结果统计图"), quote=True) + '" />', body)
+    body = re.sub(r"<p>FIGURENOTEOPEN\s*(.*?)\s*FIGURENOTECLOSE</p>",
+                  r'<p align="left"><small>\1</small></p>', body, flags=re.S)
+    # Pandoc places uncaptioned figure text before the caption; show title first.
+    body = re.sub(r'(<p align="left"><small>.*?</small></p>)\s*(<figcaption>.*?</figcaption>)',
+                  r"\2\n\1", body, flags=re.S)
     (PAPER / "研究论文.md").write_text(title+note+body+"\n\n## 参考文献（与正文引用键对应）\n\n"+"\n".join(references)+"\n", "utf-8")
 
 

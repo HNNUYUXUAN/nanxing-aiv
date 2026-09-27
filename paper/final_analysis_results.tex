@@ -13,16 +13,14 @@
 \end{equation}
 这是一种保留候选的条件构造，检查未知部分需要何种约束才能支持总体比较。
 \begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth,height=.33\textheight,keepaspectratio]{../results/final-analysis/fig03_unknown_labels.pdf}
-\caption{任务维度的学期描述与未知标签范围。橙点为各学期候选集；蓝段允许所有无候选回合取 L1 至 L6，范围为条件情景。}\label{fig:unknown}
+\input{figure_groups/fig03_unknown_labels.tex}
 \end{figure}
 秋、春候选任务的平均层级分别为 2.554 与 1.734，高阶占比分别为 19.52\% 与 8.02\%；候选春减秋为 $-11.49$ 个百分点。扩展到全部合格回合后，两学期 HOT 分别在 $[5.14\%,78.80\%]$ 与 $[2.78\%,68.09\%]$ 内，春减秋范围为 $[-76.01,62.95]$ 个百分点。范围覆盖正、负方向，说明已知候选的学期差尚不足以确定总体过程差的方向。贡献维度的春减秋范围同样跨零（$[-80.74,79.10]$ 个百分点），因此后续 B 对两学期保留分层描述。
 }
 
 \newcommand{\FinalWorkflowResults}{%
 \begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth,height=.33\textheight,keepaspectratio]{../results/final-analysis/fig02_random_flow.pdf}
-\caption{相同 352 个分层随机回合的流程比较。每条状态合计为 352；两快和强复核使用既定的不确定判断与失败回退规则。}\label{fig:flow}
+\input{figure_groups/fig02_random_flow.tex}
 \end{figure}
 \begin{table}[htbp]\centering\small
 \caption{共同随机集的状态计数；单模型候选不要求另一模型一致}\label{tab:flow}
@@ -45,8 +43,7 @@
 
 \newcommand{\FinalDistributionResults}{%
 \begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth,height=.33\textheight,keepaspectratio]{../results/final-analysis/fig01_dimensions.pdf}
-\caption{双维边际层级分布与同回合共同非空配对。左图各维按自己的候选分母；右图仅 48 个配对，颜色与数字表示回合数。}\label{fig:dimensions}
+\input{figure_groups/fig01_dimensions.tex}
 \end{figure}
 \begin{table}[htbp]\centering\small
 \caption{学期内候选描述；学生等权只平均该维至少有一个候选的学生—学期单元}\label{tab:description}
@@ -65,8 +62,7 @@
 
 \newcommand{\FinalHumanResults}{%
 \begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth,height=.33\textheight,keepaspectratio]{../results/final-analysis/fig04_human_pairs.pdf}
-\caption{16 组同题、同评审配对提交。两名评审的记录用时变化方向相反；辅助阶段的 6/8 一致包括 2 题共同弃权。}\label{fig:human}
+\input{figure_groups/fig04_human_pairs.tex}
 \end{figure}
 评审 A 的记录用时由 14.46 降至 4.80 人分钟，评审 B 由 10.10 升至 14.62 人分钟。合计减少 5.14 人分钟掩盖了个体方向差异；计时还包含停顿，因此保留逐角色数值比只报告一个效率比例更有信息。辅助后的 6 题一致中，4 题给出相同层级、2 题共同弃权，显示校准部分来自对证据不足边界的共同认识。
 }
@@ -82,8 +78,7 @@
 \newcommand{\FinalSensitivityResults}{%
 本次求解使用联合可行集的保守外包：将 ABL/HOT/DHI 的单项改标界分别截断至 $[0,1]$，缺失指标取 $[0,1]$，再枚举权重乘子的 32 个顶点。外包保留所有满足改标预算的真实组合，同时可能包含不能共同出现的组合，故其宽度与无法区分比例具有保守性。结果仅针对 356 个有任务候选的学生—学期单元，不外推到 45 个无候选单元。
 \begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth,height=.33\textheight,keepaspectratio]{../results/final-analysis/fig05_score_sensitivity.pdf}
-\caption{真实候选单元上的条件分数外包范围。权重逐项相对扰动 $\pm10\%$；$\epsilon$ 经向上取整转为改标条数，图中稳定区分限于同学期配对。}\label{fig:sensitivity}
+\input{figure_groups/fig05_score_sensitivity.tex}
 \end{figure}
 \begin{table}[htbp]\centering\small
 \caption{范围宽度和条件可区分性；356 个候选单元、37747 个同学期对}\label{tab:sensitivity}

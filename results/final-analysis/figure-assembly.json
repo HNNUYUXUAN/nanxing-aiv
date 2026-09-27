@@ -1,0 +1,106 @@
+{
+  "assembly": "independent_panels_then_latex",
+  "raster_dpi": 600,
+  "figure_title": "centered",
+  "figure_note": "separate_small_left_aligned_paragraph",
+  "caption_size_source": "cumcmthesis: font={song,minusfour,bf}; minusfour=\\zihao{-4}",
+  "figure_note_pt": 9,
+  "style_sha256": "d65a020bb9b5f19dbaab7c18e8f9f66a13d7046051ae067d45fa18638e847521",
+  "groups": [
+    {
+      "id": "fig01_dimensions",
+      "figure_number": 4,
+      "panels": [
+        "fig01a_levels.pdf",
+        "fig01b_joint.pdf"
+      ],
+      "template": "paper/figure_groups/fig01_dimensions.tex",
+      "template_sha256": "12e7468d49636caa64623de24c202223aa06286b5b8a90d84114d15bc779d677",
+      "panel_sha256": {
+        "fig01a_levels.pdf": "570ab6b231dead8dec56d95941fe05f1b721a1a43cadb5715bcbfeec804bdbb8",
+        "fig01b_joint.pdf": "8b67566b522c33b8dae9f30393d16470f400022f3ac8fd00f18928855f8e8779"
+      },
+      "files": {
+        "fig01_dimensions.pdf": "32ec407935e506e848bbe68dd828e5b4acec0e696d32e3ba17ea7cb8357e2c44",
+        "fig01_dimensions.png": "7121924a1e5f82ac7b89fec32c0fcdaeaceb718b09dcd8f537eac801bb68bd38",
+        "fig01_dimensions.svg": "fb27328969c995221f8daa85d1b946aa831342a0ef7c45f791c36f97ae51e813"
+      }
+    },
+    {
+      "id": "fig02_random_flow",
+      "figure_number": 3,
+      "panels": [
+        "fig02a_task_flow.pdf",
+        "fig02b_contribution_flow.pdf"
+      ],
+      "template": "paper/figure_groups/fig02_random_flow.tex",
+      "template_sha256": "ec5c4b0adeef2c236cabb9fd98c47606e913c6bc5cbce9ad4bb4bb1a2fa9bed6",
+      "panel_sha256": {
+        "fig02a_task_flow.pdf": "74817cf82903e4e7e953d014b745cb4ce5f5991430a3e944890efdb0a980d627",
+        "fig02b_contribution_flow.pdf": "937294f1db0f7a43cc34ad8e1f2502ce2f4e100b410a45a3b7ccd824604db12d"
+      },
+      "files": {
+        "fig02_random_flow.pdf": "3fb1eef7903c6620f828499a272bdc8e599f9aeb3cd88f75ebf68e85ea84adec",
+        "fig02_random_flow.png": "b46f29434de0f3b2531fcce8545ecb44f389fda985b28f69636197b2418af8e5",
+        "fig02_random_flow.svg": "91101e25e3ab54934713472a23801dfb2e0ff93a991637620012dd32ebbc3dbd"
+      }
+    },
+    {
+      "id": "fig03_unknown_labels",
+      "figure_number": 2,
+      "panels": [
+        "fig03a_abl_bounds.pdf",
+        "fig03b_hot_bounds.pdf"
+      ],
+      "template": "paper/figure_groups/fig03_unknown_labels.tex",
+      "template_sha256": "658495abfd78e4851b351565131a69935250fe2f0e9593a66bf581c2844f4e0c",
+      "panel_sha256": {
+        "fig03a_abl_bounds.pdf": "7832f262446e1c5fb024c147bcb5dfb978a1ccedf3e954595528e8e3cccd4fd7",
+        "fig03b_hot_bounds.pdf": "6ca30a4be579c59d9a990048079a7b8d6cf9a3cb5641a07ea467b3f4bc2d5652"
+      },
+      "files": {
+        "fig03_unknown_labels.pdf": "47ca6f4f84f6e36122406e089fd9e8910688b5b83a297a92e21f46f98f434351",
+        "fig03_unknown_labels.png": "19af4f9b8f64963e80e7bad5a43645318aa1952066a55bbea6783695b854b2ca",
+        "fig03_unknown_labels.svg": "a33258b64c8b799c5bbf891d0f8ddf31d1cb4dadfd707da3e472081f4bd43567"
+      }
+    },
+    {
+      "id": "fig04_human_pairs",
+      "figure_number": 5,
+      "panels": [
+        "fig04a_human_time.pdf",
+        "fig04b_human_agreement.pdf"
+      ],
+      "template": "paper/figure_groups/fig04_human_pairs.tex",
+      "template_sha256": "4045c17f06621864d6a916566618b3404abec13062a3222119ea253efd6d4325",
+      "panel_sha256": {
+        "fig04a_human_time.pdf": "0e7da483a252aec6e55c8a978a36d762eef5e8bb701113cfea662d1e8696912a",
+        "fig04b_human_agreement.pdf": "90455af8971f0a6ad6053c02f460ce53d26e0ca699d477e194b5fc9300660a18"
+      },
+      "files": {
+        "fig04_human_pairs.pdf": "47d6a9007c1ea9000c27193866a716eed0d4d433c6aaace91eaa365e39bb14c0",
+        "fig04_human_pairs.png": "a38929f95f09ae7cecc6e1bf1f3bd1a0a300d1675b95f7059eb8a4496327ea31",
+        "fig04_human_pairs.svg": "1fd1965eda82a7a6a9dcd851906b7da5a5902fc3bf4c87ae482f60260378dbd3"
+      }
+    },
+    {
+      "id": "fig05_score_sensitivity",
+      "figure_number": 6,
+      "panels": [
+        "fig05a_range_width.pdf",
+        "fig05b_stable_pairs.pdf"
+      ],
+      "template": "paper/figure_groups/fig05_score_sensitivity.tex",
+      "template_sha256": "5523874e1e00f4a92daf08c1490e2e8cf62fc3ab5768ac5151a2751c949896c1",
+      "panel_sha256": {
+        "fig05a_range_width.pdf": "c05745d6faa4b98bb5969f0e3374a8f8081fffd48c39531c3ea0db02030abde9",
+        "fig05b_stable_pairs.pdf": "f8abcae412f96e409544a20e46d1707a8291f6a2fce8fe849e276b0fe8cf29e5"
+      },
+      "files": {
+        "fig05_score_sensitivity.pdf": "411c3a1841e25470d26654a298cd9d34e97566b8cb23646adfa12e34277f6b30",
+        "fig05_score_sensitivity.png": "75116db404eca9b2fa84a6ae536d5b4c46694f077b472e408cffb8b3cf29c955",
+        "fig05_score_sensitivity.svg": "9efd132dd4fbb1ce74570e0c59ecd06dafe450f91b7e86d41b0a1a2daf2ed571"
+      }
+    }
+  ]
+}

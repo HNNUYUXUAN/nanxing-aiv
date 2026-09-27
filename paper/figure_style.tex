@@ -1,0 +1,14 @@
+% Shared typography and caption layout for paper figures and exported groups.
+\setCJKfamilyfont{figureSong}[AutoFakeBold=2]{SimSun}
+\newcommand{\FigureTextFont}{\rmfamily\CJKfamily{figureSong}}
+\DeclareCaptionFont{paperfigure}{\FigureTextFont}
+\DeclareCaptionFont{paneltitle}{\fontsize{9pt}{12pt}\selectfont}
+% Keep the figure/table caption size and weight supplied by cumcmthesis.
+\captionsetup[figure]{font+=paperfigure,
+  format=plain,justification=centering,singlelinecheck=false,labelsep=quad,skip=5pt}
+\captionsetup[table]{font+=paperfigure}
+\captionsetup[subfigure]{font={paneltitle,paperfigure},labelfont=normalfont,textfont=normalfont,
+  justification=centering,singlelinecheck=false,skip=3pt}
+\newcommand{\PanelDirectory}{../results/final-analysis}
+\newcommand{\figurenote}[1]{\par\vspace{3pt}%
+  {\fontsize{9pt}{12pt}\selectfont\FigureTextFont\raggedright\noindent 注：#1\par}}

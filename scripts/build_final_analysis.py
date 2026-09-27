@@ -489,7 +489,10 @@ def build(root=ROOT,output=None,build_dir=None,plots=True):
             'flow':'Same turns under each method within the fixed random or separately selected risk stratum. Production uncertain and failed-review fallback rules retained; no accuracy claim.'},
         'checks':{**data.checks,'production_final_merge_recomputed':True,'aggregate_outputs_only':True,'no_model_calls':True}}
     safe_json(output/'summary.json',summary)
-    if plots:make_plots(summary,tables,output)
+    if plots:
+        make_plots(summary,tables,output)
+        from scripts.build_figure_groups import build_groups
+        build_groups(output,output,build_dir/'figure-groups')
     after=load_frozen(root/PLAN,PIN,root=root)
     if after.source!=data.source:
         raise ValueError('Frozen source changed during build')
@@ -502,6 +505,7 @@ def build(root=ROOT,output=None,build_dir=None,plots=True):
 
 
 def make_plots(summary,tables,output):
+    """Render individual data panels; LaTeX owns grouping, captions, and notes."""
     import matplotlib
     matplotlib.use('Agg')
     import matplotlib.pyplot as plt
@@ -509,32 +513,40 @@ def make_plots(summary,tables,output):
     configure_publication_style()
     plt.rcParams.update({'font.size':11,'axes.titlesize':14,'axes.labelsize':11,'axes.unicode_minus':False,
         'pdf.fonttype':42,'ps.fonttype':42,'axes.spines.top':False,'axes.spines.right':False,'savefig.facecolor':'white'})
-    blue='#245A81';orange='#C47B29';gray='#697680'
-    def save(fig,name,note):
-        fig.text(.06,.025,note,fontsize=9,color='#4A5055',ha='left',va='bottom')
-        fig.subplots_adjust(bottom=.19,top=.88,wspace=.32)
+    blue='#245A81';orange='#C47B29'
+    def panel(*,left=.16,right=.96,top=.90):
+        fig,ax=plt.subplots(figsize=(5.8,4.2))
+        fig.subplots_adjust(left=left,right=right,bottom=.18,top=top)
+        return fig,ax
+    def save(fig,name):
         for extension in ('png','pdf','svg'):
-            fig.savefig(output/(name+'.'+extension),dpi=RASTER_DPI,bbox_inches='tight',metadata={'Date':None} if extension=='svg' else None)
+            fig.savefig(output/(name+'.'+extension),dpi=RASTER_DPI,bbox_inches=None,metadata={'Date':None} if extension=='svg' else None)
         plt.close(fig)
-    fig,axes=plt.subplots(1,2,figsize=(12,5.2))
+    fig,ax=panel()
     for dimension,color,offset,label in [('task',blue,-.18,'任务候选 n=1010'),('contribution',orange,.18,'贡献候选 n=776')]:
         rows=[r for r in tables['level-distribution.csv'] if r['term']=='all' and r['dimension']==dimension]
         vals=[100*r['candidate_share'] for r in rows]
-        axes[0].bar(np.arange(1,7)+offset,vals,width=.34,color=color,label=label)
-    axes[0].set(xticks=range(1,7),xticklabels=[f'L{x}' for x in range(1,7)],ylabel='各维候选中的比例（%）',title='任务要求与已展示贡献的六级分布')
-    axes[0].legend(frameon=False,fontsize=9)
+        ax.bar(np.arange(1,7)+offset,vals,width=.34,color=color,label=label)
+    ax.set(xticks=range(1,7),xticklabels=[f'L{x}' for x in range(1,7)],ylabel='各维候选中的比例（%）')
+    ax.legend(frameon=False,fontsize=9)
+    save(fig,'fig01a_levels')
+    fig,ax=panel()
+    # A square heatmap and its colour bar retain the same vertical plot bounds.
+    heatmap_width=(.90-.18)*4.2/5.8
+    ax.set_position([.20,.18,heatmap_width,.72])
     rows=[r for r in tables['joint-levels.csv'] if r['term']=='all']
     matrix=np.array([r['count'] for r in rows]).reshape(6,6)
-    im=axes[1].imshow(matrix,cmap='Blues',vmin=0)
+    im=ax.imshow(matrix,cmap='Blues',vmin=0)
     for i in range(6):
-        for j in range(6):axes[1].text(j,i,str(matrix[i,j]),ha='center',va='center',fontsize=10,color='white' if matrix[i,j]>matrix.max()*.5 else '#203040')
-    axes[1].set(xticks=range(6),yticks=range(6),xticklabels=[f'L{i}' for i in range(1,7)],yticklabels=[f'L{i}' for i in range(1,7)],
-        xlabel='贡献候选层级',ylabel='任务候选层级',title=f"同回合共同非空 n={summary['joint']['paired_denominator']}")
-    fig.colorbar(im,ax=axes[1],label='回合数',fraction=.047,pad=.03)
-    save(fig,'fig01_dimensions','真实数据 · 3515 个回合；左图按各自候选分母，右图仅共同非空配对。候选标签不等于独立能力。')
-    fig,axes=plt.subplots(1,2,figsize=(12,5.1),sharex=True)
+        for j in range(6):ax.text(j,i,str(matrix[i,j]),ha='center',va='center',fontsize=10,color='white' if matrix[i,j]>matrix.max()*.5 else '#203040')
+    ax.set(xticks=range(6),yticks=range(6),xticklabels=[f'L{i}' for i in range(1,7)],yticklabels=[f'L{i}' for i in range(1,7)],
+        xlabel='贡献候选层级',ylabel='任务候选层级')
+    colorbar_ax=fig.add_axes([.20+heatmap_width+.035,.18,.024,.72])
+    fig.colorbar(im,cax=colorbar_ax,label='回合数')
+    save(fig,'fig01b_joint')
     palette={'agreed':blue,'abstained':'#C3CCD2','disagreement':orange,'uncertain':'#D6BC8A','technical_failure':'#3D4247'}
-    for ax,dimension,title in zip(axes,['task','contribution'],['任务维度','贡献维度']):
+    for dimension,name in [('task','fig02a_task_flow'),('contribution','fig02b_contribution_flow')]:
+        fig,ax=panel(left=.28,top=.80)
         rows=[r for r in tables['flow-comparison.csv'] if r['stratum']=='random_audit' and r['dimension']==dimension]
         left=np.zeros(len(rows))
         for state in STATES:
@@ -542,52 +554,58 @@ def make_plots(summary,tables,output):
             for i,v in enumerate(vals):
                 if v>=22:ax.text((left[i]+v/2)/352*100,i,str(v),ha='center',va='center',fontsize=10,color='white' if state=='agreed' else '#202629')
             left+=vals
-        ax.set(yticks=range(4),yticklabels=['DeepSeek 单快','GLM 单快','双快严格一致','正式复核合并'],xlabel='固定 352 回合中的比例（%）',title=title,xlim=(0,100));ax.invert_yaxis()
-    handles,labels=axes[0].get_legend_handles_labels();fig.legend(handles,labels,loc='upper center',bbox_to_anchor=(.5,.99),ncol=5,frameon=False)
-    save(fig,'fig02_random_flow','真实数据 · 固定随机复核 n=352；条内数字为回合数。沿用不确定判定与复核失败回退；高风险 827 回合另表。')
-    fig,axes=plt.subplots(1,2,figsize=(12,5.2))
+        ax.set(yticks=range(4),yticklabels=['DeepSeek 单快','GLM 单快','双快严格一致','正式复核合并'],xlabel='固定 352 回合中的比例（%）',xlim=(0,100));ax.invert_yaxis()
+        handles,labels=ax.get_legend_handles_labels()
+        fig.legend(handles,labels,loc='upper center',bbox_to_anchor=(.60,.95),ncol=5,frameon=False,
+            fontsize=9,handlelength=1,handletextpad=.4,columnspacing=.75)
+        save(fig,name)
     rows=[r for r in tables['unknown-label-bounds.csv'] if r['term']!='all' and r['dimension']=='task']
-    for i,r in enumerate(rows):
-        for ax,metric in zip(axes,['abl_raw','hot']):
+    for metric,name in [('abl_raw','fig03a_abl_bounds'),('hot','fig03b_hot_bounds')]:
+        fig,ax=panel()
+        for i,r in enumerate(rows):
             factor=100 if metric=='hot' else 1
             lo=r[f'{metric}_lower']*factor;hi=r[f'{metric}_upper']*factor;point=r[f'candidate_{metric}']*factor
             ax.plot([lo,hi],[i,i],color=blue,lw=9,alpha=.23,solid_capstyle='butt');ax.plot([lo,hi],[i,i],'|',color=blue,markersize=18)
             ax.plot(point,i,'o',color=orange,markersize=8);ax.text(lo,i+.13,f'{lo:.2f} — {hi:.2f}',fontsize=11,color=blue)
-        axes[0].text(1.03,i-.23,f"候选 {r['candidate_turns']}/{r['total_turns']}，未知 {r['unknown_turns']}",fontsize=10)
-    for ax in axes:ax.set(yticks=[0,1],yticklabels=['秋季','春季'],ylim=(-.5,1.5));ax.grid(axis='x',alpha=.18)
-    axes[0].set(xlim=(1,6),xlabel='平均认知层级 ABL（L1–L6）',title='全回合平均层级的未知标签范围')
-    axes[1].set(xlim=(0,100),xlabel='高阶比例 HOT（%）',title='全回合高阶比例的未知标签范围')
-    save(fig,'fig03_unknown_labels','条件情景 · 蓝段将无候选回合取任意 L1–L6；橙点仅为候选子集。保持候选标签固定；范围不是置信区间。')
-    fig,axes=plt.subplots(1,2,figsize=(12,5.2))
+            if metric=='abl_raw':
+                ax.text(1.03,i-.23,f"候选 {r['candidate_turns']}/{r['total_turns']}，未知 {r['unknown_turns']}",fontsize=10)
+        ax.set(yticks=[0,1],yticklabels=['秋季','春季'],ylim=(-.5,1.5));ax.grid(axis='x',alpha=.18)
+        if metric=='abl_raw':ax.set(xlim=(1,6),xlabel='平均认知层级 ABL（L1–L6）')
+        else:ax.set(xlim=(0,100),xlabel='高阶比例 HOT（%）')
+        save(fig,name)
+    fig,ax=panel()
     role_rows=tables['human-role-timing.csv']
     for role,color in [('A',blue),('B',orange)]:
         vals=[next(r['person_minutes'] for r in role_rows if r['role']==role and r['round']==rnd) for rnd in ['retest-v2','guided-v3']]
-        axes[0].plot([0,1],vals,'o-',color=color,lw=2,label=f'评审角色 {role}')
-        for x,y in enumerate(vals):axes[0].text(x+.04,y,f'{y:.2f}',fontsize=11,color=color,va='center')
-    axes[0].set(xticks=[0,1],xticklabels=['第二轮独立盲评','第三轮同题辅助'],ylabel='记录用时（人分钟）',ylim=(0,17),xlim=(-.18,1.45),title='相同 8 题 × 2 个评审角色')
-    axes[0].legend(frameon=False,loc='lower left')
+        ax.plot([0,1],vals,'o-',color=color,lw=2,label=f'评审角色 {role}')
+        for x,y in enumerate(vals):ax.text(x+.04,y,f'{y:.2f}',fontsize=11,color=color,va='center')
+    ax.set(xticks=[0,1],xticklabels=['第二轮独立盲评','第三轮同题辅助'],ylabel='记录用时（人分钟）',ylim=(0,17),xlim=(-.18,1.45))
+    ax.legend(frameon=False,loc='lower left')
+    save(fig,'fig04a_human_time')
+    fig,ax=panel()
     before=summary['human']['rounds']['retest-v2'];after=summary['human']['rounds']['guided-v3']
     vals=[before['agreement_including_abstention']*100,after['agreement_including_abstention']*100]
-    axes[1].bar([0,1],vals,color=[blue,orange],width=.5)
-    for i,(v,n) in enumerate(zip(vals,[before['exact_including_abstention'],after['exact_including_abstention']])):axes[1].text(i,v+3,f'{n}/8 = {v:.0f}%',ha='center')
-    axes[1].set(xticks=[0,1],xticklabels=['独立盲评','同题辅助'],ylabel='包括共同弃权的完全一致率（%）',ylim=(0,100),title='双人完全一致：4/8 → 6/8')
-    save(fig,'fig04_human_pairs',f"真实人审 · 16 组成对提交；{summary['human']['before_person_minutes']:.2f} → {summary['human']['after_person_minutes']:.2f} 人分钟；辅助 {after['exact_including_abstention']}/8 含 {after['both_abstained']} 题共同弃权。\n同题重复、共同推荐和固定顺序；时间包括停顿，属于过程观察。")
-    fig,axes=plt.subplots(1,2,figsize=(12,5.2))
-    for scheme,color,marker in [('balanced',blue,'o'),('higher_order',orange,'s'),('process','#69744B','^')]:
-        rows=[r for r in tables['score-range-sensitivity.csv'] if r['term']=='all' and r['scheme']==scheme and r['weight_relative_change']==.1]
-        x=[r['label_error_fraction']*100 for r in rows]
-        axes[0].plot(x,[r['width_median'] for r in rows],marker=marker,color=color,lw=1.8,label=SCHEME_NAMES[scheme])
-        axes[1].plot(x,[r['stable_pair_fraction']*100 for r in rows],marker=marker,color=color,lw=1.8,
-            markersize={'balanced':9,'higher_order':7,'process':5}[scheme],markerfacecolor='none',
-            label=SCHEME_NAMES[scheme])
-    for ax in axes:ax.set(xticks=[0,5,10,20],xlabel='名义改标预算 ε（%）；条数 ceil(εn)');ax.grid(alpha=.18)
-    axes[0].set(ylabel='条件分数外包范围宽度中位数（分）',ylim=(0,100),title='标签误差与缺失扩大范围')
-    axes[1].set(ylabel='同学期可稳定区分的学生对（%）',ylim=(-3,100),title='同学期的条件性稳定区分')
-    for ax in axes:
+    ax.bar([0,1],vals,color=[blue,orange],width=.5)
+    for i,(v,n) in enumerate(zip(vals,[before['exact_including_abstention'],after['exact_including_abstention']])):ax.text(i,v+3,f'{n}/8 = {v:.0f}%',ha='center')
+    ax.set(xticks=[0,1],xticklabels=['独立盲评','同题辅助'],ylabel='包括共同弃权的完全一致率（%）',ylim=(0,100))
+    save(fig,'fig04b_human_agreement')
+    for metric,name in [('width_median','fig05a_range_width'),('stable_pair_fraction','fig05b_stable_pairs')]:
+        fig,ax=panel()
+        for scheme,color,marker in [('balanced',blue,'o'),('higher_order',orange,'s'),('process','#69744B','^')]:
+            rows=[r for r in tables['score-range-sensitivity.csv'] if r['term']=='all' and r['scheme']==scheme and r['weight_relative_change']==.1]
+            x=[r['label_error_fraction']*100 for r in rows]
+            factor=100 if metric=='stable_pair_fraction' else 1
+            marker_options={'markersize':{'balanced':9,'higher_order':7,'process':5}[scheme],
+                'markerfacecolor':'none'} if metric=='stable_pair_fraction' else {}
+            ax.plot(x,[r[metric]*factor for r in rows],marker=marker,color=color,lw=1.8,
+                label=SCHEME_NAMES[scheme],**marker_options)
+        ax.set(xticks=[0,5,10,20],xlabel='名义改标预算 ε（%）；条数 ceil(εn)');ax.grid(alpha=.18)
+        if metric=='width_median':ax.set(ylabel='条件分数外包范围宽度中位数（分）',ylim=(0,100))
+        else:ax.set(ylabel='同学期可稳定区分的学生对（%）',ylim=(-3,100))
         ax.set_yticks([0,20,40,60,80,100])
         ax.tick_params(axis='y',labelleft=True)
-    axes[0].legend(frameon=False)
-    save(fig,'fig05_score_sensitivity','条件情景 · 356 个有候选的学生×学期；权重 ±10%。小样本向上取整可超过名义比例；非总体能力或真实排名。')
+        ax.legend(frameon=False,fontsize=10)
+        save(fig,name)
 
 
 if __name__=='__main__':

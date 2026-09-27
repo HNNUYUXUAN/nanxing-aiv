@@ -27,7 +27,9 @@
 
 执行记录和已显示的原生图表保存在 `build/notebooks/`；`execution.json` 记录每本状态、用时和输出图数。Notebook 不读取密钥或发起模型调用。图表由单元中的计算代码生成，`save_figure` 同时输出 PDF、SVG、PNG 与来源哈希。
 
-00 总览另保存成稿论文五张彩色数据图的完整 PNG 输出，与论文及 README 共用 `results/final-analysis/fig01_dimensions` 至 `fig05_score_sensitivity`。彩色数据图的 PNG 导出为 **600 dpi**，中文采用**宋体（SimSun）**，西文和数字采用 **Times New Roman**；PDF 保留矢量图形并嵌入字体，SVG 将文字转为路径。各章交互执行时采用 120 dpi 预览，600 dpi 原图及矢量图保存在图表目录。统一样式由 `aiv/figure_style.py` 约束；缺少指定字体时执行会明确报错，不自动替换字体。
+00 总览另保存成稿论文五组彩色数据图的完整 PNG 输出，与论文及 README 共用 `results/final-analysis/fig01_dimensions` 至 `fig05_score_sensitivity`。这五组图先生成十个独立子图，再通过 `paper/figure_groups/` 中的 LaTeX 模板组装，主图题居中，图题与表题遵循 CUMCM 模板的小四号，图注另起一行、9 pt 左对齐。`scripts/build_figure_groups.py` 与论文读取相同模板，预览包含完整子图、图题和图注。
+
+彩色数据图的 PNG 导出为 **600 dpi**，中文采用**宋体（SimSun）**，西文和数字采用 **Times New Roman**；PDF 保留矢量图形并嵌入字体，SVG 将文字转为路径。各章交互执行时采用 120 dpi 预览，600 dpi 原图及矢量图保存在图表目录。独立子图样式由 `aiv/figure_style.py` 约束，LaTeX 组图排版由 `paper/figure_style.tex` 统一；缺少指定字体时执行会明确报错，不自动替换字体。组图重绘所需的 TeX 环境见[复现说明](../docs/复现说明.md)。
 
 修改叙述或单元模板后，使用以下生成入口：
 

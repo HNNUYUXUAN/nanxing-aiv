@@ -62,7 +62,7 @@ flowchart LR
 
 数值、分母和来源哈希统一见 [结果清单](results/final-analysis/summary.json)。[结果阅读指南](docs/结果阅读指南.md)将每项发现对应到图表、计算入口与教学动作。
 
-五张彩色统计图与 Notebook 数据图统一使用**宋体（SimSun）中文、Times New Roman 西文及数字**；PNG 按 **600 dpi** 导出。论文使用矢量 PDF，SVG 和 PDF 可用于放大阅读与排版，绘图环境要求见[复现说明](docs/复现说明.md)。
+五组彩色统计图先生成 **10 张独立子图**，再按论文的 [LaTeX 模板](paper/figure_groups/) 排成组；图题居中，图题和表题遵循 CUMCM 模板的小四号，图注另起一行、9 pt 左对齐。图表统一使用**宋体（SimSun）中文、Times New Roman 西文及数字**，PNG 按 **600 dpi** 导出，并保留 PDF／SVG；绘图环境要求见[复现说明](docs/复现说明.md)。
 
 | 统计图 | 高清 PNG | 矢量 PDF | 矢量 SVG |
 | --- | --- | --- | --- |

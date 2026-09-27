@@ -59,11 +59,13 @@ def main():
     checks = verify_aggregates(summary)
     from scripts.demo_evidence_chain import run_case
     from scripts.build_final_analysis import make_plots
+    from scripts.build_figure_groups import build_groups
     import pandas as pd
     output = ROOT / "build/reproduction"
     output.mkdir(parents=True, exist_ok=True)
     tables = {p.name: pd.read_csv(p).to_dict("records") for p in source.glob("*.csv")}
     make_plots(summary, tables, output)
+    build_groups(output, output)
     examples = [run_case("complete"), run_case("missing_evidence")]
     (output / "demo-examples.json").write_text(json.dumps(examples, ensure_ascii=False, indent=2, allow_nan=False), "utf-8")
     if args.notebooks:
@@ -74,7 +76,8 @@ def main():
                "raw_records_recomputed": args.authorized_inputs,
                "notebook_workers": args.notebook_workers if args.notebooks else None,
                "source_summary_sha256": hashlib.sha256((source / "summary.json").read_bytes()).hexdigest(),
-               "checks": checks, "examples_executed": len(examples), "plots_generated": 5,
+               "checks": checks, "examples_executed": len(examples), "panels_generated": 10,
+               "plots_generated": 5, "figure_assembly": "independent_panels_then_latex",
                "seconds": round(time.monotonic() - start, 3)}
     (output / "receipt.json").write_text(json.dumps(receipt, ensure_ascii=False, indent=2), "utf-8")
     print(json.dumps(receipt, ensure_ascii=False))

@@ -22,6 +22,7 @@
 \setCJKsansfont{SimHei}[BoldFont=SimHei]
 \setCJKfamilyfont{zhsong}[BoldFont=SimHei,ItalicFont=KaiTi]{SimSun}
 \setCJKfamilyfont{zhhei}[BoldFont=SimHei]{SimHei}
+\input{figure_style.tex}
 \renewcommand{\thesubsection}{\arabic{section}.\arabic{subsection}}
 \renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
 \setlength{\parindent}{2em}
@@ -89,7 +90,8 @@ flow/.style={->,thick}]
 \draw[flow] (d.south)++(0,-.7)-|(b.south);
 \draw[flow] (d.south)++(0,-.7)-|(c.south);
 \end{tikzpicture}
-\caption{证据进入评价链，反例沿链反馈；每一环节向下游传递结果及适用条件。}\label{fig:chain}
+\caption{认知证据评价链与反例反馈}\label{fig:chain}
+\figurenote{证据进入评价链，反例沿链反馈；每一环节向下游传递结果及适用条件。}
 \end{figure}
 
 本文的方法选择服务于上述接口。LLM 评审研究表明，提示设计、重复运行与文本攻击会改变判断\cite{gu2026_judge_survey,haldar2025_inconsistency,yamauchi2025_design,zhao2025_onetoken}；本文据此同时保留弃权、有效分母和复核来源。预测辅助推断可用概率抽取的参考标签校正群体均值，但收益依赖残差和抽样条件\cite{angelopoulos2023_ppi,angelopoulos2024_ppiplus,mani2025_nofreelunch}；本文将其作为校验资源配置的设计依据。教育效果研究将工具辅助表现与独立学习结局分开\cite{bastani2025_guardrails,he2024_metaanalysis}；本文相应把过程描述与因果目标分开建模。复合指标中的缺失、权重和排序不确定性按统一的可行范围处理\cite{oecd2008_composite}。

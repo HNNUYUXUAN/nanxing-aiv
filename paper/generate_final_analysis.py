@@ -29,16 +29,14 @@ NARRATIVE = r"""% Aggregates and figures from results/final-analysis/summary.jso
 \end{equation}
 这是一种保留候选的条件构造，检查未知部分需要何种约束才能支持总体比较。
 \begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth,height=.33\textheight,keepaspectratio]{@@fig03_unknown_labels@@}
-\caption{任务维度的学期描述与未知标签范围。橙点为各学期候选集；蓝段允许所有无候选回合取 L1 至 L6，范围为条件情景。}\label{fig:unknown}
+\input{figure_groups/fig03_unknown_labels.tex}
 \end{figure}
 秋、春候选任务的平均层级分别为 2.554 与 1.734，高阶占比分别为 19.52\% 与 8.02\%；候选春减秋为 $-11.49$ 个百分点。扩展到全部合格回合后，两学期 HOT 分别在 $[5.14\%,78.80\%]$ 与 $[2.78\%,68.09\%]$ 内，春减秋范围为 $[-76.01,62.95]$ 个百分点。范围覆盖正、负方向，说明已知候选的学期差尚不足以确定总体过程差的方向。贡献维度的春减秋范围同样跨零（$[-80.74,79.10]$ 个百分点），因此后续 B 对两学期保留分层描述。
 }
 
 \newcommand{\FinalWorkflowResults}{%
 \begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth,height=.33\textheight,keepaspectratio]{@@fig02_random_flow@@}
-\caption{相同 352 个分层随机回合的流程比较。每条状态合计为 352；两快和强复核使用既定的不确定判断与失败回退规则。}\label{fig:flow}
+\input{figure_groups/fig02_random_flow.tex}
 \end{figure}
 @@WORKFLOW_TABLE@@任务候选覆盖由单快的 36.36\%／40.34\%，变为双快严格一致的 31.25\% 和复核合并的 24.43\%。相对双快，复核获得 7 条新候选、撤回 31 条候选；双方都保留候选的 79 条中有 4 条改标。任务分歧由 35 增至 122，表明新增判断使部分原来的一致不再成立。贡献候选由 64 变为 52，获得 13、撤回 25；共同候选 39 条中有 5 条改标。流程选择同时改变覆盖与候选组成，无法用单一候选率评定其准确性。
 
@@ -47,8 +45,7 @@ NARRATIVE = r"""% Aggregates and figures from results/final-analysis/summary.jso
 
 \newcommand{\FinalDistributionResults}{%
 \begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth,height=.33\textheight,keepaspectratio]{@@fig01_dimensions@@}
-\caption{双维边际层级分布与同回合共同非空配对。左图各维按自己的候选分母；右图仅 48 个配对，颜色与数字表示回合数。}\label{fig:dimensions}
+\input{figure_groups/fig01_dimensions.tex}
 \end{figure}
 @@DESCRIPTION_TABLE@@任务候选的 L2 占主导；贡献候选则有较多 L4。边际 HOT 分别为 15.54\% 与 35.31\%，但 1010 个任务候选与 776 个贡献候选并非同一组回合，不能据两均值之差推断认知提升。在 48 个同回合共同非空配对中，任务高于贡献 13 个、相同 29 个、低于贡献 6 个，任务减贡献的平均层级差为 0.375；仅 5 个配对满足“任务为 HOT、贡献非 HOT”。共同配对只占全部回合的 1.37\%，支持的是局部双维对应关系。
 
@@ -57,8 +54,7 @@ NARRATIVE = r"""% Aggregates and figures from results/final-analysis/summary.jso
 
 \newcommand{\FinalHumanResults}{%
 \begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth,height=.33\textheight,keepaspectratio]{@@fig04_human_pairs@@}
-\caption{16 组同题、同评审配对提交。两名评审的记录用时变化方向相反；辅助阶段的 6/8 一致包括 2 题共同弃权。}\label{fig:human}
+\input{figure_groups/fig04_human_pairs.tex}
 \end{figure}
 评审 A 的记录用时由 14.46 降至 4.80 人分钟，评审 B 由 10.10 升至 14.62 人分钟。合计减少 5.14 人分钟掩盖了个体方向差异；计时还包含停顿，因此保留逐角色数值比只报告一个效率比例更有信息。辅助后的 6 题一致中，4 题给出相同层级、2 题共同弃权，显示校准部分来自对证据不足边界的共同认识。
 }
@@ -74,8 +70,7 @@ NARRATIVE = r"""% Aggregates and figures from results/final-analysis/summary.jso
 \newcommand{\FinalSensitivityResults}{%
 本次求解使用联合可行集的保守外包：将 ABL/HOT/DHI 的单项改标界分别截断至 $[0,1]$，缺失指标取 $[0,1]$，再枚举权重乘子的 32 个顶点。外包保留所有满足改标预算的真实组合，同时可能包含不能共同出现的组合，故其宽度与无法区分比例具有保守性。结果仅针对 356 个有任务候选的学生—学期单元，不外推到 45 个无候选单元。
 \begin{figure}[htbp]\centering
-\includegraphics[width=\linewidth,height=.33\textheight,keepaspectratio]{@@fig05_score_sensitivity@@}
-\caption{真实候选单元上的条件分数外包范围。权重逐项相对扰动 $\pm10\%$；$\epsilon$ 经向上取整转为改标条数，图中稳定区分限于同学期配对。}\label{fig:sensitivity}
+\input{figure_groups/fig05_score_sensitivity.tex}
 \end{figure}
 @@SENSITIVITY_TABLE@@不改标且固定权重时，三方案范围宽度中位数分别为 20、20、40 分；仅加入权重 $\pm10\%$ 扰动后，变为 24.33、24.14、45.18 分。可稳定区分对数分别从 6228、12575、0 降至 3651、9638、0。过程优先给缺失 CTQ 更大权重，因而真实资料不能支持该方案下的稳定区分。
 
